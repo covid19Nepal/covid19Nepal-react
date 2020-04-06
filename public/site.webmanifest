@@ -1,6 +1,7 @@
 {
-  "name": "COVID-19 Tracker | Nepal",
+  "name": "COVID-19 Nepal",
   "short_name": "COVID-19 Tracker | Nepal",
+  "description": "COVID-19 Tracker information of Nepal ",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,8 +14,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/?source=pwa",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
+  "scope": "/",
   "display": "standalone"
 }
