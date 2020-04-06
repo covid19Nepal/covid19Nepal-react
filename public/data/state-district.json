@@ -1,0 +1,499 @@
+{
+  "Province 1": {
+    "districtData": {
+      "Jhapa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Illam": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Panchthar": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Taplejung": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Morang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Sunsari": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bhojpur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dhankuta": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Tehrathum": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Sankhuwasabha": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Updayapur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Khotang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Okhaldunga": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Solukhumbu": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
+    }
+  },
+  "Province 2": {
+    "districtData": {
+      "Saptari": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Siraha": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dhanusa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Mahottari": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Sarlahi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bara": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Parsa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Rautahat": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
+    }
+  },
+  "Province 3": {
+    "districtData": {
+      "Sindhuli": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Ramechap": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dolakha": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bhaktapur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dhading": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Kathmandu": {
+        "confirmed": 3,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Kavrepalanchowk": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Lalitpur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Nuwakot": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Rasuwa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Sindupalchowk": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Chitwan": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Makwanpur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
+    }
+  },
+  "Province 4": {
+    "districtData": {
+      "Gorkha": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Kaski": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Lamjung": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Syangja": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Tanahu": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Manang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Nawalpur": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Baglung": {
+        "confirmed": 2,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 2
+        }
+      },
+      "Myagdi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Parbat": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Mustang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
+    }
+  },
+  "Province 5": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Kapilvastu": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Parasi": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Rupandehi": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Argakhanchi": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Gulmi": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Palpa": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Dang": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Pyuthan": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Rolpa": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Eastern Rukum": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Banke": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Bardiya": {
+    "confirmed": 0,
+    "lastupdatedtime": "",
+    "delta": {
+      "confirmed": 0
+    }
+  },
+  "Province 7": {
+    "districtData": {
+      "Kailali": {
+        "confirmed": 3,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 3
+        }
+      },
+
+      "Achham": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Doti": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bajhang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bajura": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Kanchanpur": {
+        "confirmed": 1,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 1
+        }
+      },
+      "Dadeldhura": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Baitadi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Darchula": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
+    }
+  }
+}
