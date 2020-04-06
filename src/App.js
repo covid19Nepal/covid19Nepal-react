@@ -73,7 +73,7 @@ function App() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/covid19Nepal/covid19-Nepal"
+          href="https://github.com/covid19nepal/covid19nepal-react"
           className="button github"
         >
           <Icon.GitHub />
