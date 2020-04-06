@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import * as Icon from 'react-feather';
 
 import './App.scss';
@@ -14,6 +9,8 @@ import Navbar from './components/navbar';
 import Links from './components/links';
 import FAQ from './components/faq';
 import Banner from './components/banner';
+
+import Routes from './router';
 
 const history = require('history').createBrowserHistory;
 
@@ -48,18 +45,7 @@ function App() {
               <Navbar pages={pages} />
               <Banner />
               <Route exact path="/" render={() => <Redirect to="/" />} />
-              <Switch location={location}>
-                {pages.map((page, i) => {
-                  return (
-                    <Route
-                      exact
-                      path={page.pageLink}
-                      component={page.view}
-                      key={i}
-                    />
-                  );
-                })}
-              </Switch>
+              <Routes location={location} />
             </div>
           )}
         />
