@@ -1,6 +1,7 @@
 # covid19nepal
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a09fa322-3102-4d74-97e3-739402b96972/deploy-status)](https://app.netlify.com/sites/nepalcovid19/deploys)
+![CI](https://github.com/covid19Nepal/covid19Nepal-react/workflows/CI/badge.svg)
 
 <p align="center">
 <img src="https://i.postimg.cc/Hx9RLq1s/covidnepal.png" width="75%">
