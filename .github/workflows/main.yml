@@ -29,5 +29,8 @@ jobs:
     - name: Install 🔧
       run: |
           npm install
+    # Run lint
+    - name: Lint
+      run: |
           npm run eslint
-          npm run scsslint
+          npm run scsslintm
