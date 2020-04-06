@@ -12,7 +12,7 @@ npm i && npm start
 
 ## Maintainers
 
-- [rupeshshreshtha](https://github.com/rupeshshrestha)
+- [rupeshshrestha722](https://github.com/rupeshshrestha722)
 
 - All credit goes to https://github.com/covid19india
 
