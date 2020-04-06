@@ -12,6 +12,8 @@ import Banner from './components/banner';
 
 import Routes from './router';
 
+import * as serviceWorker from './serviceWorker';
+
 const history = require('history').createBrowserHistory;
 
 function App() {
@@ -69,5 +71,7 @@ function App() {
     </div>
   );
 }
+
+serviceWorker.register();
 
 export default App;
