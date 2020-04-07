@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import * as Icon from 'react-feather';
 
 import './App.scss';
@@ -16,6 +11,10 @@ import FAQ from './components/faq';
 import DeepDive from './components/deepdive';
 import Banner from './components/banner';
 import PatientDB from './components/patientdb';
+
+import Routes from './router';
+
+import * as serviceWorker from './serviceWorker';
 
 const history = require('history').createBrowserHistory;
 
@@ -62,18 +61,7 @@ function App() {
               <Navbar pages={pages} />
               <Banner />
               <Route exact path="/" render={() => <Redirect to="/" />} />
-              <Switch location={location}>
-                {pages.map((page, i) => {
-                  return (
-                    <Route
-                      exact
-                      path={page.pageLink}
-                      component={page.view}
-                      key={i}
-                    />
-                  );
-                })}
-              </Switch>
+              <Routes location={location} />
             </div>
           )}
         />
@@ -87,7 +75,7 @@ function App() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/covid19Nepal/covid19-Nepal"
+          href="https://github.com/covid19nepal/covid19nepal-react"
           className="button github"
         >
           <Icon.GitHub />
@@ -97,5 +85,7 @@ function App() {
     </div>
   );
 }
+
+serviceWorker.register();
 
 export default App;
