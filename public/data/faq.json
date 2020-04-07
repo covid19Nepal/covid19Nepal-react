@@ -24,6 +24,26 @@
       "answer": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.",
       "qno": "5",
       "question": "Can the virus that causes COVID-19 be transmitted through the air?"
+    },
+    {
+      "answer": "Detailed investigations found that SARS-CoV was transmitted from civet cats to humans in China in 2002 and MERS-CoV from dromedary camels to humans in Saudi Arabia in 2012. Several known coronaviruses are circulating in animals that have not yet infected humans. As surveillance improves around the world, more coronaviruses are likely to be identified.",
+      "qno": "6",
+      "question": "Can humans become infected with a novel coronavirus of animal source?"
+    },
+    {
+      "answer": "When a disease is new, there is no vaccine until one is developed. It can take a number of years for a new vaccine to be developed.",
+      "qno": "7",
+      "question": "Is there a vaccine for a novel coronavirus?"
+    },
+    {
+      "answer": "Standard recommendations to reduce exposure to and transmission of a range of illnesses include maintaining basic hand and respiratory hygiene, and safe food practices  and avoiding close contact, when possible, with anyone showing symptoms of respiratory illness such as coughing and sneezing.",
+      "qno": "8",
+      "question": "What can I do to protect myself?"
+    },
+    {
+      "answer": "Yes, they can be, as health care workers come into contact with patients more often than the general public WHO recommends that health care workers consistently apply appropriate.",
+      "qno": "9",
+      "question": "Are health workers at risk from a novel coronavirus?"
     }
   ]
 }
