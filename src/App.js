@@ -39,7 +39,7 @@ function App() {
       animationDelayForNavbar: 0.4,
     },
     {
-      pageLink: '/links',
+      pageLink: '/about',
       view: Links,
       displayName: 'Helpful Links',
       animationDelayForNavbar: 0.5,
