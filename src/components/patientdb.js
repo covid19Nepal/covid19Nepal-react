@@ -38,10 +38,7 @@ function PatientDB(props) {
 
   useEffect(() => {
     async function fetchRawData() {
-      const response = await axios.get(
-        // 'https://api.covid19india.org/raw_data.json'
-        `${DATA_DIR}/raw_data.json`
-      );
+      const response = await axios.get(`${DATA_DIR}/raw_data.json`);
       if (response.data) {
         setPatients(response.data.raw_data.reverse());
         setFetched(true);
@@ -209,7 +206,7 @@ function PatientDB(props) {
           <div className="select">
             <select
               style={{animationDelay: '0.4s'}}
-              id="district"
+              id="date"
               onChange={(event) => {
                 handleFilters('dateannounced', event.target.value);
               }}
@@ -299,7 +296,6 @@ function PatientDB(props) {
               <option value="genders">Genders</option>
               <option value="transmission">Transmission</option>
               <option value="nationality">Nationality</option>
-              {/* <option value="age">Age</option>*/}
             </select>
           </div>
         </div>

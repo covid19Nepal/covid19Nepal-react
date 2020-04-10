@@ -486,7 +486,7 @@
       "totalrecovered": "1"
     },
     {
-      "dailyconfirmed": "5",
+      "dailyconfirmed": "0",
       "dailydeceased": "0",
       "dailyrecovered": "0",
       "date": "08 March ",
@@ -674,7 +674,7 @@
     },
     {
       "dailyconfirmed": "1",
-      "dailydeceased": "1",
+      "dailydeceased": "0",
       "dailyrecovered": "0",
       "date": "25 March ",
       "death": "0",
