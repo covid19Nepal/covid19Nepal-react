@@ -814,30 +814,96 @@
       "totalconfirmed": "9",
       "totaldeceased": "0",
       "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "07 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "08 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "09 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "10 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "11 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "3",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "12 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "12",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
     }
   ],
   "key_values": [
     {
-      "confirmeddelta": "9",
+      "confirmeddelta": "12",
       "counterforautotimeupdate": "",
-      "deceaseddelta": "1",
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "deceaseddelta": "0",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovereddelta": "1",
       "statesdelta": "0"
     }
   ],
   "statewise": [
     {
-      "active": "8",
-      "confirmed": "9",
+      "active": "11",
+      "confirmed": "12",
       "deaths": "0",
       "delta": {
-        "active": 8,
-        "confirmed": 9,
+        "active": 11,
+        "confirmed": 12,
         "deaths": 0,
         "recovered": 1
       },
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "1",
       "state": "Total"
     },
@@ -856,8 +922,8 @@
       "state": "Province 1"
     },
     {
-      "active": "0",
-      "confirmed": "0",
+      "active": "3",
+      "confirmed": "3",
       "deaths": "0",
       "delta": {
         "active": 0,
@@ -865,7 +931,7 @@
         "deaths": 0,
         "recovered": 0
       },
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 2"
     },
@@ -879,7 +945,7 @@
         "deaths": 0,
         "recovered": 1
       },
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "1",
       "state": "Province 3"
     },
@@ -893,7 +959,7 @@
         "deaths": 0,
         "recovered": 0
       },
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 4"
     },
@@ -907,7 +973,7 @@
         "deaths": 0,
         "recovered": 0
       },
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 5"
     },

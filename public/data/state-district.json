@@ -146,10 +146,10 @@
         }
       },
       "Parsa": {
-        "confirmed": 0,
+        "confirmed": 3,
         "lastupdatedtime": "",
         "delta": {
-          "confirmed": 0
+          "confirmed": 3
         }
       },
       "Rautahat": {
@@ -202,7 +202,7 @@
         "confirmed": 3,
         "lastupdatedtime": "",
         "delta": {
-          "confirmed": 0
+          "confirmed": 3
         }
       },
       "Kavrepalanchowk": {
@@ -338,94 +338,165 @@
     }
   },
   "Province 5": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
+    "districtData": {
+      "Kapilvastu": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Parasi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Rupandehi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Argakhanchi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Gulmi": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Palpa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dang": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Pyuthan": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Rolpa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Eastern Rukum": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Banke": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Bardiya": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
     }
   },
-  "Kapilvastu": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Parasi": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Rupandehi": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Argakhanchi": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Gulmi": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Palpa": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Dang": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Pyuthan": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Rolpa": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Eastern Rukum": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Banke": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
-    }
-  },
-  "Bardiya": {
-    "confirmed": 0,
-    "lastupdatedtime": "",
-    "delta": {
-      "confirmed": 0
+  "Province 6": {
+    "districtData": {
+      "Western Rukum": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Salyan": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dolpa": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Humla": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Jumla": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Kalikot": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Mugu": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Surkhet": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Dailekh": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      },
+      "Jajarkot": {
+        "confirmed": 0,
+        "lastupdatedtime": "",
+        "delta": {
+          "confirmed": 0
+        }
+      }
     }
   },
   "Province 7": {
