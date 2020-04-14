@@ -880,30 +880,52 @@
       "totalconfirmed": "12",
       "totaldeceased": "0",
       "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "13 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "12",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "2",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "14 April ",
+      "death": "0",
+      "rec": "0",
+      "totalconfirmed": "14",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
     }
   ],
   "key_values": [
     {
-      "confirmeddelta": "12",
+      "confirmeddelta": "14",
       "counterforautotimeupdate": "",
       "deceaseddelta": "0",
-      "lastupdatedtime": "12/04/2020 11:42:27",
+      "lastupdatedtime": "14/04/2020 11:42:27",
       "recovereddelta": "1",
       "statesdelta": "0"
     }
   ],
   "statewise": [
     {
-      "active": "11",
-      "confirmed": "12",
+      "active": "13",
+      "confirmed": "14",
       "deaths": "0",
       "delta": {
-        "active": 11,
-        "confirmed": 12,
+        "active": 13,
+        "confirmed": 14,
         "deaths": 0,
         "recovered": 1
       },
-      "lastupdatedtime": "12/04/2020 11:42:27",
+      "lastupdatedtime": "14/04/2020 11:42:27",
       "recovered": "1",
       "state": "Total"
     },
@@ -922,8 +944,8 @@
       "state": "Province 1"
     },
     {
-      "active": "3",
-      "confirmed": "3",
+      "active": "4",
+      "confirmed": "4",
       "deaths": "0",
       "delta": {
         "active": 0,
@@ -931,7 +953,7 @@
         "deaths": 0,
         "recovered": 0
       },
-      "lastupdatedtime": "12/04/2020 11:42:27",
+      "lastupdatedtime": "14/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 2"
     },
@@ -992,12 +1014,12 @@
       "state": "Province 6"
     },
     {
-      "active": "4",
-      "confirmed": "4",
+      "active": "5",
+      "confirmed": "5",
       "deaths": "0",
       "delta": {
-        "active": 4,
-        "confirmed": 4,
+        "active": 5,
+        "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },

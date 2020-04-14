@@ -14,7 +14,6 @@ import Level from './level';
 import MapExplorer from './mapexplorer';
 import TimeSeries from './timeseries';
 import Minigraph from './minigraph';
-import {DATA_DIR} from '../constants';
 
 function Home(props) {
   const [states, setStates] = useState([]);
@@ -42,9 +41,9 @@ function Home(props) {
         stateDistrictWiseResponse,
         updateLogResponse,
       ] = await Promise.all([
-        axios.get(`${DATA_DIR}/data.json`),
-        axios.get(`${DATA_DIR}/state-district.json`),
-        axios.get(`${DATA_DIR}/updatelog.json`),
+        axios.get(`https://api.nepalcovid19.org/data.json`),
+        axios.get(`https://api.nepalcovid19.org/state_district_wise.json`),
+        axios.get(`https://api.nepalcovid19.org/updatelog/log.json`),
       ]);
       setStates(response.data.statewise);
       setTimeseries(validateCTS(response.data.cases_time_series));

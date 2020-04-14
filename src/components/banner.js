@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
-import {DATA_DIR} from '../constants';
 
 function Banner(props) {
   const [snippets, setSnippets] = useState([]);
@@ -8,7 +7,7 @@ function Banner(props) {
 
   useEffect(() => {
     axios
-      .get(`${DATA_DIR}/banner.json`)
+      .get(`https://api.nepalcovid19.org/data.json`)
       .then((response) => {
         setSnippets(response.data.factoids || []);
         setSnippet(response.data.factoids[0] || '');

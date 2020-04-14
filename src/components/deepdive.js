@@ -6,7 +6,6 @@ import NationalityChart from './Charts/nationalitychart';
 import AllStatesChart from './Charts/allstates';
 import TotalConfirmedChart from './Charts/totalconfirmedchart';
 import DailyConfirmedChart from './Charts/dailyconfirmedchart';
-import {DATA_DIR} from '../constants';
 
 function DeepDive(props) {
   const [fetched, setFetched] = useState(false);
@@ -27,9 +26,9 @@ function DeepDive(props) {
         rawDataResponse,
         stateDailyResponse,
       ] = await Promise.all([
-        axios.get(`${DATA_DIR}/data.json`),
-        axios.get(`${DATA_DIR}/raw_data.json`),
-        axios.get(`${DATA_DIR}/state_daily.json`),
+        axios.get(`https://api.nepalcovid19.org/data.json`),
+        axios.get(`https://api.nepalcovid19.org/raw_data.json`),
+        axios.get(`https://api.nepalcovid19.org/state_daily.json`),
       ]);
       setTimeseries(response.data.cases_time_series);
       setStatesTimeSeries(stateDailyResponse.data.states_daily);

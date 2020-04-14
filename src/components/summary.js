@@ -4,7 +4,6 @@ import axios from 'axios';
 import Level from './level';
 import Minigraph from './minigraph';
 import Table from './table';
-import {DATA_DIR} from '../constants';
 
 function Summary(props) {
   const [states, setStates] = useState([]);
@@ -20,7 +19,7 @@ function Summary(props) {
 
   const getStates = () => {
     axios
-      .get(`${DATA_DIR}/data.json`)
+      .get(`https://api.nepalcovid19.org/data.json`)
       .then((response) => {
         setStates(response.data.statewise);
         setDeltas(response.data.key_values[0]);

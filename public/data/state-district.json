@@ -153,10 +153,10 @@
         }
       },
       "Rautahat": {
-        "confirmed": 0,
+        "confirmed": 1,
         "lastupdatedtime": "",
         "delta": {
-          "confirmed": 0
+          "confirmed": 1
         }
       }
     }
@@ -502,10 +502,10 @@
   "Province 7": {
     "districtData": {
       "Kailali": {
-        "confirmed": 3,
+        "confirmed": 4,
         "lastupdatedtime": "",
         "delta": {
-          "confirmed": 3
+          "confirmed": 4
         }
       },
 
