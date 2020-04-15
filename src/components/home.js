@@ -25,7 +25,7 @@ function Home(props) {
   const [graphOption, setGraphOption] = useState(1);
   const [lastUpdated, setLastUpdated] = useState('');
   const [timeseries, setTimeseries] = useState({});
-  const [activeStateCode, setActiveStateCode] = useState('TT'); // TT -> India
+  const [activeStateCode, setActiveStateCode] = useState('TT');
   const [activityLog, setActivityLog] = useState([]);
   const [timeseriesMode, setTimeseriesMode] = useState(true);
   const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
@@ -50,11 +50,10 @@ function Home(props) {
         axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
         axios.get('https://api.nepalcovid19.org/states_daily.json'),
         axios.get('https://api.nepalcovid19.org/updatelog/log.json'),
-        // axios.get('https://api.covid19india.org/state_test_data.json'),
       ]);
       setStates(response.data.statewise);
       const ts = parseStateTimeseries(statesDailyResponse);
-      ts['TT'] = preprocessTimeseries(response.data.cases_time_series); // TT -> India
+      ts['TT'] = preprocessTimeseries(response.data.cases_time_series);
       setTimeseries(ts);
       setLastUpdated(response.data.statewise[0].lastupdatedtime);
       // setStateTestData(stateTestResponse.data.states_tested_data.reverse());

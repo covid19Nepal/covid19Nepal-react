@@ -11,6 +11,7 @@ import FAQ from './components/faq';
 import DeepDive from './components/deepdive';
 import Banner from './components/banner';
 import PatientDB from './components/patientdb';
+import Resources from './components/resources';
 
 import Routes from './router';
 
@@ -39,16 +40,22 @@ function App() {
       animationDelayForNavbar: 0.4,
     },
     {
-      pageLink: '/about',
+      pageLink: '/links',
       view: Links,
       displayName: 'Helpful Links',
       animationDelayForNavbar: 0.5,
     },
     {
-      pageLink: '/faq',
+      pageLink: '/about',
       view: FAQ,
-      displayName: 'FAQ',
+      displayName: 'About',
       animationDelayForNavbar: 0.6,
+    },
+    {
+      pageLink: '/essentials',
+      view: Resources,
+      displayName: 'Essentials',
+      animationDelayForNavbar: 0.7,
     },
   ];
 
