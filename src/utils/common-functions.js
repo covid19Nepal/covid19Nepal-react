@@ -32,14 +32,14 @@ export const formatDate = (unformattedDate) => {
   const month = unformattedDate.slice(3, 5);
   const year = unformattedDate.slice(6, 10);
   const time = unformattedDate.slice(11);
-  return `${year}-${month}-${day}T${time}+05:30`;
+  return `${year}-${month}-${day}T${time}+05:45`;
 };
 
 export const formatDateAbsolute = (unformattedDate) => {
   const day = unformattedDate.slice(0, 2);
   const month = unformattedDate.slice(3, 5);
   const time = unformattedDate.slice(11);
-  return `${day} ${months[month]}, ${time.slice(0, 5)} IST`;
+  return `${day} ${months[month]}, ${time.slice(0, 5)} GMT`;
 };
 
 export const validateCTS = (data = []) => {

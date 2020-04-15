@@ -28,7 +28,7 @@ function DeepDive(props) {
       ] = await Promise.all([
         axios.get(`https://api.nepalcovid19.org/data.json`),
         axios.get(`https://api.nepalcovid19.org/raw_data.json`),
-        axios.get(`https://api.nepalcovid19.org/state_daily.json`),
+        axios.get(`https://api.nepalcovid19.org/states_daily.json`),
       ]);
       setTimeseries(response.data.cases_time_series);
       setStatesTimeSeries(stateDailyResponse.data.states_daily);

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {DATA_DIR} from '../constants';
 
 function FAQ(props) {
   const [faq, setFaq] = useState([]);
@@ -11,7 +10,7 @@ function FAQ(props) {
 
   const getFAQs = () => {
     axios
-      .get(`${DATA_DIR}/faq.json`)
+      .get(`https://api.nepalcovid19.org/faq.json`)
       .then((response) => {
         setFaq(response.data.faq);
       })

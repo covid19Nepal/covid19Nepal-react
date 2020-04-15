@@ -5,7 +5,6 @@ import {format, parse, subDays} from 'date-fns';
 
 import Patients from './patients';
 import DownloadBlock from './downloadblock';
-import {DATA_DIR} from '../constants';
 
 function filterByObject(obj, filters) {
   const keys = Object.keys(filters);
@@ -38,7 +37,9 @@ function PatientDB(props) {
 
   useEffect(() => {
     async function fetchRawData() {
-      const response = await axios.get(`${DATA_DIR}/raw_data.json`);
+      const response = await axios.get(
+        `https://api.nepalcovid19.org/raw_data.json`
+      );
       if (response.data) {
         setPatients(response.data.raw_data.reverse());
         setFetched(true);
