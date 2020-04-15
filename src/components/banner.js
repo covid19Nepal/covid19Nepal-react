@@ -7,16 +7,10 @@ function Banner(props) {
 
   useEffect(() => {
     axios
-      .get('https://api.nepalcovid19.org/website_data.json')
+      .get(`https://api.nepalcovid19.org/website_data.json`)
       .then((response) => {
         setSnippets(response.data.factoids || []);
-        setSnippet(
-          response.data.factoids[
-            Math.floor(
-              Math.random() * (response.data.factoids.length - 1 - 0) + 0
-            )
-          ] || ''
-        );
+        setSnippet(response.data.factoids[0] || '');
       })
       .catch((err) => {
         console.log(err);
