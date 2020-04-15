@@ -1580,6 +1580,7 @@ input.switch:checked::after {
     margin-top: 1rem;
     padding: 0.5rem;
     text-transform: uppercase;
+    width: auto;
     color: $gray;
 
     &:focus {
@@ -2848,7 +2849,6 @@ select {
 .updates-header {
   width: 30rem;
   align-self: center;
-  margin-top: -30rem;
   color: $gray-dark;
   h2 {
     color: $pblue;
