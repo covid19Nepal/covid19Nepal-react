@@ -93,7 +93,7 @@ function Home(props) {
           <div className="header fadeInUp" style={{animationDelay: '1s'}}>
             <div className="header-mid">
               <div className="titles">
-                <h1> COVID-19 Tracker</h1>
+                <h1>Nepal COVID-19 Tracker</h1>
                 <h6 style={{fontWeight: 600}}>A Crowdsourced Initiative</h6>
               </div>
               <div className="last-update">
@@ -198,7 +198,7 @@ function Home(props) {
                   </div>
                 </div>
 
-                <div className="trends-state-name">
+                {/* <div className="trends-state-name">
                   <select
                     onChange={({target}) => {
                       onHighlightState(JSON.parse(target.value));
@@ -216,7 +216,7 @@ function Home(props) {
                       );
                     })}
                   </select>
-                </div>
+                </div> */}
               </div>
 
               <TimeSeries

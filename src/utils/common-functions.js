@@ -43,7 +43,7 @@ export const formatDateAbsolute = (unformattedDate) => {
   return `${day} ${months[month]}, ${time.slice(0, 5)} NPT`;
 };
 
-export const validateCTS = (data = []) => {
+const validateCTS = (data = []) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const dataTypes = [
