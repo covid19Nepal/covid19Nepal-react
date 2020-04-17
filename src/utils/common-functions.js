@@ -1,4 +1,6 @@
 import moment from 'moment';
+import {STATE_CODES} from '../constants';
+
 const months = {
   '01': 'Jan',
   '02': 'Feb',
@@ -14,18 +16,8 @@ const months = {
   '12': 'Dec',
 };
 
-const stateCodes = {
-  P1: 'Province 1',
-  P2: 'Province 2',
-  P3: 'Province 3',
-  P4: 'Province 4',
-  P5: 'Province 5',
-  P6: 'Province 6',
-  P7: 'Province 7',
-};
-
 export const getStateName = (code) => {
-  return stateCodes[code.toUpperCase()];
+  return STATE_CODES[code.toUpperCase()];
 };
 
 export const formatDate = (unformattedDate) => {
@@ -92,7 +84,7 @@ export const formatNumber = (value) => {
 };
 
 export const parseStateTimeseries = ({states_daily: data}) => {
-  const statewiseSeries = Object.keys(stateCodes).reduce((a, c) => {
+  const statewiseSeries = Object.keys(STATE_CODES).reduce((a, c) => {
     a[c] = [];
     return a;
   }, {});

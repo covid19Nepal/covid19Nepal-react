@@ -1,81 +1,42 @@
 import React, {useState, useEffect, useMemo, useCallback} from 'react';
 import ChoroplethMap from './choropleth';
-import {MAP_TYPES, MAPS_DIR} from '../constants';
+import {MAP_TYPES, MAP_META} from '../constants';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
-import {formatDistance} from 'date-fns';
+import {formatDistance, format, parse} from 'date-fns';
+import {formatNumber} from '../utils/common-functions';
+import * as Icon from 'react-feather';
 
-const mapMeta = {
-  Nepal: {
-    name: 'Nepal',
-    geoDataFile: `${MAPS_DIR}/nepal.json`,
-    mapType: MAP_TYPES.COUNTRY,
-    graphObjectName: 'nepal',
-  },
-  'Province 1': {
-    name: 'Province 1',
-    geoDataFile: `${MAPS_DIR}/province1.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province1_district',
-  },
-  'Province 2': {
-    name: 'Province 2',
-    geoDataFile: `${MAPS_DIR}/province2.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province2_district',
-  },
-  'Province 3': {
-    name: 'Province 3',
-    geoDataFile: `${MAPS_DIR}/province3.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province3_district',
-  },
-  'Province 4': {
-    name: 'Province 4',
-    geoDataFile: `${MAPS_DIR}/province4.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province4_district',
-  },
-  'Province 5': {
-    name: 'Province 5',
-    geoDataFile: `${MAPS_DIR}/province5.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province5_district',
-  },
-  'Province 6': {
-    name: 'Province 6',
-    geoDataFile: `${MAPS_DIR}/province6.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province6_district',
-  },
-  'Province 7': {
-    name: 'Province 7',
-    geoDataFile: `${MAPS_DIR}/province7.json`,
-    mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province7_district',
-  },
+const getRegionFromState = (state) => {
+  if (!state) return;
+  const region = {...state};
+  if (!region.name) region.name = region.state;
+  return region;
 };
 
-export default function ({
+const getRegionFromDistrict = (districtData, name) => {
+  if (!districtData) return;
+  const region = {...districtData};
+  if (!region.name) region.name = name;
+  return region;
+};
+
+function MapExplorer({
+  forwardRef,
+  mapMeta,
   states,
   stateDistrictWiseData,
   stateTestData,
   regionHighlighted,
+  onMapHighlightChange,
+  isCountryLoaded,
 }) {
   const [selectedRegion, setSelectedRegion] = useState({});
-  const [currentHoveredRegion, setCurrentHoveredRegion] = useState({});
-  const [panelRegion, setPanelRegion] = useState({});
-  /* const [testObj, setTestObj] = useState({});*/
-  const [currentMap, setCurrentMap] = useState(mapMeta.Nepal);
-
-  useEffect(() => {
-    const region = getRegionFromState(states[1]);
-    setPanelRegion(region);
-    setCurrentHoveredRegion(region);
-  }, [states]);
-
-  if (!panelRegion) {
-    return null;
-  }
+  const [panelRegion, setPanelRegion] = useState(getRegionFromState(states[0]));
+  const [currentHoveredRegion, setCurrentHoveredRegion] = useState(
+    getRegionFromState(states[0])
+  );
+  const [testObj, setTestObj] = useState({});
+  const [currentMap, setCurrentMap] = useState(mapMeta);
 
   const [statistic, currentMapData] = useMemo(() => {
     const statistic = {total: 0, maxConfirmed: 0};
@@ -116,10 +77,11 @@ export default function ({
     (name, currentMap) => {
       if (currentMap.mapType === MAP_TYPES.COUNTRY) {
         const region = getRegionFromState(
-          states.filter((state) => name === state.state)[0]
+          states.find((state) => name === state.state)
         );
         setCurrentHoveredRegion(region);
         setPanelRegion(region);
+        onMapHighlightChange(region);
       } else if (currentMap.mapType === MAP_TYPES.STATE) {
         const state = stateDistrictWiseData[currentMap.name] || {
           districtData: {},
@@ -135,12 +97,13 @@ export default function ({
         }
         setCurrentHoveredRegion(getRegionFromDistrict(districtData, name));
         const panelRegion = getRegionFromState(
-          states.filter((state) => currentMap.name === state.state)[0]
+          states.find((state) => currentMap.name === state.state)
         );
         setPanelRegion(panelRegion);
+        if (onMapHighlightChange) onMapHighlightChange(panelRegion);
       }
     },
-    [states, stateDistrictWiseData]
+    [states, stateDistrictWiseData, onMapHighlightChange]
   );
 
   useEffect(() => {
@@ -152,13 +115,13 @@ export default function ({
     }
     const isState = !('district' in regionHighlighted);
     if (isState) {
-      const newMap = mapMeta['Nepal'];
+      const newMap = MAP_META['Nepal'];
       setCurrentMap(newMap);
       const region = getRegionFromState(regionHighlighted.state);
       setHoveredRegion(region.name, newMap);
       setSelectedRegion(region.name);
     } else {
-      const newMap = mapMeta[regionHighlighted.state.state];
+      const newMap = MAP_META[regionHighlighted.state.state];
       if (!newMap) {
         return;
       }
@@ -166,48 +129,30 @@ export default function ({
       setHoveredRegion(regionHighlighted.district, newMap);
       setSelectedRegion(regionHighlighted.district);
     }
-  }, [regionHighlighted, currentMap.mapType, setHoveredRegion]);
-
-  const getRegionFromDistrict = (districtData, name) => {
-    if (!districtData) {
-      return;
-    }
-    const region = {...districtData};
-    if (!region.name) {
-      region.name = name;
-    }
-    return region;
-  };
-
-  const getRegionFromState = (state) => {
-    if (!state) {
-      return;
-    }
-    const region = {...state};
-    if (!region.name) {
-      region.name = region.state;
-    }
-    return region;
-  };
+  }, [regionHighlighted, setHoveredRegion]);
 
   const switchMapToState = useCallback(
     (name) => {
-      const newMap = mapMeta[name];
+      const newMap = MAP_META[name];
       if (!newMap) {
         return;
       }
       setCurrentMap(newMap);
+      setSelectedRegion(null);
       if (newMap.mapType === MAP_TYPES.COUNTRY) {
-        setHoveredRegion(states[1].state, newMap);
+        setHoveredRegion(states[0].state, newMap);
       } else if (newMap.mapType === MAP_TYPES.STATE) {
-        const districtData = (stateDistrictWiseData[name] || {districtData: {}})
-          .districtData;
-        const topDistrict = Object.keys(districtData)
-          .filter((name) => name !== 'Unknown')
-          .sort((a, b) => {
-            return districtData[b].confirmed - districtData[a].confirmed;
-          })[0];
-        setHoveredRegion(topDistrict, newMap);
+        const {districtData} = stateDistrictWiseData[name] || {};
+
+        if (districtData !== undefined) {
+          const topDistrict = Object.keys(districtData)
+            .filter((name) => name !== 'Unknown')
+            .sort((a, b) => {
+              return districtData[b].confirmed - districtData[a].confirmed;
+            })[0];
+          setHoveredRegion(topDistrict, newMap);
+          setSelectedRegion(topDistrict);
+        }
       }
     },
     [setHoveredRegion, stateDistrictWiseData, states]
@@ -215,13 +160,25 @@ export default function ({
 
   const {name, lastupdatedtime} = currentHoveredRegion;
 
+  useEffect(() => {
+    setTestObj(
+      stateTestData.find(
+        (obj) => obj.state === panelRegion.name && obj.totaltested !== ''
+      )
+    );
+  }, [panelRegion, stateTestData, testObj]);
+
   return (
-    <div className="MapExplorer fadeInUp" style={{animationDelay: '1.5s'}}>
+    <div
+      className="MapExplorer fadeInUp"
+      style={{animationDelay: '1.5s'}}
+      ref={forwardRef}
+    >
       <div className="header">
         <h1>{currentMap.name}</h1>
         <h6>
           {window.innerWidth <= 769 ? 'Tap' : 'Hover'} over a{' '}
-          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/ut' : 'district'}{' '}
+          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/UT' : 'district'}{' '}
           for more details
         </h6>
       </div>
@@ -230,7 +187,7 @@ export default function ({
         <div className="stats fadeInUp" style={{animationDelay: '2s'}}>
           <h5>{window.innerWidth <= 769 ? 'Cnfmd' : 'Confirmed'}</h5>
           <div className="stats-bottom">
-            <h1>{panelRegion.confirmed}</h1>
+            <h1>{formatNumber(panelRegion.confirmed)}</h1>
             <h6>{}</h6>
           </div>
         </div>
@@ -241,7 +198,7 @@ export default function ({
         >
           <h5>{window.innerWidth <= 769 ? 'Actv' : 'Active'}</h5>
           <div className="stats-bottom">
-            <h1>{panelRegion.active || ''}</h1>
+            <h1>{formatNumber(panelRegion.active)}</h1>
             <h6>{}</h6>
           </div>
         </div>
@@ -252,7 +209,7 @@ export default function ({
         >
           <h5>{window.innerWidth <= 769 ? 'Rcvrd' : 'Recovered'}</h5>
           <div className="stats-bottom">
-            <h1>{panelRegion.recovered || ''}</h1>
+            <h1>{formatNumber(panelRegion.recovered)}</h1>
             <h6>{}</h6>
           </div>
         </div>
@@ -263,34 +220,35 @@ export default function ({
         >
           <h5>{window.innerWidth <= 769 ? 'Dcsd' : 'Deceased'}</h5>
           <div className="stats-bottom">
-            <h1>{panelRegion.deaths || ''}</h1>
+            <h1>{formatNumber(panelRegion.deaths)}</h1>
             <h6>{}</h6>
           </div>
         </div>
 
-        {/* <div
-          className="stats is-purple tested fadeInUp"
-          style={{animationDelay: '2.4s'}}
-        >
-          <h5>{window.innerWidth <= 769 ? 'Tested' : 'Tested'}</h5>
-          <div className="stats-bottom">
-            <h1>{testObj?.totaltested || '-'}</h1>
+        {
+          <div
+            className="stats is-purple tested fadeInUp"
+            style={{animationDelay: '2.4s'}}
+          >
+            <h5>{window.innerWidth <= 769 ? 'Tested' : 'Tested'}</h5>
+            <div className="stats-bottom">
+              <h1>{formatNumber(testObj?.totaltested)}</h1>
+            </div>
+            <h6 className="timestamp">
+              {!isNaN(parse(testObj?.updatedon, 'dd/MM/yyyy', new Date()))
+                ? `As of ${format(
+                    parse(testObj?.updatedon, 'dd/MM/yyyy', new Date()),
+                    'dd MMM'
+                  )}`
+                : ''}
+            </h6>
+            {testObj?.totaltested?.length > 1 && (
+              <a href={testObj.source} target="_noblank">
+                <Icon.Link />
+              </a>
+            )}
           </div>
-          <h6 className="timestamp">
-            {!isNaN(new Date(testObj?.updatedon))
-              ? `As of ${format(
-                  parse(testObj?.updatedon, 'dd/MM/yyyy', new Date()),
-                  'dd MMM'
-                )}`
-              : ''}
-          </h6>
-          {testObj?.totaltested?.length > 1 && (
-            <a href={testObj.source} target="_noblank">
-              <Icon.Link />
-            </a>
-          )}
-        </div>
-        */}
+        }
       </div>
 
       <div className="meta fadeInUp" style={{animationDelay: '2.4s'}}>
@@ -321,13 +279,17 @@ export default function ({
           </div>
         )}
 
-        {currentMap.mapType === MAP_TYPES.STATE ? (
-          <h4 className="district-confirmed">
-            Confirmed cases:{' '}
+        {currentMap.mapType === MAP_TYPES.STATE &&
+        currentHoveredRegion.name !== currentMap.name ? (
+          <h1 className="district-confirmed">
             {currentMapData[currentHoveredRegion.name]
               ? currentMapData[currentHoveredRegion.name]
               : 0}
-          </h4>
+            <br />
+            <span style={{fontSize: '0.75rem', fontWeight: 600}}>
+              confirmed
+            </span>
+          </h1>
         ) : null}
 
         {currentMap.mapType === MAP_TYPES.STATE &&
@@ -355,7 +317,10 @@ export default function ({
         changeMap={switchMapToState}
         selectedRegion={selectedRegion}
         setSelectedRegion={setSelectedRegion}
+        isCountryLoaded={isCountryLoaded}
       />
     </div>
   );
 }
+
+export default MapExplorer;

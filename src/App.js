@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-import * as Icon from 'react-feather';
+import {AnimatedSwitch} from 'react-router-transition';
 
 import './App.scss';
 
@@ -8,16 +8,10 @@ import Home from './components/home';
 import Navbar from './components/navbar';
 import Links from './components/links';
 import FAQ from './components/faq';
-import DeepDive from './components/deepdive';
-import Banner from './components/banner';
 import PatientDB from './components/patientdb';
+import DeepDive from './components/deepdive';
 import Resources from './components/resources';
-
-import Routes from './router';
-
-import * as serviceWorker from './serviceWorker';
-
-const history = require('history').createBrowserHistory;
+import State from './components/state';
 
 function App() {
   const pages = [
@@ -26,73 +20,85 @@ function App() {
       view: Home,
       displayName: 'Home',
       animationDelayForNavbar: 0.2,
+      showInNavbar: true,
     },
     {
       pageLink: '/demographics',
       view: PatientDB,
       displayName: 'Demographics',
       animationDelayForNavbar: 0.3,
+      showInNavbar: true,
     },
     {
       pageLink: '/deepdive',
       view: DeepDive,
       displayName: 'Deep Dive',
       animationDelayForNavbar: 0.4,
+      showInNavbar: true,
     },
     {
       pageLink: '/links',
       view: Links,
       displayName: 'Helpful Links',
       animationDelayForNavbar: 0.5,
-    },
-    {
-      pageLink: '/about',
-      view: FAQ,
-      displayName: 'About',
-      animationDelayForNavbar: 0.6,
+      showInNavbar: true,
     },
     {
       pageLink: '/essentials',
       view: Resources,
       displayName: 'Essentials',
+      animationDelayForNavbar: 0.6,
+      showInNavbar: true,
+    },
+    {
+      pageLink: '/about',
+      view: FAQ,
+      displayName: 'About',
       animationDelayForNavbar: 0.7,
+      showInNavbar: true,
+    },
+    {
+      pageLink: '/state/:stateName',
+      view: State,
+      displayName: 'State',
+      animationDelayForNavbar: 0.8,
+      showInNavbar: false,
     },
   ];
 
   return (
     <div className="App">
-      <Router history={history}>
+      <Router>
         <Route
           render={({location}) => (
             <div className="Almighty-Router">
               <Navbar pages={pages} />
-              <Banner />
               <Route exact path="/" render={() => <Redirect to="/" />} />
-              <Routes location={location} />
+              <AnimatedSwitch
+                atEnter={{opacity: 0}}
+                atLeave={{opacity: 0}}
+                atActive={{opacity: 1}}
+                className="switch-wrapper"
+                location={location}
+              >
+                {pages.map((page, i) => {
+                  return (
+                    <Route
+                      exact
+                      path={page.pageLink}
+                      component={page.view}
+                      key={i}
+                    />
+                  );
+                })}
+                <Redirect to="/" />
+              </AnimatedSwitch>
             </div>
           )}
         />
       </Router>
-
-      <footer className="fadeInUp" style={{animationDelay: '2s'}}>
-        <h5>We stand with everyone fighting on the frontlines</h5>
-        <div className="link">
-          <a href="https://github.com/covid19Nepal">covid19Nepal</a>
-        </div>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/covid19nepal/covid19nepal-react"
-          className="button github"
-        >
-          <Icon.GitHub />
-          <span>Open Sourced on GitHub</span>
-        </a>
-      </footer>
     </div>
   );
 }
-
-serviceWorker.register();
 
 export default App;

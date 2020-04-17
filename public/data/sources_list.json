@@ -1,0 +1,64 @@
+{
+  "sources_list": [
+    {
+      "region": "General",
+      "source1": "https://www.mohfw.gov.in/",
+      "source2": "https://twitter.com/PTI_News",
+      "source3": "https://twitter.com/ANI",
+      "source4": "https://twitter.com/the_hindu",
+      "source5": "https://www.indiatoday.in",
+      "source6": "https://twitter.com/thenewsminute",
+      "statecode": "GG"
+    },
+    {
+      "region": "Testing",
+      "source1": "https://icmr.nic.in/node/39071",
+      "source2": "https://covid.icmr.org.in/index.php",
+      "source3": "",
+      "source4": "",
+      "source5": "",
+      "source6": "",
+      "statecode": "TE"
+    },
+    {
+      "region": "Province 2",
+      "source1": "https://twitter.com/CMOKerala",
+      "source2": "https://twitter.com/vijayanpinarayi",
+      "source3": "https://dashboard.kerala.gov.in/",
+      "source4": "http://dhs.kerala.gov.in/%E0%B4%A1%E0%B5%86%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B4%BF-%E0%B4%AC%E0%B5%81%E0%B4%B3%E0%B5%8D%E0%B4%B3%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B4%BF%E0%B4%A8%E0%B5%8D%E2%80%8D/",
+      "source5": "",
+      "source6": "",
+      "statecode": "P2"
+    },
+    {
+      "region": "Province 3",
+      "source1": "https://covid19.karnataka.gov.in",
+      "source2": "https://twitter.com/sriramulubjp",
+      "source3": "https://karunadu.karnataka.gov.in/hfw/kannada/Pages/cv-dashboard-old.aspx",
+      "source4": "https://twitter.com/DHFWKA",
+      "source5": "",
+      "source6": "",
+      "statecode": "P3"
+    },
+    {
+      "region": "Province 4",
+      "source1": "https://twitter.com/IPRTelangana",
+      "source2": "https://twitter.com/TelanganaHealth",
+      "source3": "http://124.124.103.93/COVID/home.htm",
+      "source4": "https://covid19.telangana.gov.in/announcements/media-bulletins/",
+      "source5": "",
+      "source6": "",
+      "statecode": "P4"
+    },
+    {
+      "region": "Province 7",
+      "source1": "https://mahe.gov.in/covid-19/",
+      "source2": "https://collectorate.py.gov.in/Corona%20COVID-19.htm",
+      "source3": "",
+      "source4": "",
+      "source5": "",
+      "source6": "",
+      "statecode": "P7"
+    }
+  ]
+}
