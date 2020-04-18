@@ -160,23 +160,24 @@ function State(props) {
                 <Icon.Compass />
                 <div className="sources-right">
                   Data collected from sources{' '}
-                  {Object.keys(sources) !== '0' ||
-                    Object.keys(sources[0]).map((key) => {
-                      if (
-                        key.match('source') &&
-                        sources[0][key] !== '' &&
-                        sources[0][key] !== '0'
-                      ) {
-                        const num = key.match(/\d+/);
-                        return (
-                          <React.Fragment>
-                            {num > 1 ? ',' : ''}
-                            <a href={sources[0][key]}>{num}</a>
-                          </React.Fragment>
-                        );
-                      }
-                      return null;
-                    })}
+                  {sources.length > 0
+                    ? Object.keys(sources[0]).map((key) => {
+                        if (
+                          key.match('source') &&
+                          sources[0][key] !== '' &&
+                          sources[0][key] !== '0'
+                        ) {
+                          const num = key.match(/\d+/);
+                          return (
+                            <React.Fragment>
+                              {num > 1 ? ',' : ''}
+                              <a href={sources[0][key]}>{num}</a>
+                            </React.Fragment>
+                          );
+                        }
+                        return null;
+                      })
+                    : ''}
                 </div>
               </div>
             </div>
@@ -193,37 +194,40 @@ function State(props) {
                 >
                   <h2>Top districts</h2>
                   <div className="districts">
-                    {typeof districtData !== undefined ||
-                      Object.keys(districtData[stateName].districtData)
-                        .slice(0, 6)
-                        .sort(
-                          (a, b) =>
-                            districtData[stateName].districtData[b].confirmed -
-                            districtData[stateName].districtData[a].confirmed
-                        )
-                        .map((district, index) => {
-                          return (
-                            <div key={index} className="district">
-                              <h2>
-                                {
-                                  districtData[stateName].districtData[district]
-                                    .confirmed
-                                }
-                              </h2>
-                              <h5>{district}</h5>
-                              <div className="delta">
-                                <Icon.ArrowUp />
-                                <h6>
+                    {districtData[stateName]
+                      ? Object.keys(districtData[stateName].districtData)
+                          .slice(0, 6)
+                          .sort(
+                            (a, b) =>
+                              districtData[stateName].districtData[b]
+                                .confirmed -
+                              districtData[stateName].districtData[a].confirmed
+                          )
+                          .map((district, index) => {
+                            return (
+                              <div key={index} className="district">
+                                <h2>
                                   {
                                     districtData[stateName].districtData[
                                       district
-                                    ].delta.confirmed
+                                    ].confirmed
                                   }
-                                </h6>
+                                </h2>
+                                <h5>{district}</h5>
+                                <div className="delta">
+                                  <Icon.ArrowUp />
+                                  <h6>
+                                    {
+                                      districtData[stateName].districtData[
+                                        district
+                                      ].delta.confirmed
+                                    }
+                                  </h6>
+                                </div>
                               </div>
-                            </div>
-                          );
-                        })}
+                            );
+                          })
+                      : ''}
                   </div>
                 </div>
                 <div className="district-bar-right">
