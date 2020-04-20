@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import axios from 'axios';
-import {format, parse, subDays} from 'date-fns';
+import {format, subDays} from 'date-fns';
+import DatePicker from 'react-date-picker';
+import * as Icon from 'react-feather';
 
 import Patients from './patients';
 import DownloadBlock from './downloadblock';
@@ -24,6 +26,7 @@ function PatientDB(props) {
   const {pathname} = useLocation();
   const [colorMode, setColorMode] = useState('genders');
   const [scaleMode, setScaleMode] = useState(false);
+  const [filterDate, setFilterDate] = useState(null);
   const [filters, setFilters] = useState({
     detectedstate: '',
     detecteddistrict: '',
@@ -38,7 +41,7 @@ function PatientDB(props) {
   useEffect(() => {
     async function fetchRawData() {
       const response = await axios.get(
-        `https://api.nepalcovid19.org/raw_data.json`
+        'https://api.nepalcovid19.org/raw_data.json'
       );
       if (response.data) {
         setPatients(response.data.raw_data.reverse());
@@ -205,35 +208,39 @@ function PatientDB(props) {
           </div>
 
           <div className="select">
+            <DatePicker
+              value={filterDate}
+              minDate={new Date('30-Jan-2020')}
+              maxDate={subDays(new Date(), 1)}
+              format="dd/MM/y"
+              calendarIcon={<Icon.Calendar />}
+              clearIcon={<Icon.XCircle class={'calendar-close'} />}
+              onChange={(date) => {
+                setFilterDate(date);
+                const fomattedDate = !!date ? format(date, 'dd/MM/yyyy') : '';
+                handleFilters('dateannounced', fomattedDate);
+              }}
+            />
+          </div>
+
+          {/* <div className="select">
             <select
               style={{animationDelay: '0.4s'}}
-              id="date"
               onChange={(event) => {
                 handleFilters('dateannounced', event.target.value);
               }}
             >
-              <option value="" disabled selected>
-                Select Day
-              </option>
-              {getSortedValues(
-                filterByObject(patients, {
-                  detectedstate: filters.detectedstate,
-                }),
-                'dateannounced'
-              ).map((date, index) => {
-                return (
-                  <option key={index} value={date}>
-                    {date === ''
-                      ? 'All'
-                      : format(
-                          parse(date, 'dd/MM/yyyy', new Date()),
-                          'dd MMM, yyyy'
-                        )}
-                  </option>
-                );
-              })}
+              {Array.from(new Set(patients.map((p) => p.dateannounced))).map(
+                (date, index) => {
+                  return (
+                    <option key={index} value={date}>
+                      {date}
+                    </option>
+                  );
+                }
+              )}
             </select>
-          </div>
+          </div>*/}
         </div>
 
         <div className="legend">
@@ -297,6 +304,7 @@ function PatientDB(props) {
               <option value="genders">Genders</option>
               <option value="transmission">Transmission</option>
               <option value="nationality">Nationality</option>
+              {/* <option value="age">Age</option>*/}
             </select>
           </div>
         </div>
