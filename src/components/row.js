@@ -7,6 +7,7 @@ import {
 } from '../utils/common-functions';
 import {formatDistance} from 'date-fns';
 import {Tooltip} from 'react-lightweight-tooltip';
+import {Link} from 'react-router-dom';
 
 function Row(props) {
   const [state, setState] = useState(props.state);
@@ -30,8 +31,31 @@ function Row(props) {
     setSortedDistricts(props.districts);
   }, [props.districts]);
 
+  const tooltipStyles = {
+    tooltip: {
+      background: '#000',
+      borderRadius: '10px',
+      fontSize: '.8em',
+      left: '250%',
+      opacity: 0.65,
+    },
+    wrapper: {
+      cursor: 'cursor',
+      display: 'inline-block',
+      position: 'relative',
+      textAlign: 'center',
+    },
+    arrow: {
+      left: '37%',
+    },
+  };
+
   const handleReveal = () => {
     props.handleReveal(props.state.state);
+  };
+
+  const handleTooltip = (e) => {
+    e.stopPropagation();
   };
 
   const sortDistricts = useCallback(
@@ -111,26 +135,14 @@ function Row(props) {
             <span className="actual__title-wrapper">
               {state.state}
               {state.statenotes && (
-                <Tooltip
-                  content={[`${state.statenotes}`]}
-                  styles={{
-                    tooltip: {
-                      background: '#000',
-                      borderRadius: '10px',
-                      fontSize: '.8em',
-                      left: '250%',
-                      opacity: 0.65,
-                    },
-                    wrapper: {
-                      cursor: 'cursor',
-                      display: 'inline-block',
-                      position: 'relative',
-                      textAlign: 'center',
-                    },
-                  }}
-                >
-                  <Icon.Info />
-                </Tooltip>
+                <span onClick={handleTooltip}>
+                  <Tooltip
+                    content={[`${state.statenotes}`]}
+                    styles={tooltipStyles}
+                  >
+                    <Icon.Info />
+                  </Tooltip>
+                </span>
               )}
             </span>
           </div>
@@ -255,6 +267,14 @@ function Row(props) {
             </div>
           </div>
         </td>
+        <td className="state-page-link" colSpan={3}>
+          <Link to={`state/${state.statecode}`}>
+            <div>
+              <abbr>Visit state page</abbr>
+              <Icon.ArrowRightCircle />
+            </div>
+          </Link>
+        </td>
       </tr>
 
       {sortedDistricts &&
@@ -304,9 +324,14 @@ function Row(props) {
             className={`district`}
             style={{display: props.reveal && !props.total ? '' : 'none'}}
           >
-            <td style={{fontWeight: 600}}>
-              Unknown{' '}
-              <span style={{fontSize: '0.75rem', color: '#201aa299'}}>#</span>
+            <td className="unknown" style={{fontWeight: 600}}>
+              Unknown
+              <Tooltip
+                content={['Awaiting patient-level details from State Bulletin']}
+                styles={tooltipStyles}
+              >
+                <Icon.Info />
+              </Tooltip>
             </td>
             <td>
               <span className="deltas" style={{color: '#ff073a'}}>
@@ -322,28 +347,6 @@ function Row(props) {
               </span>
             </td>
           </tr>
-          <span
-            style={{
-              display: props.reveal && !props.total ? '' : 'none',
-              fontSize: '0.75rem',
-              color: '#201aa299',
-            }}
-          >
-            #
-          </span>
-          <div
-            style={{
-              display: props.reveal && !props.total ? '' : 'none',
-              fontSize: '0.5rem',
-              paddingLeft: '1rem',
-              position: 'absolute',
-              marginTop: '-0.85rem',
-              color: '#201aa299',
-              fontWeight: 600,
-            }}
-          >
-            Awaiting patient-level details from State Bulletin
-          </div>
         </React.Fragment>
       )}
 
