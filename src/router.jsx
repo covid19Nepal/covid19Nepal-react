@@ -15,7 +15,7 @@ function Routes(props) {
       <Route path="/demographics" exact component={PatientDB} key="2" />
       <Route path="/deepdive" exact component={DeepDive} key="3" />
       <Route path="/links" exact component={Links} key="4" />
-      <Route path="/about" exact component={FAQ} key="5" />
+      <Route path="/faq" exact component={FAQ} key="5" />
       <Route path="/essentials" exact component={Resources} key="6" />
     </Switch>
   );

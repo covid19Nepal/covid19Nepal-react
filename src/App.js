@@ -51,9 +51,9 @@ function App() {
       showInNavbar: true,
     },
     {
-      pageLink: '/about',
+      pageLink: '/faq',
       view: FAQ,
-      displayName: 'About',
+      displayName: 'FAQ',
       animationDelayForNavbar: 0.7,
       showInNavbar: true,
     },
