@@ -8,7 +8,7 @@
           "type": "Polygon",
           "id": 20,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Sindhuli"
           },
           "arcs": [[0, 1, 2, 3]]
@@ -17,7 +17,7 @@
           "type": "Polygon",
           "id": 21,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Ramechhap"
           },
           "arcs": [[-1, 4, 5, 6]]
@@ -26,7 +26,7 @@
           "type": "Polygon",
           "id": 22,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Dolakha"
           },
           "arcs": [[-6, 7, 8, 9]]
@@ -35,7 +35,7 @@
           "type": "Polygon",
           "id": 23,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Bhaktapur"
           },
           "arcs": [[10, 11, 12]]
@@ -44,7 +44,7 @@
           "type": "Polygon",
           "id": 24,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Dhading"
           },
           "arcs": [[13, 14, 15, 16, 17, 18]]
@@ -53,7 +53,7 @@
           "type": "Polygon",
           "id": 25,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Kathmandu"
           },
           "arcs": [[19, 20, 21, -13, 22, 23, -16]]
@@ -62,7 +62,7 @@
           "type": "Polygon",
           "id": 26,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "kavrepalanchowk"
           },
           "arcs": [[24, -8, -5, -4, 25, 26, -11, -22]]
@@ -71,7 +71,7 @@
           "type": "Polygon",
           "id": 27,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Lalitpur"
           },
           "arcs": [[-27, 27, -23, -12]]
@@ -80,7 +80,7 @@
           "type": "Polygon",
           "id": 28,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Nuwakot"
           },
           "arcs": [[28, 29, -20, -15]]
@@ -89,7 +89,7 @@
           "type": "Polygon",
           "id": 29,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Rasuwa"
           },
           "arcs": [[30, 31, -29, -14]]
@@ -98,7 +98,7 @@
           "type": "Polygon",
           "id": 30,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Sindhupalchowk"
           },
           "arcs": [[-32, 32, -9, -25, -21, -30]]
@@ -107,7 +107,7 @@
           "type": "Polygon",
           "id": 34,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Chitwan"
           },
           "arcs": [[-18, 33, 34]]
@@ -116,7 +116,7 @@
           "type": "Polygon",
           "id": 35,
           "properties": {
-            "st_nm": "province 3",
+            "st_nm": "bagmati province",
             "district": "Makwanpur"
           },
           "arcs": [[-24, -28, -26, -3, 35, -34, -17]]

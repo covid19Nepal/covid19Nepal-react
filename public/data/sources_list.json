@@ -31,7 +31,7 @@
       "statecode": "P2"
     },
     {
-      "region": "Province 3",
+      "region": "Bagmati Province",
       "source1": "https://covid19.karnataka.gov.in",
       "source2": "https://twitter.com/sriramulubjp",
       "source3": "https://karunadu.karnataka.gov.in/hfw/kannada/Pages/cv-dashboard-old.aspx",
@@ -41,7 +41,7 @@
       "statecode": "P3"
     },
     {
-      "region": "Province 4",
+      "region": "Gandaki Province",
       "source1": "https://twitter.com/IPRTelangana",
       "source2": "https://twitter.com/TelanganaHealth",
       "source3": "http://124.124.103.93/COVID/home.htm",
@@ -51,7 +51,7 @@
       "statecode": "P4"
     },
     {
-      "region": "Province 7",
+      "region": "Sudurpaschim Province",
       "source1": "https://mahe.gov.in/covid-19/",
       "source2": "https://collectorate.py.gov.in/Corona%20COVID-19.htm",
       "source3": "",

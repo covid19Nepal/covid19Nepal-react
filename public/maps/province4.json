@@ -8,7 +8,7 @@
           "type": "Polygon",
           "id": 36,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Gorkha"
           },
           "arcs": [[0, 1, 2, 3]]
@@ -17,7 +17,7 @@
           "type": "Polygon",
           "id": 37,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Kaski"
           },
           "arcs": [[4, 5, 6, 7, 8, 9]]
@@ -26,7 +26,7 @@
           "type": "Polygon",
           "id": 38,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Lamjung"
           },
           "arcs": [[-3, 10, -5, 11]]
@@ -35,7 +35,7 @@
           "type": "Polygon",
           "id": 39,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Syangja"
           },
           "arcs": [[-7, 12, 13, 14]]
@@ -44,7 +44,7 @@
           "type": "Polygon",
           "id": 40,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Tanahu"
           },
           "arcs": [[-6, -11, -2, 15, 16, 17, -13]]
@@ -53,7 +53,7 @@
           "type": "Polygon",
           "id": 41,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Manang"
           },
           "arcs": [[18, -4, -12, -10, 19, 20]]
@@ -62,7 +62,7 @@
           "type": "Polygon",
           "id": 43,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Nawalpur"
           },
           "arcs": [[-17, 21]]
@@ -71,7 +71,7 @@
           "type": "Polygon",
           "id": 49,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Baglung"
           },
           "arcs": [[22, 23, 24]]
@@ -80,7 +80,7 @@
           "type": "Polygon",
           "id": 50,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Myagdi"
           },
           "arcs": [[25, -20, -9, 26, -23, 27]]
@@ -89,7 +89,7 @@
           "type": "Polygon",
           "id": 51,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Parbat"
           },
           "arcs": [[-27, -8, -15, 28, -24]]
@@ -98,7 +98,7 @@
           "type": "Polygon",
           "id": 52,
           "properties": {
-            "st_nm": "province 4",
+            "st_nm": "gandaki province",
             "district": "Mustang"
           },
           "arcs": [[-21, -26, 29]]

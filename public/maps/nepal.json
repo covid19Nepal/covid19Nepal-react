@@ -9691,7 +9691,7 @@
       "geometries": [
         {
           "type": "Polygon",
-          "properties": {"st_nm": "Province 6"},
+          "properties": {"st_nm": "Karnali Province"},
           "arcs": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [13], [14]]
         },
         {
@@ -9795,7 +9795,7 @@
             [87]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 4"}
+          "properties": {"st_nm": "Gandaki Province"}
         },
         {
           "arcs": [
@@ -9830,7 +9830,7 @@
         {
           "arcs": [[-9, 110, -7, -40, 111]],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 7"}
+          "properties": {"st_nm": "Sudurpaschim Province"}
         },
         {
           "arcs": [
@@ -9897,7 +9897,7 @@
             [144]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 3"}
+          "properties": {"st_nm": "Bagmati Province"}
         }
       ]
     }

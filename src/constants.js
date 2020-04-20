@@ -25,14 +25,14 @@ export const MAP_META = {
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province2_district',
   },
-  'Province 3': {
-    name: 'Province 3',
+  'Bagmati Province': {
+    name: 'Bagmati Province',
     geoDataFile: `${MAPS_DIR}/province3.json`,
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province3_district',
   },
-  'Province 4': {
-    name: 'Province 4',
+  'Gandaki Province': {
+    name: 'Gandaki Province',
     geoDataFile: `${MAPS_DIR}/province4.json`,
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province4_district',
@@ -43,14 +43,14 @@ export const MAP_META = {
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province5_district',
   },
-  'Province 6': {
-    name: 'Province 6',
+  'Karnali Province': {
+    name: 'Karnali Province',
     geoDataFile: `${MAPS_DIR}/province6.json`,
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province6_district',
   },
-  'Province 7': {
-    name: 'Province 7',
+  'Sudurpaschim Province': {
+    name: 'Sudurpaschim Province',
     geoDataFile: `${MAPS_DIR}/province7.json`,
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'province7_district',
@@ -60,11 +60,11 @@ export const MAP_META = {
 export const STATE_CODES = {
   P1: 'Province 1',
   P2: 'Province 2',
-  P3: 'Province 3',
-  P4: 'Province 4',
+  P3: 'Bagmati Province',
+  P4: 'Gandaki Province',
   P5: 'Province 5',
-  P6: 'Province 6',
-  P7: 'Province 7',
+  P6: 'Karnali Province',
+  P7: 'Sudurpaschim Province',
 };
 
 const reverseStateCodes = {};
@@ -195,57 +195,57 @@ export const DISTRICTS_ARRAY = [
   {
     district: 'Sindhuli',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Ramechhap',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Dolakha',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Bhaktapur',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Dhading',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Kathmandu',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'kavrepalanchowk',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Lalitpur',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Nuwakot',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Rasuwa',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Sindhupalchowk',
     othernamesspellings: '',
-    state: 'Province 3',
+    state: 'Bagmati Province',
   },
   {
     district: 'Chitwan',
@@ -260,57 +260,57 @@ export const DISTRICTS_ARRAY = [
   {
     district: 'Gorkha',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Kaski',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Lamjung',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Syangja',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Tanahu',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Manang',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Nawalpur',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Baglung',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Myagdi',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Parbat',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Mustang',
     othernamesspellings: '',
-    state: 'Province 4',
+    state: 'Gandaki Province',
   },
   {
     district: 'Kapilvastu',
@@ -375,96 +375,96 @@ export const DISTRICTS_ARRAY = [
   {
     district: 'Western Rukum',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Salyan',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Dolpa',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Humla',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Jumla',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Kalikot',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Mugu',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Surkhet',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Dailekh',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Jajarkot',
     othernamesspellings: '',
-    state: 'Province 6',
+    state: 'Karnali Province',
   },
   {
     district: 'Kailali',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Achham',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Doti',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Bajhang',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Bajura',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Kanchanpur',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Dadeldhura',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Baitadi',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
   {
     district: 'Darchula',
     othernamesspellings: '',
-    state: 'Province 7',
+    state: 'Sudurpaschim Province',
   },
 ];

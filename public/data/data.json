@@ -785,7 +785,7 @@
       "deltarecovered": "0",
       "lastupdatedtime": "04/04/2020 11:42:27",
       "recovered": "1",
-      "state": "Province 3",
+      "state": "Bagmati Province",
       "statecode": "P3"
     },
     {
@@ -797,7 +797,7 @@
       "deltarecovered": "0",
       "lastupdatedtime": "04/04/2020 11:42:27",
       "recovered": "0",
-      "state": "Province 4",
+      "state": "Gandaki Province",
       "statecode": "P4"
     },
     {
@@ -821,7 +821,7 @@
       "deltarecovered": "0",
       "lastupdatedtime": "04/04/2020 11:42:27",
       "recovered": "0",
-      "state": "Province 6",
+      "state": "Karnali Province",
       "statecode": "P6"
     },
     {
@@ -833,7 +833,7 @@
       "deltarecovered": "0",
       "lastupdatedtime": "12/04/2020 11:42:27",
       "recovered": "0",
-      "state": "Province 7",
+      "state": "Sudurpaschim Province",
       "statecode": "P7"
     }
   ],

@@ -8,7 +8,7 @@
           "type": "Polygon",
           "id": 69,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Kailali"
           },
           "arcs": [[0, 1, 2, 3]]
@@ -17,7 +17,7 @@
           "type": "Polygon",
           "id": 70,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Achham"
           },
           "arcs": [[4, 5, 6, 7]]
@@ -26,7 +26,7 @@
           "type": "Polygon",
           "id": 71,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Doti"
           },
           "arcs": [[8, -8, 9, -1, 10, 11]]
@@ -35,7 +35,7 @@
           "type": "Polygon",
           "id": 72,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Bajhang"
           },
           "arcs": [[12, 13, -5, -9, 14, 15]]
@@ -44,7 +44,7 @@
           "type": "Polygon",
           "id": 73,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Bajura"
           },
           "arcs": [[16, -6, -14]]
@@ -53,7 +53,7 @@
           "type": "Polygon",
           "id": 74,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Kanchanpur"
           },
           "arcs": [[-3, 17, 18]]
@@ -62,7 +62,7 @@
           "type": "Polygon",
           "id": 75,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Dadeldhura"
           },
           "arcs": [[-11, -4, -19, 19, 20]]
@@ -71,7 +71,7 @@
           "type": "Polygon",
           "id": 76,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Baitadi"
           },
           "arcs": [[21, -15, -12, -21, 22]]
@@ -80,7 +80,7 @@
           "type": "Polygon",
           "id": 77,
           "properties": {
-            "st_nm": "province 7",
+            "st_nm": "sudurpaschim province",
             "district": "Darchula"
           },
           "arcs": [[-16, -22, 23]]
