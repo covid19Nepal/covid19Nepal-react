@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {format, parse} from 'date-fns';
 import React, {useEffect, useRef, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import * as Icon from 'react-feather';
 
 import {
@@ -23,6 +23,8 @@ function State(props) {
   const mapRef = useRef();
   const tsRef = useRef();
 
+  const {stateCode} = useParams();
+
   const [fetched, setFetched] = useState(false);
   const [timeseries, setTimeseries] = useState({});
   const [graphOption, setGraphOption] = useState(1);
@@ -32,9 +34,6 @@ function State(props) {
   const [testData, setTestData] = useState({});
   const [sources, setSources] = useState({});
   const [districtData, setDistrictData] = useState({});
-  const [stateCode] = useState(
-    window.location.pathname.split('/').pop().toUpperCase()
-  );
   const [stateName] = useState(STATE_CODES[stateCode]);
 
   useEffect(() => {
@@ -162,11 +161,7 @@ function State(props) {
                   Data collected from sources{' '}
                   {sources.length > 0
                     ? Object.keys(sources[0]).map((key) => {
-                        if (
-                          key.match('source') &&
-                          sources[0][key] !== '' &&
-                          sources[0][key] !== '0'
-                        ) {
+                        if (key.match('source') && sources[0][key] !== '') {
                           const num = key.match(/\d+/);
                           return (
                             <React.Fragment>
@@ -196,13 +191,14 @@ function State(props) {
                   <div className="districts">
                     {districtData[stateName]
                       ? Object.keys(districtData[stateName].districtData)
-                          .slice(0, 6)
+                          .filter((d) => d !== 'Unknown')
                           .sort(
                             (a, b) =>
                               districtData[stateName].districtData[b]
                                 .confirmed -
                               districtData[stateName].districtData[a].confirmed
                           )
+                          .slice(0, 6)
                           .map((district, index) => {
                             return (
                               <div key={index} className="district">
@@ -316,12 +312,14 @@ function State(props) {
             </React.Fragment>
           )}
         </div>
+
         <div className="state-left">
           <div className="Clusters fadeInUp" style={{animationDelay: '0.8s'}}>
             <h1>Network of transmission</h1>
             <Clusters stateCode={stateCode} />
           </div>
         </div>
+
         <div className="state-right"></div>
       </div>
       <Footer />
