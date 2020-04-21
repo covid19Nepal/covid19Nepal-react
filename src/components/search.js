@@ -221,13 +221,41 @@ function Search(props) {
                 <h4
                   onMouseDown={(event) => {
                     event.preventDefault();
-                    setNativeValue(searchInput.current, 'Baglung Shelter');
+                    setNativeValue(searchInput.current, 'Quarantine Center');
                     searchInput.current.dispatchEvent(
                       new Event('input', {bubbles: true})
                     );
                   }}
                 >
-                  Baglung Shelter
+                  Quarantine Center
+                </h4>
+              </div>
+              <div className="suggestion">
+                <div>-</div>
+                <h4
+                  onMouseDown={(event) => {
+                    event.preventDefault();
+                    setNativeValue(searchInput.current, 'Health Facility');
+                    searchInput.current.dispatchEvent(
+                      new Event('input', {bubbles: true})
+                    );
+                  }}
+                >
+                  Health Facility
+                </h4>
+              </div>
+              <div className="suggestion">
+                <div>-</div>
+                <h4
+                  onMouseDown={(event) => {
+                    event.preventDefault();
+                    setNativeValue(searchInput.current, 'Medical College');
+                    searchInput.current.dispatchEvent(
+                      new Event('input', {bubbles: true})
+                    );
+                  }}
+                >
+                  Medical College
                 </h4>
               </div>
               <div className="suggestion">
@@ -237,45 +265,14 @@ function Search(props) {
                     event.preventDefault();
                     setNativeValue(
                       searchInput.current,
-                      'Community Kitchen in Pokhara'
+                      'District Level Hospital'
                     );
                     searchInput.current.dispatchEvent(
                       new Event('input', {bubbles: true})
                     );
                   }}
                 >
-                  Community Kitchen in Pokhara
-                </h4>
-              </div>
-              <div className="suggestion">
-                <div>-</div>
-                <h4
-                  onMouseDown={(event) => {
-                    event.preventDefault();
-                    setNativeValue(searchInput.current, 'Groceries Bhaktapur');
-                    searchInput.current.dispatchEvent(
-                      new Event('input', {bubbles: true})
-                    );
-                  }}
-                >
-                  Groceries Bhaktapur
-                </h4>
-              </div>
-              <div className="suggestion">
-                <div>-</div>
-                <h4
-                  onMouseDown={(event) => {
-                    event.preventDefault();
-                    setNativeValue(
-                      searchInput.current,
-                      ' Senior citizen support'
-                    );
-                    searchInput.current.dispatchEvent(
-                      new Event('input', {bubbles: true})
-                    );
-                  }}
-                >
-                  Senior citizen support
+                  District Level Hospital
                 </h4>
               </div>
             </div>
