@@ -223,7 +223,7 @@ export const DISTRICTS_ARRAY = [
     state: 'Bagmati Province',
   },
   {
-    district: 'kavrepalanchowk',
+    district: 'Kavrepalanchowk',
     othernamesspellings: '',
     state: 'Bagmati Province',
   },

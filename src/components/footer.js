@@ -17,6 +17,15 @@ function Footer(props) {
         <Icon.GitHub />
         <span>Open Sourced on GitHub</span>
       </a>
+      <a
+        className="button excel"
+        href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQiWt6CGh8CbXcdsCHWFwf9hmiLbTqZSLJgn6WQQhasGMgdIDFJiInpUE9oK9R4Rj8EWbDpf619OZLv/pubhtml"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon.Database />
+        <span>Crowdsourced Patient Database&nbsp;</span>
+      </a>
     </footer>
   );
 }

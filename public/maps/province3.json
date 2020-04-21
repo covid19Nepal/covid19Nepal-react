@@ -63,7 +63,7 @@
           "id": 26,
           "properties": {
             "st_nm": "bagmati province",
-            "district": "kavrepalanchowk"
+            "district": "Kavrepalanchowk"
           },
           "arcs": [[24, -8, -5, -4, 25, 26, -11, -22]]
         },
