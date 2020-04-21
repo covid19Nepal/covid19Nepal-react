@@ -4,6 +4,7 @@ import {MAP_TYPES, MAP_META} from '../constants';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
 import {formatDistance, format, parse} from 'date-fns';
 import {formatNumber} from '../utils/common-functions';
+import {Link} from 'react-router-dom';
 import * as Icon from 'react-feather';
 
 const getRegionFromState = (state) => {
@@ -95,11 +96,13 @@ function MapExplorer({
             recovered: 0,
           };
         }
-        setCurrentHoveredRegion(getRegionFromDistrict(districtData, name));
+        const currentHoveredRegion = getRegionFromDistrict(districtData, name);
         const panelRegion = getRegionFromState(
           states.find((state) => currentMap.name === state.state)
         );
         setPanelRegion(panelRegion);
+        currentHoveredRegion.statecode = panelRegion.statecode;
+        setCurrentHoveredRegion(currentHoveredRegion);
         if (onMapHighlightChange) onMapHighlightChange(panelRegion);
       }
     },
@@ -107,12 +110,8 @@ function MapExplorer({
   );
 
   useEffect(() => {
-    if (regionHighlighted === undefined) {
-      return;
-    } else if (regionHighlighted === null) {
-      setSelectedRegion(null);
-      return;
-    }
+    if (regionHighlighted === undefined || regionHighlighted === null) return;
+
     const isState = !('district' in regionHighlighted);
     if (isState) {
       const newMap = MAP_META['Nepal'];
@@ -143,16 +142,13 @@ function MapExplorer({
         setHoveredRegion(states[0].state, newMap);
       } else if (newMap.mapType === MAP_TYPES.STATE) {
         const {districtData} = stateDistrictWiseData[name] || {};
-
-        if (districtData !== undefined) {
-          const topDistrict = Object.keys(districtData)
-            .filter((name) => name !== 'Unknown')
-            .sort((a, b) => {
-              return districtData[b].confirmed - districtData[a].confirmed;
-            })[0];
-          setHoveredRegion(topDistrict, newMap);
-          setSelectedRegion(topDistrict);
-        }
+        const topDistrict = Object.keys(districtData)
+          .filter((name) => name !== 'Unknown')
+          .sort((a, b) => {
+            return districtData[b].confirmed - districtData[a].confirmed;
+          })[0];
+        setHoveredRegion(topDistrict, newMap);
+        setSelectedRegion(topDistrict);
       }
     },
     [setHoveredRegion, stateDistrictWiseData, states]
@@ -175,10 +171,10 @@ function MapExplorer({
       ref={forwardRef}
     >
       <div className="header">
-        <h1>{currentMap.name}</h1>
+        <h1>{currentMap.name} Map</h1>
         <h6>
           {window.innerWidth <= 769 ? 'Tap' : 'Hover'} over a{' '}
-          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'province' : 'district'}{' '}
+          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/UT' : 'district'}{' '}
           for more details
         </h6>
       </div>
@@ -188,7 +184,7 @@ function MapExplorer({
           <h5>{window.innerWidth <= 769 ? 'Cnfmd' : 'Confirmed'}</h5>
           <div className="stats-bottom">
             <h1>{formatNumber(panelRegion.confirmed)}</h1>
-            <h6>{}</h6>
+            <h6>{`+${formatNumber(panelRegion.deltaconfirmed)}`}</h6>
           </div>
         </div>
 
@@ -199,7 +195,7 @@ function MapExplorer({
           <h5>{window.innerWidth <= 769 ? 'Actv' : 'Active'}</h5>
           <div className="stats-bottom">
             <h1>{formatNumber(panelRegion.active)}</h1>
-            <h6>{}</h6>
+            <h6>{` `}</h6>
           </div>
         </div>
 
@@ -210,7 +206,7 @@ function MapExplorer({
           <h5>{window.innerWidth <= 769 ? 'Rcvrd' : 'Recovered'}</h5>
           <div className="stats-bottom">
             <h1>{formatNumber(panelRegion.recovered)}</h1>
-            <h6>{}</h6>
+            <h6>{`+${formatNumber(panelRegion.deltarecovered)}`}</h6>
           </div>
         </div>
 
@@ -221,7 +217,7 @@ function MapExplorer({
           <h5>{window.innerWidth <= 769 ? 'Dcsd' : 'Deceased'}</h5>
           <div className="stats-bottom">
             <h1>{formatNumber(panelRegion.deaths)}</h1>
-            <h6>{}</h6>
+            <h6>{`+${formatNumber(panelRegion.deltadeaths)}`}</h6>
           </div>
         </div>
 
@@ -261,7 +257,7 @@ function MapExplorer({
                 : 'state-last-update'
             }`}
           >
-            <h6>Last Updated</h6>
+            <h6>Last updated</h6>
             <h3
               title={
                 isNaN(Date.parse(formatDate(lastupdatedtime)))
@@ -274,7 +270,7 @@ function MapExplorer({
                 : formatDistance(
                     new Date(formatDate(lastupdatedtime)),
                     new Date()
-                  ) + ' Ago'}
+                  ) + ' ago'}
             </h3>
           </div>
         )}
@@ -306,6 +302,15 @@ function MapExplorer({
           >
             Back
           </div>
+        ) : null}
+
+        {currentMap.mapType === MAP_TYPES.STATE ? (
+          <Link to={`state/${currentHoveredRegion.statecode}`}>
+            <div className="button state-page-button">
+              <abbr>Visit state page</abbr>
+              <Icon.ArrowRightCircle />
+            </div>
+          </Link>
         ) : null}
       </div>
 
