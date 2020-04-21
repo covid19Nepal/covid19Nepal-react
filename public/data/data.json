@@ -737,29 +737,83 @@
       "totalconfirmed": "16",
       "totaldeceased": "0",
       "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "15 April",
+      "totalconfirmed": "16",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "16 April",
+      "totalconfirmed": "16",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "14",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "17 April",
+      "totalconfirmed": "30",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "2",
+      "date": "18 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "3"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "1",
+      "date": "19 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "4"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "20 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "4"
     }
   ],
   "statewise": [
     {
-      "active": "15",
-      "confirmed": "16",
+      "active": "27",
+      "confirmed": "31",
       "deaths": "0",
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "14/04/2020 11:42:27",
-      "recovered": "1",
+      "lastupdatedtime": "19/04/2020 16:33:00",
+      "recovered": "4",
       "state": "Total",
       "statecode": "TT"
     },
     {
-      "active": "0",
-      "confirmed": "0",
+      "active": "13",
+      "confirmed": "13",
       "deaths": "0",
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "18/04/2020 21:07:00",
       "recovered": "0",
       "state": "Province 1",
       "statecode": "P1"
@@ -771,32 +825,32 @@
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "14/04/2020 11:42:27",
+      "lastupdatedtime": "13/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 2",
       "statecode": "P2"
     },
     {
-      "active": "4",
-      "confirmed": "5",
+      "active": "5",
+      "confirmed": "7",
       "deaths": "0",
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "04/04/2020 11:42:27",
-      "recovered": "1",
+      "lastupdatedtime": "18/04/2020 14:53:00",
+      "recovered": "2",
       "state": "Bagmati Province",
       "statecode": "P3"
     },
     {
-      "active": "2",
+      "active": "1",
       "confirmed": "2",
       "deaths": "0",
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "04/04/2020 11:42:27",
-      "recovered": "0",
+      "lastupdatedtime": "18/04/2020 17:54:00",
+      "recovered": "1",
       "state": "Gandaki Province",
       "statecode": "P4"
     },
@@ -807,7 +861,7 @@
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "14/04/2020 11:42:27",
       "recovered": "0",
       "state": "Province 5",
       "statecode": "P5"
@@ -819,20 +873,20 @@
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "04/04/2020 11:42:27",
+      "lastupdatedtime": "14/04/2020 11:42:27",
       "recovered": "0",
       "state": "Karnali Province",
       "statecode": "P6"
     },
     {
-      "active": "5",
+      "active": "4",
       "confirmed": "5",
       "deaths": "0",
       "deltaconfirmed": "0",
       "deltadeaths": "0",
       "deltarecovered": "0",
-      "lastupdatedtime": "12/04/2020 11:42:27",
-      "recovered": "0",
+      "lastupdatedtime": "19/04/2020 16:33:00",
+      "recovered": "1",
       "state": "Sudurpaschim Province",
       "statecode": "P7"
     }
@@ -843,7 +897,7 @@
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
       "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "65",
+      "totalnegativetested": "65",
       "totalpositivecases": "3",
       "totalsamplestested": "758",
       "updatetimestamp": "27/03/2020 07:15:00"
@@ -852,8 +906,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "912",
+      "testsconductedbyprivatnegativetested": "912",
       "totalpositivecases": "5",
       "totalsamplestested": "917",
       "updatetimestamp": "30/03/2020 06:50:00"
@@ -862,8 +915,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "988",
+      "testsconductedbyprivatnegativetested": "988",
       "totalpositivecases": "5",
       "totalsamplestested": "993",
       "updatetimestamp": "31/03/2020 07:58:00"
@@ -872,8 +924,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "1055",
+      "testsconductedbyprivatnegativetested": "1055",
       "totalpositivecases": "5",
       "totalsamplestested": "1060",
       "updatetimestamp": "01/04/2020 7:47:00"
@@ -882,8 +933,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "1140",
+      "testsconductedbyprivatnegativetested": "1140",
       "totalpositivecases": "5",
       "totalsamplestested": "1145",
       "updatetimestamp": "02/04/2020 7:01:00"
@@ -892,8 +942,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "1350",
+      "testsconductedbyprivatnegativetested": "1350",
       "totalpositivecases": "6",
       "totalsamplestested": "1356",
       "updatetimestamp": "04/04/2020 16:44:00"
@@ -902,8 +951,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "1512",
+      "testsconductedbyprivatnegativetested": "1512",
       "totalpositivecases": "9",
       "totalsamplestested": "1521",
       "updatetimestamp": "05/04/2020 7:08:00"
@@ -912,8 +960,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "1881",
+      "testsconductedbyprivatnegativetested": "1881",
       "totalpositivecases": "9",
       "totalsamplestested": "1890",
       "updatetimestamp": "07/04/2020 6:56:00"
@@ -922,8 +969,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "2113",
+      "testsconductedbyprivatnegativetested": "2113",
       "totalpositivecases": "9",
       "totalsamplestested": "2122",
       "updatetimestamp": "8/4/2020 6:56:00"
@@ -932,8 +978,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "2375",
+      "testsconductedbyprivatnegativetested": "2375",
       "totalpositivecases": "9",
       "totalsamplestested": "2366",
       "updatetimestamp": "09/04/2020 6:47:00"
@@ -942,8 +987,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "2886",
+      "testsconductedbyprivatnegativetested": "2886",
       "totalpositivecases": "9",
       "totalsamplestested": "2895",
       "updatetimestamp": "10/04/2020 6:47:00"
@@ -952,8 +996,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "3525",
+      "testsconductedbyprivatnegativetested": "3525",
       "totalpositivecases": "9",
       "totalsamplestested": "3225",
       "updatetimestamp": "11/04/2020 7:19:00"
@@ -962,8 +1005,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "4417",
+      "testsconductedbyprivatnegativetested": "4417",
       "totalpositivecases": "9",
       "totalsamplestested": "4426",
       "updatetimestamp": "12/04/2020 6:58:00"
@@ -972,8 +1014,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "5172",
+      "testsconductedbyprivatnegativetested": "5172",
       "totalpositivecases": "12",
       "totalsamplestested": "5184",
       "updatetimestamp": "13/04/2020 06:49:00"
@@ -982,8 +1023,7 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "5677",
+      "testsconductedbyprivatnegativetested": "5677",
       "totalpositivecases": "14",
       "totalsamplestested": "5691",
       "updatetimestamp": "14/04/2020 06:49:00"
@@ -992,11 +1032,55 @@
       "positivecasesfromsamplesreported": "",
       "samplereportedtoday": "",
       "source": "https://covid19.mohp.gov.np",
-      "testsconductedbyprivatelabs": "",
-      "totalindividaulstested": "6283",
+      "testsconductedbyprivatnegativetested": "6283",
       "totalpositivecases": "16",
       "totalsamplestested": "6299",
       "updatetimestamp": "15/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "6855",
+      "totalpositivecases": "16",
+      "totalsamplestested": "6871",
+      "updatetimestamp": "16/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7224",
+      "totalpositivecases": "16",
+      "totalsamplestested": "7240",
+      "updatetimestamp": "17/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7672",
+      "totalpositivecases": "30",
+      "totalsamplestested": "7702",
+      "updatetimestamp": "18/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7986",
+      "totalpositivecases": "31",
+      "totalsamplestested": "8017",
+      "updatetimestamp": "19/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "8383",
+      "totalpositivecases": "31",
+      "totalsamplestested": "8414",
+      "updatetimestamp": "20/04/2020 16:36:00"
     }
   ]
 }
