@@ -178,7 +178,7 @@ function MapExplorer({
         <h1>{currentMap.name}</h1>
         <h6>
           {window.innerWidth <= 769 ? 'Tap' : 'Hover'} over a{' '}
-          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'state/UT' : 'district'}{' '}
+          {currentMap.mapType === MAP_TYPES.COUNTRY ? 'province' : 'district'}{' '}
           for more details
         </h6>
       </div>

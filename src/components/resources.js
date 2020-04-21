@@ -514,7 +514,7 @@ function Resources(props) {
                   id="demo-simple-select-outlined-label"
                   classes={{root: classesInputLabel.root}}
                 >
-                  State/UT
+                  Province
                 </InputLabel>
                 <Select
                   native
@@ -523,7 +523,7 @@ function Resources(props) {
                   value={nepalstate}
                   onChange={changeNepalState}
                   defaultValue="all"
-                  label="State/UT"
+                  label="Province"
                   classes={{root: classesMenuItem.root}}
                 >
                   <option value="all" classes={{root: classesMenuItem.root}}>
@@ -703,7 +703,7 @@ function Resources(props) {
                   id="demo-simple-select-outlined-label"
                   classes={{root: classesInputLabel.root}}
                 >
-                  State/UT
+                  Province
                 </InputLabel>
                 <Select
                   native
@@ -712,7 +712,7 @@ function Resources(props) {
                   value={nepalstate}
                   onChange={changeNepalState}
                   defaultValue="all"
-                  label="State/UT"
+                  label="Province"
                   classes={{root: classesMenuItem.root}}
                 >
                   <option value="all" classes={{root: classesMenuItem.root}}>

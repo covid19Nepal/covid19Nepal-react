@@ -9,7 +9,7 @@ import {
   formatNumber,
   parseStateTimeseries,
 } from '../utils/common-functions';
-import {MAP_META, STATE_CODES, DATA_DIR} from '../constants';
+import {MAP_META, STATE_CODES} from '../constants';
 
 import Clusters from './clusters';
 import DeltaBarGraph from './deltabargraph';
@@ -56,7 +56,7 @@ function State(props) {
         axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
         axios.get('https://api.nepalcovid19.org/states_daily.json'),
         axios.get('https://api.nepalcovid19.org/state_test_data.json'),
-        axios.get(`${DATA_DIR}/sources_list.json`),
+        axios.get('https://api.nepalcovid19.org/sources_list.json'),
       ]);
       const states = dataResponse.statewise;
       setStateData(states.find((s) => s.statecode === code));

@@ -118,7 +118,7 @@ function Table(props) {
                 onClick={(e) => handleSort(e, props)}
               >
                 <div className="heading-content">
-                  <abbr title="State">State/UT</abbr>
+                  <abbr title="State">Province</abbr>
                   <div
                     style={{
                       display:
