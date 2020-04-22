@@ -1,4 +1,4 @@
-# covid19nepal
+# nepalcovid19.org
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a09fa322-3102-4d74-97e3-739402b96972/deploy-status)](https://app.netlify.com/sites/nepalcovid19/deploys)
 ![CI](https://github.com/covid19Nepal/covid19Nepal-react/workflows/CI/badge.svg)
