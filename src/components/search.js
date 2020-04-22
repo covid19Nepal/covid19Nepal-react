@@ -246,7 +246,7 @@ function Search(props) {
                 <h4
                   onMouseDown={(event) => {
                     event.preventDefault();
-                    setNativeValue(searchInput.current, 'Heath Facility');
+                    setNativeValue(searchInput.current, 'Health Facility');
                     searchInput.current.dispatchEvent(
                       new Event('input', {bubbles: true})
                     );
