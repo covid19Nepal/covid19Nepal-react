@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {useLocation} from 'react-router-dom';
+import DownloadBlock from './downloadblock';
+import Patients from './patients';
+
 import axios from 'axios';
 import {format, subDays} from 'date-fns';
+import React, {useState, useEffect} from 'react';
 import DatePicker from 'react-date-picker';
 import * as Icon from 'react-feather';
-
-import Patients from './patients';
-import DownloadBlock from './downloadblock';
+import {useLocation} from 'react-router-dom';
 
 function filterByObject(obj, filters) {
   const keys = Object.keys(filters);

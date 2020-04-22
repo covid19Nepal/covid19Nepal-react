@@ -1,8 +1,10 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import * as d3 from 'd3';
-import * as topojson from 'topojson';
-import {MAP_TYPES} from '../constants';
 import legend from './legend';
+
+import {MAP_TYPES} from '../constants';
+
+import * as d3 from 'd3';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import * as topojson from 'topojson';
 
 const propertyFieldMap = {
   country: 'st_nm',

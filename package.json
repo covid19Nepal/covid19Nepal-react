@@ -59,7 +59,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "eslint . --fix",
+      "eslint --fix",
       "prettier --write"
     ],
     "*.+(json|yml|yaml|md|vue)": [

@@ -1,11 +1,13 @@
-import React, {useState, useEffect, useMemo, useCallback} from 'react';
 import ChoroplethMap from './choropleth';
+
 import {MAP_TYPES, MAP_META} from '../constants';
 import {formatDate, formatDateAbsolute} from '../utils/common-functions';
-import {formatDistance, format, parse} from 'date-fns';
 import {formatNumber} from '../utils/common-functions';
-import {Link} from 'react-router-dom';
+
+import {formatDistance, format, parse} from 'date-fns';
+import React, {useState, useEffect, useMemo, useCallback} from 'react';
 import * as Icon from 'react-feather';
+import {Link} from 'react-router-dom';
 
 const getRegionFromState = (state) => {
   if (!state) return;

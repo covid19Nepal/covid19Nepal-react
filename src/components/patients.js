@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {parse} from 'date-fns';
-import * as Icon from 'react-feather';
 import PatientsView from './patientsview';
+
+import {parse} from 'date-fns';
+import React, {useState, useEffect, useCallback} from 'react';
+import * as Icon from 'react-feather';
 
 function Patients(props) {
   const [patients, setPatients] = useState(props.patients);

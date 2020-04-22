@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-
 import Level from './level';
 import Minigraph from './minigraph';
 import Table from './table';
+
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 
 function Summary(props) {
   const [states, setStates] = useState([]);

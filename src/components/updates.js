@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {formatDistance, format} from 'date-fns';
 import axios from 'axios';
+import {formatDistance, format} from 'date-fns';
+import React, {useState, useEffect} from 'react';
 
 function Updates(props) {
   const [updates, setUpdates] = useState([]);

@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
 import {formatNumber} from '../utils/common-functions';
+
+import React, {useState, useEffect} from 'react';
 
 function Level(props) {
   const [data, setData] = useState(props.data);

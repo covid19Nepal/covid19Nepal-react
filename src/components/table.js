@@ -1,7 +1,7 @@
+import Row from './row';
+
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-
-import Row from './row';
 
 function Table(props) {
   const [states, setStates] = useState(props.states);

@@ -1,5 +1,5 @@
-import React from 'react';
 import {format} from 'date-fns';
+import React from 'react';
 
 function PatientsView(props) {
   const logs = props.logs;

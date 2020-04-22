@@ -1,5 +1,5 @@
-import React from 'react';
 import {Parser} from 'json2csv';
+import React from 'react';
 import * as Icon from 'react-feather';
 
 function CSVDownloadLink(props) {

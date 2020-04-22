@@ -1,23 +1,23 @@
-import axios from 'axios';
-import {format, parse} from 'date-fns';
-import React, {useEffect, useRef, useState} from 'react';
-import {Link} from 'react-router-dom';
-import * as Icon from 'react-feather';
+import Clusters from './clusters';
+import DeltaBarGraph from './deltabargraph';
+import Footer from './footer';
+import Level from './level';
+import MapExplorer from './mapexplorer';
+import Minigraph from './minigraph';
+import TimeSeries from './timeseries';
 
+import {MAP_META, STATE_CODES} from '../constants';
 import {
   formatDateAbsolute,
   formatNumber,
   parseStateTimeseries,
 } from '../utils/common-functions';
-import {MAP_META, STATE_CODES} from '../constants';
 
-import Clusters from './clusters';
-import DeltaBarGraph from './deltabargraph';
-import Level from './level';
-import MapExplorer from './mapexplorer';
-import Minigraph from './minigraph';
-import TimeSeries from './timeseries';
-import Footer from './footer';
+import axios from 'axios';
+import {format, parse} from 'date-fns';
+import React, {useEffect, useRef, useState} from 'react';
+import * as Icon from 'react-feather';
+import {Link} from 'react-router-dom';
 
 function State(props) {
   const mapRef = useRef();

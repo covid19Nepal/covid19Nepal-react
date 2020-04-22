@@ -1,8 +1,8 @@
 import axios from 'axios';
 import * as d3 from 'd3';
-import ForceGraph2D from 'react-force-graph-2d';
 import React, {useEffect, useRef, useState} from 'react';
 import ReactDOM from 'react-dom';
+import ForceGraph2D from 'react-force-graph-2d';
 
 function Clusters({stateCode}) {
   const [fetched, setFetched] = useState(false);
