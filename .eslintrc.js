@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'react-hooks', 'import'],
   rules: {
+    'new-cap': 0,
     'require-jsdoc': 0,
     'prettier/prettier': 'error',
     'no-invalid-this': 0,
