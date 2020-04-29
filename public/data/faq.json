@@ -1,0 +1,49 @@
+{
+  "faq": [
+    {
+      "answer": "Coronaviruses are a large family of viruses that may cause illness in animals or humans. In humans, several coronaviruses are known to cause respiratory infections. The most recently discovered coronavirus causes coronavirus disease COVID-19.",
+      "qno": "1",
+      "question": "What is a coronavirus?"
+    },
+    {
+      "answer": "COVID-19 is an infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019.\n\n",
+      "qno": "2",
+      "question": "What is COVID-19?"
+    },
+    {
+      "answer": "The most common symptoms of COVID-19 are fever, tiredness, and dry cough. Some patients may have aches and pains, nasal congestion, runny nose, sore throat or diarrhea. These symptoms are usually mild and begin gradually. Some people become infected but don’t develop any symptoms and don't feel unwell.",
+      "qno": "4",
+      "question": "What are the symptoms of COVID-19?"
+    },
+    {
+      "answer": "The disease can spread from person to person if they breathe in the small droplets containing the virus when that person with COVID-19 coughs or exhales. These droplets land on objects and surfaces around the person. Other people then catch COVID-19 by touching these objects or surfaces, then touching their eyes, nose or mouth.",
+      "qno": "3",
+      "question": "How does the COVID-19 disease transmit from person to person?"
+    },
+    {
+      "answer": "Studies to date suggest that the virus that causes COVID-19 is mainly transmitted through contact with respiratory droplets rather than through the air.",
+      "qno": "5",
+      "question": "Can the virus that causes COVID-19 be transmitted through the air?"
+    },
+    {
+      "answer": "Detailed investigations found that SARS-CoV was transmitted from civet cats to humans in China in 2002 and MERS-CoV from dromedary camels to humans in Saudi Arabia in 2012. Several known coronaviruses are circulating in animals that have not yet infected humans. As surveillance improves around the world, more coronaviruses are likely to be identified.",
+      "qno": "6",
+      "question": "Can humans become infected with a novel coronavirus of animal source?"
+    },
+    {
+      "answer": "When a disease is new, there is no vaccine until one is developed. It can take a number of years for a new vaccine to be developed.",
+      "qno": "7",
+      "question": "Is there a vaccine for a novel coronavirus?"
+    },
+    {
+      "answer": "Standard recommendations to reduce exposure to and transmission of a range of illnesses include maintaining basic hand and respiratory hygiene, and safe food practices  and avoiding close contact, when possible, with anyone showing symptoms of respiratory illness such as coughing and sneezing.",
+      "qno": "8",
+      "question": "What can I do to protect myself?"
+    },
+    {
+      "answer": "Yes, they can be, as health care workers come into contact with patients more often than the general public WHO recommends that health care workers consistently apply appropriate.",
+      "qno": "9",
+      "question": "Are health workers at risk from a novel coronavirus?"
+    }
+  ]
+}

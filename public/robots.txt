@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+Sitemap: https://www.nepalcovid19.org/sitemap.xml
 User-agent: *
 Disallow:

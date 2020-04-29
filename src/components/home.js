@@ -1,0 +1,207 @@
+import React, { useState, useCallback } from 'react';
+
+import Footer from './footer';
+import Level from './level';
+import MapExplorer from './mapexplorer';
+import Minigraph from './minigraph';
+import Search from './search';
+import Table from './table';
+import TimeSeriesExplorer from './timeseriesexplorer';
+import Updates from './updates';
+
+import {MAP_META} from '../constants';
+import { formatDate, formatDateAbsolute, preprocessTimeseries,  parseStateTimeseries } from '../utils/common-functions';
+
+import axios from 'axios';
+
+import * as Icon from 'react-feather';
+import { useEffectOnce, useLocalStorage, useFavicon } from 'react-use';
+import { Helmet } from 'react-helmet';
+
+function Home(props) {
+  const [states, setStates] = useState([]);
+  const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
+  const [stateTestData, setStateTestData] = useState({});
+  const [lastUpdated, setLastUpdated] = useState('');
+  const [timeseries, setTimeseries] = useState({});
+  const [fetched, setFetched] = useState(false);
+  const [activeStateCode, setActiveStateCode] = useState('TT');
+  const [regionHighlighted, setRegionHighlighted] = useState(undefined);
+  const [showUpdates, setShowUpdates] = useState(false);
+  const [anchor, setAnchor] = useState(null);
+  const [lastViewedLog, setLastViewedLog] = useLocalStorage(
+    'lastViewedLog',
+    null
+  );
+  const [newUpdate, setNewUpdate] = useLocalStorage('newUpdate', false);
+
+  useFavicon(newUpdate ? '/thumnail.png' : '/favicon.ico');
+
+  useEffectOnce(() => {
+    getStates();
+  });
+
+  useEffectOnce(() => {
+    axios
+      .get('https://api.nepalcovid19.org/updatelog/log.json')
+      .then((response) => {
+        const lastTimestamp = response.data
+          .slice()
+          .reverse()[0]
+          .timestamp.toString();
+        if (lastTimestamp !== lastViewedLog) {
+          setNewUpdate(true);
+          setLastViewedLog(lastTimestamp);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  const getStates = async () => {
+    try {
+      const [
+        {data},
+        stateDistrictWiseResponse,
+        {data: statesDailyResponse},
+        {data: stateTestData},
+      ] = await Promise.all([
+        axios.get('https://api.nepalcovid19.org/data.json'),
+        axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
+        axios.get('https://api.nepalcovid19.org/states_daily.json'),
+        axios.get('https://api.nepalcovid19.org/state_test_data.json'),
+      ]);
+
+      setStates(data.statewise);
+
+      const ts = parseStateTimeseries(statesDailyResponse);
+      ts['TT'] = preprocessTimeseries(data.cases_time_series);
+      setTimeseries(ts);
+
+      setLastUpdated(data.statewise[0].lastupdatedtime);
+
+      const testData = stateTestData.states_tested_data.reverse();
+      const totalTest = data.tested[data.tested.length - 1];
+      testData.push({
+        updatedon: totalTest.updatetimestamp.split(' ')[0],
+        totaltested: totalTest.totalsamplestested,
+        source: totalTest.source,
+        state: 'Total',
+      });
+      setStateTestData(testData);
+
+      setStateDistrictWiseData(stateDistrictWiseResponse.data);
+      setFetched(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const onHighlightState = (state, index) => {
+    if (!state && !index) return setRegionHighlighted(null);
+    setRegionHighlighted({state, index});
+  };
+
+  const onHighlightDistrict = (district, state, index) => {
+    if (!state && !index && !district) return setRegionHighlighted(null);
+    setRegionHighlighted({district, state, index});
+  };
+
+  const onMapHighlightChange = useCallback(({statecode}) => {
+    setActiveStateCode(statecode);
+  }, []);
+
+  return (
+    <React.Fragment>
+      <div className="Home">
+      <Helmet>
+          <title>Coronavirus Outbreak in Nepal - nepalcovid19.org</title>
+          <meta
+            name="title"
+            content="Coronavirus  Tracker in Nepal"
+          />
+        </Helmet>
+        <div className="home-left">
+          <div className="header fadeInUp" style={{animationDelay: '1s'}}>
+            {fetched && <Search />}
+
+            <div className="actions">
+              <h5>
+                {isNaN(Date.parse(formatDate(lastUpdated)))
+                  ? ''
+                  : formatDateAbsolute(lastUpdated)}
+              </h5>
+              {!showUpdates && (
+                <div className="bell-icon">
+                  {fetched && (
+                    <Icon.Bell
+                      onClick={() => {
+                        setShowUpdates(!showUpdates);
+                        setNewUpdate(false);
+                      }}
+                    />
+                  )}
+                  {newUpdate && <div className="indicator"></div>}
+                </div>
+              )}
+              {showUpdates && (
+                <Icon.BellOff
+                  onClick={() => {
+                    setShowUpdates(!showUpdates);
+                  }}
+                />
+              )}
+            </div>
+          </div>
+
+          {showUpdates && <Updates />}
+
+          {fetched && <Level data={states[0]} />}
+          {fetched && <Minigraph timeseries={timeseries['TT']} />}
+          {fetched && (
+            <Table
+              states={states}
+              summary={false}
+              stateDistrictWiseData={stateDistrictWiseData}
+              onHighlightState={onHighlightState}
+              onHighlightDistrict={onHighlightDistrict}
+            />
+          )}
+        </div>
+
+        <div className="home-right">
+          {fetched && (
+            <React.Fragment>
+              <MapExplorer
+                mapMeta={MAP_META.Nepal}
+                states={states}
+                stateDistrictWiseData={stateDistrictWiseData}
+                stateTestData={stateTestData}
+                regionHighlighted={regionHighlighted}
+                onMapHighlightChange={onMapHighlightChange}
+                isCountryLoaded={true}
+                anchor={anchor}
+                setAnchor={setAnchor}
+              />
+
+              {fetched && (
+                <TimeSeriesExplorer
+                  timeseries={timeseries}
+                  activeStateCode={activeStateCode}
+                  onHighlightState={onHighlightState}
+                  states={states}
+                  anchor={anchor}
+                  setAnchor={setAnchor}
+                />
+              )}
+            </React.Fragment>
+          )}
+        </div>
+      </div>
+      {fetched && <Footer />}
+    </React.Fragment>
+  );
+}
+
+export default React.memo(Home);

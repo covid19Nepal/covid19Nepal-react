@@ -1,0 +1,29 @@
+{
+  "factoids": [
+    {
+      "banner": "Wash your hands regularly for 20 seconds, with soap and water or alcohol-based hand rub.",
+      "id": "1",
+      "numberoftimes": "2"
+    },
+    {
+      "banner": "Cover your nose and mouth with a disposable tissue or flexed elbow when you cough or sneeze.",
+      "id": "2",
+      "numberoftimes": "2"
+    },
+    {
+      "banner": "Avoid close contact (1 meter or 3 feet) with people who are unwell.",
+      "id": "3",
+      "numberoftimes": "2"
+    },
+    {
+      "banner": "Stay home and self-isolate from others in the household if you feel unwell. ",
+      "id": "4",
+      "numberoftimes": "2"
+    },
+    {
+      "banner": "Plan ahead! Take a minute and check how much you have at home. Planning let's you buy exactly what you need! ",
+      "id": "5",
+      "numberoftimes": "2"
+    }
+  ]
+}

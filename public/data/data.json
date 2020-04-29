@@ -1,0 +1,1086 @@
+{
+  "cases_time_series": [
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "24 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "25 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "26 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "27 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "28 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "29 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "30 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "0"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "1",
+      "date": "31 January",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "01 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "02 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "03 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "04 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "05 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "06 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "07 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "8 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "09 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "10 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "11 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "12 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "13 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "14 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "15 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "16 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "17 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "18 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "19 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "20 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "21 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "22 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "23 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "24 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "25 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "26 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "27 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "28 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "29 February",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "01 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "02 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "03 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "04 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "05 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "06 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "07 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "08 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "09 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "10 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "11 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "12 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "13 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "14 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "15 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "16 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "17 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "18 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "19 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "20 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "21 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "22 March",
+      "totalconfirmed": "1",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "23 March",
+      "totalconfirmed": "2",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "24 March",
+      "totalconfirmed": "2",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "25 March",
+      "totalconfirmed": "3",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "26 March",
+      "totalconfirmed": "3",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "27 March",
+      "totalconfirmed": "4",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "28 March",
+      "totalconfirmed": "5",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "29 March",
+      "totalconfirmed": "5",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "20 March",
+      "totalconfirmed": "5",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "31 March",
+      "totalconfirmed": "5",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "01 April",
+      "totalconfirmed": "5",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "02 April",
+      "totalconfirmed": "6",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "03 April",
+      "totalconfirmed": "6",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "3",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "04 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "05 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "06 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "07 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "08 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "09 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "10 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "11 April",
+      "totalconfirmed": "9",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "3",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "12 April",
+      "totalconfirmed": "12",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "2",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "13 April",
+      "totalconfirmed": "14",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "2",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "14 April",
+      "totalconfirmed": "16",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "15 April",
+      "totalconfirmed": "16",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "16 April",
+      "totalconfirmed": "16",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "14",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "17 April",
+      "totalconfirmed": "30",
+      "totaldeceased": "0",
+      "totalrecovered": "1"
+    },
+    {
+      "dailyconfirmed": "1",
+      "dailydeceased": "0",
+      "dailyrecovered": "2",
+      "date": "18 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "3"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "1",
+      "date": "19 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "4"
+    },
+    {
+      "dailyconfirmed": "0",
+      "dailydeceased": "0",
+      "dailyrecovered": "0",
+      "date": "20 April",
+      "totalconfirmed": "31",
+      "totaldeceased": "0",
+      "totalrecovered": "4"
+    }
+  ],
+  "statewise": [
+    {
+      "active": "27",
+      "confirmed": "31",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "19/04/2020 16:33:00",
+      "recovered": "4",
+      "state": "Total",
+      "statecode": "TT"
+    },
+    {
+      "active": "13",
+      "confirmed": "13",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "18/04/2020 21:07:00",
+      "recovered": "0",
+      "state": "Province 1",
+      "statecode": "P1"
+    },
+    {
+      "active": "4",
+      "confirmed": "4",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "13/04/2020 11:42:27",
+      "recovered": "0",
+      "state": "Province 2",
+      "statecode": "P2"
+    },
+    {
+      "active": "5",
+      "confirmed": "7",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "18/04/2020 14:53:00",
+      "recovered": "2",
+      "state": "Bagmati Province",
+      "statecode": "P3"
+    },
+    {
+      "active": "1",
+      "confirmed": "2",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "18/04/2020 17:54:00",
+      "recovered": "1",
+      "state": "Gandaki Province",
+      "statecode": "P4"
+    },
+    {
+      "active": "0",
+      "confirmed": "0",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "14/04/2020 11:42:27",
+      "recovered": "0",
+      "state": "Province 5",
+      "statecode": "P5"
+    },
+    {
+      "active": "0",
+      "confirmed": "0",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "14/04/2020 11:42:27",
+      "recovered": "0",
+      "state": "Karnali Province",
+      "statecode": "P6"
+    },
+    {
+      "active": "4",
+      "confirmed": "5",
+      "deaths": "0",
+      "deltaconfirmed": "0",
+      "deltadeaths": "0",
+      "deltarecovered": "0",
+      "lastupdatedtime": "19/04/2020 16:33:00",
+      "recovered": "1",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7"
+    }
+  ],
+  "tested": [
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatelabs": "",
+      "totalnegativetested": "65",
+      "totalpositivecases": "3",
+      "totalsamplestested": "758",
+      "updatetimestamp": "27/03/2020 07:15:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "912",
+      "totalpositivecases": "5",
+      "totalsamplestested": "917",
+      "updatetimestamp": "30/03/2020 06:50:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "988",
+      "totalpositivecases": "5",
+      "totalsamplestested": "993",
+      "updatetimestamp": "31/03/2020 07:58:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "1055",
+      "totalpositivecases": "5",
+      "totalsamplestested": "1060",
+      "updatetimestamp": "01/04/2020 7:47:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "1140",
+      "totalpositivecases": "5",
+      "totalsamplestested": "1145",
+      "updatetimestamp": "02/04/2020 7:01:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "1350",
+      "totalpositivecases": "6",
+      "totalsamplestested": "1356",
+      "updatetimestamp": "04/04/2020 16:44:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "1512",
+      "totalpositivecases": "9",
+      "totalsamplestested": "1521",
+      "updatetimestamp": "05/04/2020 7:08:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "1881",
+      "totalpositivecases": "9",
+      "totalsamplestested": "1890",
+      "updatetimestamp": "07/04/2020 6:56:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "2113",
+      "totalpositivecases": "9",
+      "totalsamplestested": "2122",
+      "updatetimestamp": "8/4/2020 6:56:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "2375",
+      "totalpositivecases": "9",
+      "totalsamplestested": "2366",
+      "updatetimestamp": "09/04/2020 6:47:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "2886",
+      "totalpositivecases": "9",
+      "totalsamplestested": "2895",
+      "updatetimestamp": "10/04/2020 6:47:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "3525",
+      "totalpositivecases": "9",
+      "totalsamplestested": "3225",
+      "updatetimestamp": "11/04/2020 7:19:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "4417",
+      "totalpositivecases": "9",
+      "totalsamplestested": "4426",
+      "updatetimestamp": "12/04/2020 6:58:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "5172",
+      "totalpositivecases": "12",
+      "totalsamplestested": "5184",
+      "updatetimestamp": "13/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "5677",
+      "totalpositivecases": "14",
+      "totalsamplestested": "5691",
+      "updatetimestamp": "14/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "6283",
+      "totalpositivecases": "16",
+      "totalsamplestested": "6299",
+      "updatetimestamp": "15/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "6855",
+      "totalpositivecases": "16",
+      "totalsamplestested": "6871",
+      "updatetimestamp": "16/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7224",
+      "totalpositivecases": "16",
+      "totalsamplestested": "7240",
+      "updatetimestamp": "17/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7672",
+      "totalpositivecases": "30",
+      "totalsamplestested": "7702",
+      "updatetimestamp": "18/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "7986",
+      "totalpositivecases": "31",
+      "totalsamplestested": "8017",
+      "updatetimestamp": "19/04/2020 06:49:00"
+    },
+    {
+      "positivecasesfromsamplesreported": "",
+      "samplereportedtoday": "",
+      "source": "https://covid19.mohp.gov.np",
+      "testsconductedbyprivatnegativetested": "8383",
+      "totalpositivecases": "31",
+      "totalsamplestested": "8414",
+      "updatetimestamp": "20/04/2020 16:36:00"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+import AgeChart from './Charts/agechart';
+import AllStatesChart from './Charts/allstates';
+import DailyConfirmedChart from './Charts/dailyconfirmedchart';
+import GenderChart from './Charts/genderchart';
+import NationalityChart from './Charts/nationalitychart';
+import TotalConfirmedChart from './Charts/totalconfirmedchart';
+
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import {  Helmet } from 'react-helmet';
+
+function DeepDive(props) {
+  const [fetched, setFetched] = useState(false);
+  const [timeseries, setTimeseries] = useState([]);
+  const [rawData, setRawData] = useState([]);
+  const [statesTimeSeries, setStatesTimeSeries] = useState([]);
+
+  useEffect(() => {
+    if (fetched === false) {
+      getStates();
+    }
+  }, [fetched]);
+
+  const getStates = async () => {
+    try {
+      const [
+        response,
+        rawDataResponse,
+        stateDailyResponse,
+      ] = await Promise.all([
+        axios.get(`https://api.nepalcovid19.org/data.json`),
+        axios.get(`https://api.nepalcovid19.org/raw_data.json`),
+        axios.get(`https://api.nepalcovid19.org/states_daily.json`),
+      ]);
+      setTimeseries(response.data.cases_time_series);
+      setStatesTimeSeries(stateDailyResponse.data.states_daily);
+      setRawData(rawDataResponse.data.raw_data);
+      setFetched(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return (
+    <div className="cards-container">
+        <Helmet>
+        <title>Deep Dive - nepalcovid19.org</title>
+        <meta name="title" content="Deep Dive - nepalcovid19.org" />
+      </Helmet>
+      <section className="cards">
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <TotalConfirmedChart
+            title="Nepal - Total Cases"
+            timeseries={timeseries}
+          />
+        </div>
+
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <DailyConfirmedChart
+            title="Nepal - Daily Cases"
+            timeseries={timeseries}
+          />
+        </div>
+
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <AllStatesChart
+            title="States - Total Cases"
+            data={statesTimeSeries}
+          />
+        </div>
+
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <GenderChart title="Patient Gender" data={rawData} />
+        </div>
+
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <AgeChart title="Patient Age" data={rawData} />
+        </div>
+
+        <div className="card fadeInUp" style={{animationDelay: '0.7s'}}>
+          <NationalityChart title="Patient Nationality" data={rawData} />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default DeepDive;
