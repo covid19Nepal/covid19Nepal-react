@@ -9,13 +9,23 @@ import Resources from './components/resources';
 import State from './components/state';
 
 import React from 'react';
+import {Helmet} from 'react-helmet';
+
 import {
-  BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
+  Switch
 } from 'react-router-dom';
-import {useLocalStorage} from 'react-use';
+import {useLocalStorage , useEffectOnce} from 'react-use';
+
+const schemaMarkup = {
+  '@context': 'http://schema.org/',
+  '@type': 'NGO',
+  name: 'Coronavirus  Tracker in Nepal',
+  alternateName: 'COVID-19 Tracker',
+  url: 'https://www.nepalcovid19.org/',
+  image: 'https://www.nepalcovid19.org/thumbnail.png',
+};
 
 function App() {
   const pages = [
@@ -64,6 +74,23 @@ function App() {
   ];
 
   const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
+  const [isThemeSet] = useLocalStorage('isThemeSet', false);
+
+  useEffectOnce(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      !isThemeSet
+    ) {
+      setDarkMode(true);
+    } else if (
+      window.matchMedia &&
+      !window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      !isThemeSet
+    ) {
+      setDarkMode(false);
+    }
+  });
 
   React.useEffect(() => {
     if (darkMode) {
@@ -74,8 +101,13 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      <Router>
+
+    <div className="App">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      </Helmet>
         <Route
           render={({location}) => (
             <div className="Almighty-Router">
@@ -100,7 +132,6 @@ function App() {
             </div>
           )}
         />
-      </Router>
     </div>
   );
 }

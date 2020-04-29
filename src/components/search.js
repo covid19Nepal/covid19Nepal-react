@@ -4,7 +4,7 @@ import {
   STATE_CODES_REVERSE,
 } from '../constants';
 
-import Bloodhound from 'corejs-typeahead';
+import Bloodhound from 'bloodhound-js';
 import React, {useState, useCallback, useRef} from 'react';
 import * as Icon from 'react-feather';
 import {Link} from 'react-router-dom';

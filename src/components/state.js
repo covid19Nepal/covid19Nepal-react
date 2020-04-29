@@ -18,6 +18,7 @@ import {format, parse} from 'date-fns';
 import React, {useEffect, useRef, useState} from 'react';
 import * as Icon from 'react-feather';
 import {Link} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function State(props) {
   const mapRef = useRef();
@@ -85,6 +86,15 @@ function State(props) {
   return (
     <React.Fragment>
       <div className="State">
+      <Helmet>
+          <title>
+            Coronavirus Outbreak in {STATE_CODES[stateCode]} - nepalcovid19.org
+          </title>
+          <meta
+            name="title"
+            content={`Coronavirus Outbreak in ${STATE_CODES[stateCode]}: Latest Map and Case Count`}
+          />
+        </Helmet>
         <div className="state-left">
           <div className="breadcrumb fadeInUp">
             <Link to="/">Home</Link>/

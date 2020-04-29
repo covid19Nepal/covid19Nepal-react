@@ -1,64 +1,169 @@
 {
-  "sources_list": [
-    {
-      "region": "General",
-      "source1": "https://www.mohfw.gov.in/",
-      "source2": "https://twitter.com/PTI_News",
-      "source3": "https://twitter.com/ANI",
-      "source4": "https://twitter.com/the_hindu",
-      "source5": "https://www.indiatoday.in",
-      "source6": "https://twitter.com/thenewsminute",
-      "statecode": "GG"
-    },
-    {
-      "region": "Testing",
-      "source1": "https://icmr.nic.in/node/39071",
-      "source2": "https://covid.icmr.org.in/index.php",
-      "source3": "",
-      "source4": "",
-      "source5": "",
-      "source6": "",
-      "statecode": "TE"
-    },
-    {
-      "region": "Province 2",
-      "source1": "https://twitter.com/CMOKerala",
-      "source2": "https://twitter.com/vijayanpinarayi",
-      "source3": "https://dashboard.kerala.gov.in/",
-      "source4": "http://dhs.kerala.gov.in/%E0%B4%A1%E0%B5%86%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B4%BF-%E0%B4%AC%E0%B5%81%E0%B4%B3%E0%B5%8D%E0%B4%B3%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B4%BF%E0%B4%A8%E0%B5%8D%E2%80%8D/",
-      "source5": "",
-      "source6": "",
-      "statecode": "P2"
-    },
-    {
-      "region": "Bagmati Province",
-      "source1": "https://covid19.karnataka.gov.in",
-      "source2": "https://twitter.com/sriramulubjp",
-      "source3": "https://karunadu.karnataka.gov.in/hfw/kannada/Pages/cv-dashboard-old.aspx",
-      "source4": "https://twitter.com/DHFWKA",
-      "source5": "",
-      "source6": "",
-      "statecode": "P3"
-    },
-    {
-      "region": "Gandaki Province",
-      "source1": "https://twitter.com/IPRTelangana",
-      "source2": "https://twitter.com/TelanganaHealth",
-      "source3": "http://124.124.103.93/COVID/home.htm",
-      "source4": "https://covid19.telangana.gov.in/announcements/media-bulletins/",
-      "source5": "",
-      "source6": "",
-      "statecode": "P4"
-    },
-    {
-      "region": "Sudurpaschim Province",
-      "source1": "https://mahe.gov.in/covid-19/",
-      "source2": "https://collectorate.py.gov.in/Corona%20COVID-19.htm",
-      "source3": "",
-      "source4": "",
-      "source5": "",
-      "source6": "",
-      "statecode": "P7"
-    }
-  ]
+	"resources": [
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Kathmandu",
+			"contact": "https://www.nphl.gov.np/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "National Public Health Laboratory",
+			"phonenumber": "14240217",
+			"timestamp": "15/04/2020 15:50:44"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Kathmandu",
+			"contact": "http://www.pahs.edu.np/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Patan Academy of Health Science",
+			"phonenumber": "01-5522295",
+			"timestamp": "21/04/2020 09:47:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Health Facility",
+			"city": "Kritipur",
+			"contact": "https://nartc.org.np/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Ayurbed Research Center",
+			"phonenumber": "01-4334973",
+			"timestamp": "21/04/2020 09:50:00"
+		},
+		{
+			"_cokwr": "Gandaki Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Pokhara",
+			"contact": "https://pahs.gov.np/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Pokhara Health Science Academy",
+			"phonenumber": "061-522674",
+			"timestamp": "21/04/2020 17:01:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Kathmandu",
+			"contact": "https://en.wikipedia.org/wiki/Bir_Hospital",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Bir Hospital",
+			"phonenumber": "",
+			"timestamp": "21/04/2020 17:01:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Dulikhel",
+			"contact": "https://en.wikipedia.org/wiki/Dhulikhel_Hospital",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Dhulikhel Hospital",
+			"phonenumber": "",
+			"timestamp": "21/04/2020 17:01:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Hetauda",
+			"contact": "http://vbdrtc.gov.np/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Vector Borne Disease Research and Training Center",
+			"phonenumber": "057-521826",
+			"timestamp": "21/04/2020 17:09:00"
+		},
+		{
+			"_cokwr": "Province 1",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Dharan",
+			"contact": "http://www.bpkihs.edu/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "B.P. Koirala Institute of Health Sciences",
+			"phonenumber": "025-525555",
+			"timestamp": "21/04/2020 17:11:00"
+		},
+		{
+			"_cokwr": "Province 2",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Janakpur",
+			"contact": "https://www.mohp.gov.np/eng/health-institutions/government/zonal-hospitals",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Janakpur Zonal Hospital",
+			"phonenumber": "041-520133",
+			"timestamp": "21/04/2020 17:12:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Chitwan",
+			"contact": "",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "National Avian DIsease Investigation Laboratory",
+			"phonenumber": "",
+			"timestamp": "21/04/2020 17:14:00"
+		},
+		{
+			"_cokwr": "Karnali Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Surkhet",
+			"contact": " www.midwesterncancercentre.ie/",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Mid Western Regional Hospital",
+			"phonenumber": "083-520200",
+			"timestamp": "21/04/2020 17:16:00"
+		},
+		{
+			"_cokwr": "Province 5",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Nepalgunj",
+			"contact": "",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Bheri Zonal Hospital",
+			"phonenumber": "081-520120",
+			"timestamp": "21/04/2020 17:16:00"
+		},
+		{
+			"_cokwr": "Sudurpaschim Province",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Kailali",
+			"contact": "",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "Seti Zonal Hospital",
+			"phonenumber": "091-524281",
+			"timestamp": "21/04/2020 17:18:00"
+		},
+		{
+			"_cokwr": "Province 5",
+			"additionalfeedbackcomment": "",
+			"category": "Covid19-Testing Labs",
+			"city": "Rupandehi",
+			"contact": "",
+			"descriptionandorserviceprovided": "Government approved and supported Testing labs",
+			"nameoftheorganisation": "National Wheat Research Center",
+			"phonenumber": "",
+			"timestamp": "21/04/2020 17:18:00"
+		},
+		{
+			"_cokwr": "Bagmati Province",
+			"additionalfeedbackcomment": "",
+			"category": "Quarantine Center",
+			"city": "Bhaktapur",
+			"contact": "https://www.facebook.com/pages/Bhaktapur-Kharipati-NEA-Training-Center/220158554695430",
+			"descriptionandorserviceprovided": "",
+			"nameoftheorganisation": "Training Center of Nepal Electricity Authority",
+			"phonenumber": "01-6616660",
+			"timestamp": "21/04/2020 17:20:00"
+		}
+	]
 }

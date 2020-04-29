@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {useEffectOnce, useLockBodyScroll} from 'react-use';
 
 const navLinkProps = (path, animationDelay) => ({
-  className: `fadeInUp ${window.location.pathname === path ? 'focused' : ''}`,
+  className: `fadeInUp ${typeof window !== "undefined" && window.location.pathname === path ? 'focused' : ''}`,
   style: {
     animationDelay: `${animationDelay}s`,
   },
@@ -35,7 +35,7 @@ function Navbar({pages, darkMode, setDarkMode}) {
           setExpand(!expand);
         }}
         onMouseEnter={() => {
-          if (window.innerWidth > 769) {
+          if (typeof window !== "undefined" && window.innerWidth > 769) {
             setExpand(true);
             anime({
               targets: '.navbar-right path',
@@ -51,8 +51,8 @@ function Navbar({pages, darkMode, setDarkMode}) {
           }
         }}
       >
-        {window.innerWidth < 769 && <span>{expand ? 'Close' : 'Menu'}</span>}
-        {window.innerWidth > 769 && (
+        { typeof window !== "undefined" &&window.innerWidth < 769 && <span>{expand ? 'Close' : 'Menu'}</span>}
+        { typeof window !== "undefined" && window.innerWidth > 769 && (
           <React.Fragment>
             <span>
               <Icon.Home />

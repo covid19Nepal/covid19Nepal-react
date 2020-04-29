@@ -7,6 +7,7 @@ import React, {useState, useEffect} from 'react';
 import DatePicker from 'react-date-picker';
 import * as Icon from 'react-feather';
 import {useLocation} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function filterByObject(obj, filters) {
   const keys = Object.keys(filters);
@@ -100,6 +101,14 @@ function PatientDB(props) {
 
   return (
     <div className="PatientsDB">
+        <Helmet>
+        <title>Demographics - nepalcovid19.org</title>
+        <meta name="title" content={`Demographics - nepalcovid19.org`} />
+        <meta
+          name="description"
+          content="A demographical overview of the Nepal population affected by the coronavirus."
+        />
+      </Helmet>
       {error ? <div className="alert alert-danger">{error}</div> : ''}
 
       <div className="filters fadeInUp" style={{animationDelay: '0.5s'}}>

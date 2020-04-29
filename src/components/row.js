@@ -245,10 +245,10 @@ function Row(props) {
         <td onClick={(e) => handleSort('confirmed')}>
           <div className="heading-content">
             <abbr
-              className={`${window.innerWidth <= 769 ? 'is-cherry' : ''}`}
+              className={`${typeof window !== "undefined" && window.innerWidth <= 769 ? 'is-cherry' : ''}`}
               title="Confirmed"
             >
-              {window.innerWidth <= 769
+              {typeof window !== "undefined" && window.innerWidth <= 769
                 ? window.innerWidth <= 375
                   ? 'C'
                   : 'Cnfmd'
