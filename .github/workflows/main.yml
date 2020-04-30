@@ -34,4 +34,4 @@ jobs:
       - name: Lint
         run: |
           npm run eslint
-          npm run scsslint
+          npm run scss-lint
