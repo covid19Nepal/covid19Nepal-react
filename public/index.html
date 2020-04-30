@@ -32,6 +32,83 @@
     <meta name="description" content="Volunteer-driven crowdsourced initiative to track the spread of Coronavirus (COVID-19) in Nepal">
    <meta name="keywords" content="coronavirus,corona,covid,covid19,covid-19,covidnepal, covid19nepal,nepal, nepalcovid19,virus">
 
+
+   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+   <link rel="preconnect" href="https://api.nepalcovid19.org" crossorigin>
+   <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin>
+
+    <!-- Font Preloading -->
+    <link
+      rel="preload"
+      importance="low"
+      href="/fonts/Archia/archia-semibold-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      importance="low"
+      href="/fonts/Archia/archia-medium-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      importance="low"
+      href="/fonts/Archia/archia-bold-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+
+    <style>
+      /* font-face declarations for preloaded fonts */
+      /* These are the only 3 fonts being used.
+      font-face declarations for thin, regular and light fonts should be added as needed */
+      @font-face {
+        font-family: 'Archia';
+        src: url('/fonts/Archia/archia-semibold-webfont.eot');
+        src: local('Archia'),
+          url('/fonts/Archia/archia-semibold-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/Archia/archia-semibold-webfont.woff2') format('woff2'),
+          url('/fonts/Archia/archia-semibold-webfont.woff') format('woff'),
+          url('/fonts/Archia/archia-semibold-webfont.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Archia';
+        src: url('/fonts/Archia/archia-medium-webfont.eot');
+        src: local('Archia'),
+          url('/fonts/Archia/archia-medium-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/Archia/archia-medium-webfont.woff2') format('woff2'),
+          url('/fonts/Archia/archia-medium-webfont.woff') format('woff'),
+          url('/fonts/Archia/archia-medium-webfont.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Archia';
+        src: url('/fonts/Archia/archia-bold-webfont.eot');
+        src: local('Archia'),
+          url('/fonts/Archia/archia-bold-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/Archia/archia-bold-webfont.woff2') format('woff2'),
+          url('/fonts/Archia/archia-bold-webfont.woff') format('woff'),
+          url('/fonts/Archia/archia-bold-webfont.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.nepalcovid19.org">
@@ -69,3 +146,12 @@
     gtag('js', new Date());
     gtag('config', 'UA-162813083-1');
   </script>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M6GJZR2');</script>
+  <!-- End Google Tag Manager -->
+  </html>

@@ -20,6 +20,7 @@
     "d3": "^5.15.0",
     "d3-svg-legend": "^2.25.6",
     "date-fns": "^2.11.0",
+    "date-fns-tz": "^1.0.10",
     "i": "^0.3.6",
     "ignore-styles": "^5.0.1",
     "install": "^0.13.0",
@@ -41,6 +42,7 @@
     "react-router-transition": "^2.0.0",
     "react-scripts": "^3.4.0",
     "react-table": "^7.0.4",
+    "react-tooltip": "^4.2.5",
     "react-use": "^14.1.1",
     "sass-lint": "^1.13.1",
     "topojson": "^3.0.2"
@@ -50,11 +52,11 @@
     "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint . --fix --max-warnings=0",
-    "eslint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix --max-warnings=0",
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|md|html)\"",
     "scss-lint": "sass-lint 'src/**/*.scss' -v -f table --max-warnings 0",
-    "scss-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' -d -h -c '.sass-lint-auto-fix.yml'"
+    "scss-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' -d -h -c .sass-lint-auto-fix.yml"
   },
   "eslintConfig": {
     "extends": "react-app"

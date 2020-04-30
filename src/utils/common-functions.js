@@ -1,6 +1,7 @@
 import {STATE_CODES} from '../constants';
 
-import moment from 'moment';
+import {parse, isBefore, isSameDay, startOfDay} from 'date-fns';
+import {utcToZonedTime} from 'date-fns-tz';
 
 const months = {
   '01': 'Jan',
@@ -21,6 +22,10 @@ export const getStateName = (code) => {
   return STATE_CODES[code.toUpperCase()];
 };
 
+export const getNepalDay = () => {
+  return startOfDay(utcToZonedTime(new Date(), 'Asia/Kathmandu'));
+};
+
 export const formatDate = (unformattedDate) => {
   const day = unformattedDate.slice(0, 2);
   const month = unformattedDate.slice(3, 5);
@@ -37,8 +42,6 @@ export const formatDateAbsolute = (unformattedDate) => {
 };
 
 const validateCTS = (data = []) => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
   const dataTypes = [
     'dailyconfirmed',
     'dailydeceased',
@@ -51,14 +54,16 @@ const validateCTS = (data = []) => {
     .filter((d) => dataTypes.every((dt) => d[dt]) && d.date)
     .filter((d) => dataTypes.every((dt) => Number(d[dt]) >= 0))
     .filter((d) => {
-      const year = today.getFullYear();
-      return new Date(d.date + year) < today;
+      // Skip data from the current day
+      const today = getNepalDay();
+      const date = parse(d.date, 'dd MMMM', new Date(2020, 0, 1));
+      return isBefore(date, today);
     });
 };
 
 export const preprocessTimeseries = (timeseries) => {
   return validateCTS(timeseries).map((stat, index) => ({
-    date: new Date(stat.date + ' 2020'),
+    date: parse(stat.date, 'dd MMMM', new Date(2020, 0, 1)),
     totalconfirmed: +stat.totalconfirmed,
     totalrecovered: +stat.totalrecovered,
     totaldeceased: +stat.totaldeceased,
@@ -95,11 +100,11 @@ export const parseStateTimeseries = ({states_daily: data}) => {
     return a;
   }, {});
 
-  const today = moment();
+  const today = getNepalDay();
   for (let i = 0; i < data.length; i += 3) {
-    const date = moment(data[i].date, 'DD-MMM-YY');
+    const date = parse(data[i].date, 'dd-MMM-yy', new Date());
     // Skip data from the current day
-    if (date.isBefore(today, 'Date')) {
+    if (isBefore(date, today)) {
       Object.entries(statewiseSeries).forEach(([k, v]) => {
         const stateCode = k.toLowerCase();
         const prev = v[v.length - 1] || {};
@@ -114,7 +119,7 @@ export const parseStateTimeseries = ({states_daily: data}) => {
           +data[i + 2][stateCode] + (prev.totaldeceased || 0);
         // Push
         v.push({
-          date: date.toDate(),
+          date: date,
           dailyconfirmed: dailyconfirmed,
           dailyrecovered: dailyrecovered,
           dailydeceased: dailydeceased,
@@ -130,4 +135,66 @@ export const parseStateTimeseries = ({states_daily: data}) => {
   }
 
   return statewiseSeries;
+};
+
+export const parseStateTestTimeseries = (data) => {
+  const stateCodeMap = Object.keys(STATE_CODES).reduce((ret, sc) => {
+    ret[STATE_CODES[sc]] = sc;
+    return ret;
+  }, {});
+
+  const testTimseries = Object.keys(STATE_CODES).reduce((ret, sc) => {
+    ret[sc] = [];
+    return ret;
+  }, {});
+
+  const today = getNepalDay();
+  data.forEach((d) => {
+    const date = parse(d.updatedon, 'dd/MM/yyyy', new Date());
+    const totaltested = +d.totaltested;
+    if (isBefore(date, today) && totaltested) {
+      const stateCode = stateCodeMap[d.state];
+      testTimseries[stateCode].push({
+        date: date,
+        totaltested: totaltested,
+      });
+    }
+  });
+  return testTimseries;
+};
+
+export const parseTotalTestTimeseries = (data) => {
+  const testTimseries = [];
+  const today = getNepalDay();
+  data.forEach((d) => {
+    const date = parse(
+      d.updatetimestamp.split(' ')[0],
+      'dd/MM/yyyy',
+      new Date()
+    );
+    const totaltested = +d.totalsamplestested;
+    if (isBefore(date, today) && totaltested) {
+      testTimseries.push({
+        date: date,
+        totaltested: totaltested,
+      });
+    }
+  });
+  return testTimseries;
+};
+
+export const mergeTimeseries = (ts1, ts2) => {
+  const tsRet = Object.assign({}, ts1);
+  for (const state in ts1) {
+    if (ts1.hasOwnProperty(state)) {
+      tsRet[state] = ts1[state].map((d1) => {
+        const testData = ts2[state].find((d2) => isSameDay(d1.date, d2.date));
+        return {
+          totaltested: testData?.totaltested,
+          ...d1,
+        };
+      });
+    }
+  }
+  return tsRet;
 };
