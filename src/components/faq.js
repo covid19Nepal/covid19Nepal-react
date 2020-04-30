@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 function FAQ(props) {
   const [faq, setFaq] = useState([]);
@@ -24,10 +24,7 @@ function FAQ(props) {
     <div className="FAQ">
       <Helmet>
         <title>FAQ - nepalcovid19.org</title>
-        <meta
-          name="title"
-          content="Coronavirus  Tracker in Nepal"
-        />
+        <meta name="title" content="Coronavirus  Tracker in Nepal" />
       </Helmet>
       {faq.map((faq, index) => {
         return (

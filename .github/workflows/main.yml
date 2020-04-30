@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false
 
       # Runs a single command using the runners shell
-      - name: Install 🔧
+      - name: Install and Build 🔧
         run: |
           npm install
           npm run build

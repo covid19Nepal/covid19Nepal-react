@@ -6,8 +6,8 @@ import {format, subDays} from 'date-fns';
 import React, {useState, useEffect} from 'react';
 import DatePicker from 'react-date-picker';
 import * as Icon from 'react-feather';
+import {Helmet} from 'react-helmet';
 import {useLocation} from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 function filterByObject(obj, filters) {
   const keys = Object.keys(filters);
@@ -101,7 +101,7 @@ function PatientDB(props) {
 
   return (
     <div className="PatientsDB">
-        <Helmet>
+      <Helmet>
         <title>Demographics - nepalcovid19.org</title>
         <meta name="title" content={`Demographics - nepalcovid19.org`} />
         <meta

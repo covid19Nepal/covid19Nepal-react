@@ -10,13 +10,8 @@ import State from './components/state';
 
 import React from 'react';
 import {Helmet} from 'react-helmet';
-
-import {
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-import {useLocalStorage , useEffectOnce} from 'react-use';
+import {Route, Redirect, Switch} from 'react-router-dom';
+import {useLocalStorage, useEffectOnce} from 'react-use';
 
 const schemaMarkup = {
   '@context': 'http://schema.org/',
@@ -101,37 +96,36 @@ function App() {
   }, [darkMode]);
 
   return (
-
     <div className="App">
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
       </Helmet>
-        <Route
-          render={({location}) => (
-            <div className="Almighty-Router">
-              <Navbar
-                pages={pages}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
-              />
-              <Switch location={location}>
-                {pages.map((page, index) => {
-                  return (
-                    <Route
-                      exact
-                      path={page.pageLink}
-                      component={page.view}
-                      key={index}
-                    />
-                  );
-                })}
-                <Redirect to="/" />
-              </Switch>
-            </div>
-          )}
-        />
+      <Route
+        render={({location}) => (
+          <div className="Almighty-Router">
+            <Navbar
+              pages={pages}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+            />
+            <Switch location={location}>
+              {pages.map((page, index) => {
+                return (
+                  <Route
+                    exact
+                    path={page.pageLink}
+                    component={page.view}
+                    key={index}
+                  />
+                );
+              })}
+              <Redirect to="/" />
+            </Switch>
+          </div>
+        )}
+      />
     </div>
   );
 }

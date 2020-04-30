@@ -1,5 +1,3 @@
-import React, { useState, useCallback } from 'react';
-
 import Footer from './footer';
 import Level from './level';
 import MapExplorer from './mapexplorer';
@@ -10,13 +8,18 @@ import TimeSeriesExplorer from './timeseriesexplorer';
 import Updates from './updates';
 
 import {MAP_META} from '../constants';
-import { formatDate, formatDateAbsolute, preprocessTimeseries,  parseStateTimeseries } from '../utils/common-functions';
+import {
+  formatDate,
+  formatDateAbsolute,
+  preprocessTimeseries,
+  parseStateTimeseries,
+} from '../utils/common-functions';
 
 import axios from 'axios';
-
+import React, {useState, useCallback} from 'react';
 import * as Icon from 'react-feather';
-import { useEffectOnce, useLocalStorage, useFavicon } from 'react-use';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
+import {useEffectOnce, useLocalStorage, useFavicon} from 'react-use';
 
 function Home(props) {
   const [states, setStates] = useState([]);
@@ -115,12 +118,9 @@ function Home(props) {
   return (
     <React.Fragment>
       <div className="Home">
-      <Helmet>
+        <Helmet>
           <title>Coronavirus Outbreak in Nepal - nepalcovid19.org</title>
-          <meta
-            name="title"
-            content="Coronavirus  Tracker in Nepal"
-          />
+          <meta name="title" content="Coronavirus  Tracker in Nepal" />
         </Helmet>
         <div className="home-left">
           <div className="header fadeInUp" style={{animationDelay: '1s'}}>

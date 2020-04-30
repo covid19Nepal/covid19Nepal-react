@@ -37,7 +37,7 @@ function TimeSeriesExplorer({
         className="timeseries-header fadeInUp"
         style={{animationDelay: '2.5s'}}
       >
-        {typeof window !== "undefined" && window.innerWidth > 769 && (
+        {typeof window !== 'undefined' && window.innerWidth > 769 && (
           <div
             className={`anchor ${anchor === 'timeseries' ? 'stickied' : ''}`}
             onClick={() => {

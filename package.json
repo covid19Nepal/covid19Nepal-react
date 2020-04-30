@@ -53,7 +53,8 @@
     "eslint": "eslint . --fix --max-warnings=0",
     "eslint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
-    "scsslint": "sass-lint-auto-fix -d"
+    "scss-lint": "sass-lint 'src/**/*.scss' -v -f table --max-warnings 0",
+    "scss-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' -d -h -c '.sass-lint-auto-fix.yml'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,14 +66,15 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "eslint --fix",
-      "prettier --write"
+      "npm run eslint:fix",
+      "prettier --write \"**/*.+(js|jsx)\""
     ],
-    "*.+(json|yml|yaml|md|vue)": [
-      "prettier --write"
+    "*.+(json|yml|yaml|md)": [
+      "prettier --write \"**/*.+(json|yml|yaml|md)\""
     ],
     "*.+(css|scss)": [
-      "sass-lint-auto-fix"
+      "npm run scss-lint:fix",
+      "npm run scss-lint"
     ]
   },
   "devDependencies": {
@@ -87,6 +89,7 @@
     "lint-staged": "^10.0.9",
     "prettier": "^2.0.2",
     "react-router-sitemap": "^1.2.0",
+    "sass-lint": "^1.13.1",
     "sass-lint-auto-fix": "^0.21.0"
   },
   "browserslist": {

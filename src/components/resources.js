@@ -10,7 +10,7 @@ import ErrorOutlineOutlinedIcon from '@material-ui/icons/ErrorOutlineOutlined';
 import NavigationOutlinedIcon from '@material-ui/icons/NavigationOutlined';
 import axios from 'axios';
 import React, {useState, useEffect, useCallback} from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 export const useFormControlStyles = makeStyles((isDesktop) => {
   if (isDesktop === true)
@@ -419,7 +419,7 @@ function Resources(props) {
   };
   return (
     <div className="Resources">
-       <Helmet>
+      <Helmet>
         <title>Essentials - nepalcovid19.org</title>
         <meta name="title" content="Essentials - nepalcovid19.org" />
       </Helmet>

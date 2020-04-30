@@ -1,15 +1,16 @@
-import path from 'path'
-import fs from 'fs'
+import App from '../src/App';
 
-import express from 'express'
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import { StaticRouter } from 'react-router'
-import App from '../src/App'
+import express from 'express';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import {StaticRouter} from 'react-router';
 
-const app = express()
+import fs from 'fs';
+import path from 'path';
 
-const router = express.Router()
+const app = express();
+
+const router = express.Router();
 
 const staticFiles = [
   '/static/*',
@@ -26,48 +27,47 @@ const staticFiles = [
   '/thumnail.png',
   '/icon.png',
   '/maps/*',
-  '/flags/*'
-]
+  '/flags/*',
+];
 
-staticFiles.forEach(file => {
+staticFiles.forEach((file) => {
   app.get(file, (req, res) => {
-    const filePath = path.join( __dirname, '../build', req.url )
-    res.sendFile( filePath )
-  })
-})
-
+    const filePath = path.join(__dirname, '../build', req.url);
+    res.sendFile(filePath);
+  });
+});
 
 const Serverrenderer = (req, res, next) => {
-    const context = {};
+  const context = {};
   fs.readFile(path.resolve('./build/index.html'), 'utf8', (err, data) => {
     if (err) {
-      console.error(err)
-      return res.status(500).send('An error occurred')
+      console.error(err);
+      return res.status(500).send('An error occurred');
     }
     return res.send(
       data.replace(
         '<div id="root"></div>',
         `<div id="root">${ReactDOMServer.renderToString(
           <StaticRouter location={req.url} context={context}>
-          <App />
+            <App />
           </StaticRouter>
         )}</div>`
       )
-    )
-  })
-}
-router.use('/*',  Serverrenderer )
+    );
+  });
+};
+router.use('/*', Serverrenderer);
 
 router.use(
-  express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' })
-)
+  express.static(path.resolve(__dirname, '..', 'build'), {maxAge: '30d'})
+);
 
 router.use(express.static('public'));
 // tell the app to use the above rules
-app.use(router)
+app.use(router);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`SSR running on port ${PORT}`)
-})
+  console.log(`SSR running on port ${PORT}`);
+});

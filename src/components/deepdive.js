@@ -7,7 +7,7 @@ import TotalConfirmedChart from './Charts/totalconfirmedchart';
 
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import {  Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 function DeepDive(props) {
   const [fetched, setFetched] = useState(false);
@@ -43,7 +43,7 @@ function DeepDive(props) {
 
   return (
     <div className="cards-container">
-        <Helmet>
+      <Helmet>
         <title>Deep Dive - nepalcovid19.org</title>
         <meta name="title" content="Deep Dive - nepalcovid19.org" />
       </Helmet>
