@@ -19,7 +19,7 @@ function Resources(props) {
   const [fetched, setFetched] = useState(false);
   const [city, setCity] = useState('all');
   const [category, setCategory] = useState('all');
-  const [indianstate, setIndianState] = useState('all');
+  const [nepalstate, setNepalState] = useState('all');
   const [resourcedict, setResourceDict] = useState({});
   const [showTable, setShowTable] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -80,7 +80,6 @@ function Resources(props) {
       });
 
       setResourceDict(hashmap);
-      // setIndianState(Object.keys()[0]);
 
       setFetched(true);
     } catch (err) {}
@@ -135,10 +134,10 @@ function Resources(props) {
   // const memodata = React.useMemo(() => data, [data])
 
   const getCityOptions = function () {
-    if (indianstate) {
-      if (indianstate === 'all') return [];
+    if (nepalstate) {
+      if (nepalstate === 'all') return [];
       else {
-        return Object.keys(resourcedict[indianstate])
+        return Object.keys(resourcedict[nepalstate])
           .sort()
           .map((x, i) => (
             <option
@@ -158,7 +157,7 @@ function Resources(props) {
     } else return [];
     // return getCityList().map((x) => <option value={x}>{x}</option>)
   };
-  const getIndianStateOptions = function () {
+  const getnepalstateOptions = function () {
     // let defaultOption = ['Please select']
     return Object.keys(resourcedict)
       .sort()
@@ -178,8 +177,8 @@ function Resources(props) {
       ));
   };
   const getCategoryOptions = function () {
-    if (indianstate && city) {
-      if (indianstate === 'all') {
+    if (nepalstate && city) {
+      if (nepalstate === 'all') {
         const array = [];
         Object.values(resourcedict).forEach((state) => {
           Object.values(state).forEach((citydata) => {
@@ -205,7 +204,7 @@ function Resources(props) {
       } else {
         if (city === 'all') {
           const array = [];
-          Object.values(resourcedict[indianstate]).forEach((citydata) => {
+          Object.values(resourcedict[nepalstate]).forEach((citydata) => {
             Object.keys(citydata).forEach((x) => {
               if (array.indexOf(x) === -1) array.push(x);
             });
@@ -225,7 +224,7 @@ function Resources(props) {
             </option>
           ));
         } else {
-          return Object.keys(resourcedict[indianstate][city])
+          return Object.keys(resourcedict[nepalstate][city])
             .sort()
             .map((x, i) => (
               <option
@@ -250,7 +249,7 @@ function Resources(props) {
     let a = [];
     if (category === 'all') {
       if (city === 'all') {
-        if (indianstate === 'all') {
+        if (nepalstate === 'all') {
           Object.values(resourcedict).forEach((state) => {
             Object.values(state).forEach((citydata) => {
               Object.values(citydata).forEach((category) => {
@@ -259,19 +258,19 @@ function Resources(props) {
             });
           });
         } else {
-          Object.values(resourcedict[indianstate]).forEach((citydata) => {
+          Object.values(resourcedict[nepalstate]).forEach((citydata) => {
             Object.values(citydata).forEach((category) => {
               category.forEach((x) => a.push(x));
             });
           });
         }
       } else {
-        Object.values(resourcedict[indianstate][city]).forEach((x) => {
+        Object.values(resourcedict[nepalstate][city]).forEach((x) => {
           x.forEach((y) => a.push(y));
         });
       }
     } else {
-      if (indianstate === 'all' && city === 'all') {
+      if (nepalstate === 'all' && city === 'all') {
         Object.values(resourcedict).forEach((state) => {
           Object.values(state).forEach((citydata) => {
             Object.values(citydata).forEach((categorydata) => {
@@ -281,8 +280,8 @@ function Resources(props) {
             });
           });
         });
-      } else if (indianstate !== 'all' && city === 'all') {
-        Object.values(resourcedict[indianstate]).forEach((citydata) => {
+      } else if (nepalstate !== 'all' && city === 'all') {
+        Object.values(resourcedict[nepalstate]).forEach((citydata) => {
           if (category in citydata) {
             citydata[category].forEach((x) => {
               a.push(x);
@@ -290,12 +289,12 @@ function Resources(props) {
           }
         });
       } else {
-        a = resourcedict[indianstate][city][category];
+        a = resourcedict[nepalstate][city][category];
       }
     }
     try {
-      if ('PAN India' in resourcedict) {
-        resourcedict['PAN India']['Multiple']['CoVID-19 Testing Lab'].forEach(
+      if ('PAN Nepal' in resourcedict) {
+        resourcedict['PAN Nepal']['Multiple']['CoVID-19 Testing Lab'].forEach(
           (element) => {
             a.push(element);
           }
@@ -312,8 +311,8 @@ function Resources(props) {
     setSearchValue('');
   };
 
-  const changeIndianState = function (changedstateevent) {
-    setIndianState(changedstateevent.target.value);
+  const changeNepalState = function (changedstateevent) {
+    setNepalState(changedstateevent.target.value);
     // setCity(
     //   Object.keys(resourcedict[changedstateevent.target.value]).sort()[0]
     // );
@@ -346,7 +345,7 @@ function Resources(props) {
 
   const openSharingLink = function (message) {
     const shareUri = `https://www.addtoany.com/share#url=${encodeURI(
-      'https://www.covid19india.org/essentials'
+      'https://www.nepalcovid19.org/essentials'
     )}&title=${encodeURI(message)}`;
 
     const h = 500;
@@ -376,7 +375,7 @@ function Resources(props) {
         .share({
           title: document.title,
           text: message,
-          url: 'https://www.covid19india.org/essentials',
+          url: 'https://www.nepalcovid19.org/essentials',
         })
         .then()
         .catch((error) => {});
@@ -398,8 +397,8 @@ function Resources(props) {
   return (
     <div className="Resources" id="top-elem">
       <Helmet>
-        <title>Essentials - covid19india.org</title>
-        <meta name="title" content="Essentials - covid19india.org" />
+        <title>Essentials - nepalcovid19.org</title>
+        <meta name="title" content="Essentials - nepalcovid19.org" />
       </Helmet>
 
       <div className="filtersection">
@@ -413,9 +412,9 @@ function Resources(props) {
             isDisclaimerOpen={isDisclaimerOpen}
             anchorEl={anchorEl}
             handleDisclaimerClose={handleDisclaimerClose}
-            indianstate={indianstate}
-            changeIndianState={changeIndianState}
-            stateoptions={getIndianStateOptions()}
+            nepalstate={nepalstate}
+            changeNepalState={changeNepalState}
+            stateoptions={getnepalstateOptions()}
             city={city}
             changeCity={changeCity}
             cityoptions={getCityOptions()}
@@ -433,9 +432,9 @@ function Resources(props) {
             isDisclaimerOpen={isDisclaimerOpen}
             anchorEl={anchorEl}
             handleDisclaimerClose={handleDisclaimerClose}
-            indianstate={indianstate}
-            changeIndianState={changeIndianState}
-            stateoptions={getIndianStateOptions()}
+            nepalstate={nepalstate}
+            changeNepalState={changeNepalState}
+            stateoptions={getnepalstateOptions()}
             city={city}
             changeCity={changeCity}
             cityoptions={getCityOptions()}

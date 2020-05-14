@@ -130,8 +130,8 @@ function FiltersDesktop(props) {
             native
             labelId="demo-simple-select-outlined-label"
             id="stateselect"
-            value={props.indianstate}
-            onChange={props.changeIndianState}
+            value={props.nepalstate}
+            onChange={props.changeNepalState}
             label="State/UT"
             classes={{root: classesMenuItem.root}}
           >
