@@ -1,0 +1,709 @@
+{
+  "zones": [
+    {
+      "district": "Jhapa",
+      "districtcode": "1",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Orange"
+    },
+    {
+      "district": "Illam",
+      "districtcode": "2",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Panchthar",
+      "districtcode": "3",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Taplejung",
+      "districtcode": "4",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Morang",
+      "districtcode": "4",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Sunsari",
+      "districtcode": "6",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Bhojpur",
+      "districtcode": "7",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Orange"
+    },
+    {
+      "district": "Dhankuta",
+      "districtcode": "8",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Tehrathum",
+      "districtcode": "9",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Sankhuwasabha",
+      "districtcode": "10",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Udayapur",
+      "districtcode": "13",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Red"
+    },
+    {
+      "district": "Khotang",
+      "districtcode": "14",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Okhaldunga",
+      "districtcode": "15",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Solukhumbu",
+      "districtcode": "16",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Saptari",
+      "districtcode": "16",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 1",
+      "statecode": "P1",
+      "zone": "Green"
+    },
+    {
+      "district": "Saptari",
+      "districtcode": "11",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+    {
+      "district": "Siraha",
+      "districtcode": "12",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Green"
+    },
+    {
+      "district": "Dhanusha",
+      "districtcode": "17",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+    {
+      "district": "Mahottari",
+      "districtcode": "18",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+    {
+      "district": "Sarlahi",
+      "districtcode": "19",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+    {
+      "district": "Bara",
+      "districtcode": "31",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+
+    {
+      "district": "Parsa",
+      "districtcode": "32",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Red"
+    },
+
+    {
+      "district": "Rautahat",
+      "districtcode": "33",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 2",
+      "statecode": "P2",
+      "zone": "Orange"
+    },
+    {
+      "district": "Sindhuli",
+      "districtcode": "20",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Ramechhap",
+      "districtcode": "21",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Dolakha",
+      "districtcode": "22",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Bhaktapur",
+      "districtcode": "23",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Orange"
+    },
+    {
+      "district": "Dhading",
+      "districtcode": "24",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+
+    {
+      "district": "Kathmandu",
+      "districtcode": "25",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Orange"
+    },
+    {
+      "district": "Kavrepalanchowk",
+      "districtcode": "26",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Lalitpur",
+      "districtcode": "27",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Nuwakot",
+      "districtcode": "28",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Rasuwa",
+      "districtcode": "29",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Sindhupalchowk",
+      "districtcode": "25",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Chitwan",
+      "districtcode": "34",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Orange"
+    },
+    {
+      "district": "Makwanpur",
+      "districtcode": "35",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Bagmati Province",
+      "statecode": "P3",
+      "zone": "Green"
+    },
+    {
+      "district": "Gorkha",
+      "districtcode": "36",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Kaski",
+      "districtcode": "37",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Lamjung",
+      "districtcode": "38",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Syangja",
+      "districtcode": "39",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Tanahu",
+      "districtcode": "40",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Manang",
+      "districtcode": "41",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Nawalpur",
+      "districtcode": "43",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Orange"
+    },
+    {
+      "district": "Baglung",
+      "districtcode": "49",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Orange"
+    },
+    {
+      "district": "Myagdi",
+      "districtcode": "50",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Parbat",
+      "districtcode": "51",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Mustang",
+      "districtcode": "52",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Gandaki Province",
+      "statecode": "P4",
+      "zone": "Green"
+    },
+    {
+      "district": "Kapilvastu",
+      "districtcode": "42",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Red"
+    },
+    {
+      "district": "Parasi",
+      "districtcode": "44",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Orange"
+    },
+    {
+      "district": "Rupandehi",
+      "districtcode": "45",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Red"
+    },
+    {
+      "district": "Argakhanchi",
+      "districtcode": "46",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Gulmi",
+      "districtcode": "47",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Palpa",
+      "districtcode": "48",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Dang",
+      "districtcode": "53",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Pyuthan",
+      "districtcode": "54",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Rolpa",
+      "districtcode": "55",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Eastern Rukum",
+      "districtcode": "56",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Green"
+    },
+    {
+      "district": "Banke",
+      "districtcode": "64",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Red"
+    },
+    {
+      "district": "Bardiya",
+      "districtcode": "65",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Province 5",
+      "statecode": "P5",
+      "zone": "Orange"
+    },
+    {
+      "district": "Western Rukum",
+      "districtcode": "57",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Salyan",
+      "districtcode": "58",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Dolpa",
+      "districtcode": "59",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Humla",
+      "districtcode": "60",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Jumla",
+      "districtcode": "61",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Kalikot",
+      "districtcode": "62",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Mugu",
+      "districtcode": "63",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Surkhet",
+      "districtcode": "66",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Dailekh",
+      "districtcode": "67",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Jajarkot",
+      "districtcode": "68",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Karnali Province",
+      "statecode": "P6",
+      "zone": "Green"
+    },
+    {
+      "district": "Kailali",
+      "districtcode": "69",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Orange"
+    },
+    {
+      "district": "Achham",
+      "districtcode": "70",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Doti",
+      "districtcode": "71",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Bajhang",
+      "districtcode": "72",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Bajura",
+      "districtcode": "73",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Kanchanpur",
+      "districtcode": "74",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Orange"
+    },
+    {
+      "district": "Dadeldhura",
+      "districtcode": "75",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Baitadi",
+      "districtcode": "76",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    },
+    {
+      "district": "Darchula",
+      "districtcode": "77",
+      "lastupdated": "14/05/2020",
+      "source": "",
+      "state": "Sudurpaschim Province",
+      "statecode": "P7",
+      "zone": "Green"
+    }
+  ]
+}

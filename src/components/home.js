@@ -7,7 +7,7 @@ import Table from './table';
 import TimeSeriesExplorer from './timeseriesexplorer';
 import Updates from './updates';
 
-import {MAP_META} from '../constants';
+import {STATE_CODES_REVERSE, DATA_DIR} from '../constants';
 import {
   formatDate,
   formatDateAbsolute,
@@ -16,37 +16,63 @@ import {
   parseStateTimeseries,
   parseStateTestTimeseries,
   parseTotalTestTimeseries,
+  parseDistrictZones,
 } from '../utils/common-functions';
 
+import 'intersection-observer';
+import Observer from '@researchgate/react-intersection-observer';
 import axios from 'axios';
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useMemo} from 'react';
 import * as Icon from 'react-feather';
 import {Helmet} from 'react-helmet';
-import {useEffectOnce, useLocalStorage, useFavicon} from 'react-use';
+import {useEffectOnce, useLocalStorage} from 'react-use';
 
 function Home(props) {
-  const [states, setStates] = useState([]);
-  const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
-  const [stateTestData, setStateTestData] = useState({});
+  const [states, setStates] = useState(null);
+  const [stateDistrictWiseData, setStateDistrictWiseData] = useState(null);
+  const [districtZones, setDistrictZones] = useState(null);
+  const [stateTestData, setStateTestData] = useState(null);
   const [lastUpdated, setLastUpdated] = useState('');
-  const [timeseries, setTimeseries] = useState({});
+  const [timeseries, setTimeseries] = useState(null);
   const [fetched, setFetched] = useState(false);
-  const [activeStateCode, setActiveStateCode] = useState('TT');
-  const [regionHighlighted, setRegionHighlighted] = useState(undefined);
-  const [rowHighlighted, setRowHighlighted] = useState({
-    statecode: undefined,
-    isDistrict: false,
-    districtName: undefined,
+  const [regionHighlighted, setRegionHighlighted] = useState({
+    state: 'Total',
   });
   const [showUpdates, setShowUpdates] = useState(false);
   const [anchor, setAnchor] = useState(null);
+  const [mapOption, setMapOption] = useState('confirmed');
+  const [isTimeseriesIntersecting, setIsTimeseriesIntersecting] = useState(
+    false
+  );
+
   const [lastViewedLog, setLastViewedLog] = useLocalStorage(
     'lastViewedLog',
     null
   );
   const [newUpdate, setNewUpdate] = useLocalStorage('newUpdate', false);
 
-  useFavicon(newUpdate ? '/thumnail.png' : '/favicon.ico');
+  const Bell = useMemo(
+    () => (
+      <Icon.Bell
+        onClick={() => {
+          setShowUpdates(!showUpdates);
+          setNewUpdate(false);
+        }}
+      />
+    ),
+    [setNewUpdate, showUpdates]
+  );
+
+  const BellOff = useMemo(
+    () => (
+      <Icon.BellOff
+        onClick={() => {
+          setShowUpdates(!showUpdates);
+        }}
+      />
+    ),
+    [showUpdates]
+  );
 
   useEffectOnce(() => {
     getStates();
@@ -73,18 +99,25 @@ function Home(props) {
   const getStates = async () => {
     try {
       const [
-        {data},
-        stateDistrictWiseResponse,
         {data: statesDailyResponse},
+        {data: zonesResponse},
+      ] = await Promise.all([
+        axios.get('https://api.nepalcovid19.org/states_daily.json'),
+        axios.get(`${DATA_DIR}/zones.json`),
+      ]);
+
+      const [
+        {data},
+        {data: stateDistrictWiseResponse},
         {data: stateTestData},
       ] = await Promise.all([
         axios.get('https://api.nepalcovid19.org/data.json'),
         axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
-        axios.get('https://api.nepalcovid19.org/states_daily.json'),
         axios.get('https://api.nepalcovid19.org/state_test_data.json'),
       ]);
 
       setStates(data.statewise);
+      setDistrictZones(parseDistrictZones(zonesResponse.zones));
 
       const ts = parseStateTimeseries(statesDailyResponse);
       ts['TT'] = preprocessTimeseries(data.cases_time_series);
@@ -107,50 +140,42 @@ function Home(props) {
       });
       setStateTestData(testData);
 
-      setStateDistrictWiseData(stateDistrictWiseResponse.data);
+      setStateDistrictWiseData(stateDistrictWiseResponse);
       setFetched(true);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const onHighlightState = (state, index) => {
-    if (!state && !index) return setRegionHighlighted(null);
-    setRegionHighlighted({state, index});
-  };
-
-  const onHighlightDistrict = (district, state, index) => {
-    if (!state && !index && !district) return setRegionHighlighted(null);
-    setRegionHighlighted({district, state, index});
-  };
-
-  const onMapHighlightChange = useCallback((region) => {
-    setActiveStateCode(region.statecode);
-    if ('districtName' in region)
-      setRowHighlighted({
-        statecode: region.statecode,
-        isDistrict: true,
-        districtName: region.districtName,
-      });
-    else
-      setRowHighlighted({
-        statecode: region.statecode,
-        isDistrict: false,
-        districtName: undefined,
-      });
+  const onHighlightState = useCallback((state) => {
+    if (!state) return setRegionHighlighted(null);
+    setRegionHighlighted({state: state.state});
   }, []);
+
+  const onHighlightDistrict = useCallback((district, state) => {
+    if (!state && !district) return setRegionHighlighted(null);
+    setRegionHighlighted({district, state: state.state});
+  }, []);
+
+  const options = {
+    rootMargin: '0px 0px 0px 0px',
+  };
 
   return (
     <React.Fragment>
       <div className="Home">
         <Helmet>
           <title>Coronavirus Outbreak in Nepal - nepalcovid19.org</title>
-          <meta name="title" content="Coronavirus  Tracker in Nepal" />
+          <meta
+            name="title"
+            content="Coronavirus Outbreak in Nepal: Latest Map and Case Count"
+          />
         </Helmet>
 
         <div className="home-left">
           <div className="header fadeInUp" style={{animationDelay: '1s'}}>
-            {fetched && <Search />}
+            {/* <LanguageSwitcher />*/}
+            {fetched && <Search districtZones={districtZones} />}
 
             <div className="actions">
               <h5>
@@ -158,39 +183,28 @@ function Home(props) {
                   ? ''
                   : formatDateAbsolute(lastUpdated)}
               </h5>
-              {!showUpdates && (
+              {fetched && !showUpdates && (
                 <div className="bell-icon">
-                  {fetched && (
-                    <Icon.Bell
-                      onClick={() => {
-                        setShowUpdates(!showUpdates);
-                        setNewUpdate(false);
-                      }}
-                    />
-                  )}
+                  {fetched && Bell}
                   {newUpdate && <div className="indicator"></div>}
                 </div>
               )}
-              {showUpdates && (
-                <Icon.BellOff
-                  onClick={() => {
-                    setShowUpdates(!showUpdates);
-                  }}
-                />
-              )}
+              {fetched && showUpdates && BellOff}
             </div>
           </div>
 
           {showUpdates && <Updates />}
 
-          {fetched && <Level data={states[0]} />}
-          {fetched && <Minigraph timeseries={timeseries['TT']} />}
-          {fetched && (
+          {states && <Level data={states[0]} />}
+          {timeseries && <Minigraph timeseries={timeseries['TT']} />}
+          {stateDistrictWiseData && (
             <Table
               states={states}
               summary={false}
-              stateDistrictWiseData={stateDistrictWiseData}
-              rowHighlighted={rowHighlighted}
+              districts={stateDistrictWiseData}
+              zones={districtZones}
+              regionHighlighted={regionHighlighted}
+              setRegionHighlighted={setRegionHighlighted}
               onHighlightState={onHighlightState}
               onHighlightDistrict={onHighlightDistrict}
             />
@@ -198,32 +212,50 @@ function Home(props) {
         </div>
 
         <div className="home-right">
-          {fetched && (
-            <React.Fragment>
+          <React.Fragment>
+            {fetched && (
               <MapExplorer
-                mapMeta={MAP_META.Nepal}
+                mapName={'Nepal'}
                 states={states}
-                stateDistrictWiseData={stateDistrictWiseData}
+                districts={stateDistrictWiseData}
+                zones={districtZones}
                 stateTestData={stateTestData}
                 regionHighlighted={regionHighlighted}
-                onMapHighlightChange={onMapHighlightChange}
-                isCountryLoaded={true}
+                setRegionHighlighted={setRegionHighlighted}
                 anchor={anchor}
                 setAnchor={setAnchor}
+                mapOption={mapOption}
+                setMapOption={setMapOption}
               />
+            )}
 
-              {fetched && (
-                <TimeSeriesExplorer
-                  timeseries={timeseries[activeStateCode]}
-                  activeStateCode={activeStateCode}
-                  onHighlightState={onHighlightState}
-                  states={states}
-                  anchor={anchor}
-                  setAnchor={setAnchor}
-                />
-              )}
-            </React.Fragment>
-          )}
+            <Observer
+              options={options}
+              onChange={({isIntersecting}) =>
+                setIsTimeseriesIntersecting(isIntersecting)
+              }
+            >
+              <div>
+                {timeseries && (
+                  <TimeSeriesExplorer
+                    timeseries={
+                      timeseries[
+                        STATE_CODES_REVERSE[regionHighlighted?.state] || 'TT'
+                      ]
+                    }
+                    activeStateCode={
+                      STATE_CODES_REVERSE[regionHighlighted?.state] || 'TT'
+                    }
+                    onHighlightState={onHighlightState}
+                    states={states}
+                    anchor={anchor}
+                    setAnchor={setAnchor}
+                    isIntersecting={isTimeseriesIntersecting}
+                  />
+                )}
+              </div>
+            </Observer>
+          </React.Fragment>
         </div>
       </div>
       {fetched && <Footer />}
@@ -231,4 +263,4 @@ function Home(props) {
   );
 }
 
-export default React.memo(Home);
+export default Home;

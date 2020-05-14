@@ -1,47 +1,86 @@
+import Clusters from './clusters';
 import DeltaBarGraph from './deltabargraph';
 import Footer from './footer';
 import Level from './level';
 import MapExplorer from './mapexplorer';
 import Minigraph from './minigraph';
-import TimeSeries from './timeseries';
+import StateMeta from './statemeta';
+import TimeSeriesExplorer from './timeseriesexplorer';
 
-import {MAP_META, STATE_CODES} from '../constants';
+import {STATE_CODES, STATE_POPULATIONS, DATA_DIR} from '../constants';
 import {
   formatDateAbsolute,
   formatNumber,
+  mergeTimeseries,
   parseStateTimeseries,
+  parseStateTestTimeseries,
+  parseDistrictZones,
 } from '../utils/common-functions';
 
+import Breadcrumb from '@primer/components/lib/Breadcrumb';
+import Dropdown from '@primer/components/lib/Dropdown';
+import anime from 'animejs';
 import axios from 'axios';
 import {format, parse} from 'date-fns';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import * as Icon from 'react-feather';
 import {Helmet} from 'react-helmet';
-import {Link} from 'react-router-dom';
+import {Link, useParams, Redirect} from 'react-router-dom';
+import {useMeasure, useEffectOnce} from 'react-use';
+
+function PureBreadcrumbs({stateName, stateCode, fetched, allStateData}) {
+  return (
+    <div className="breadcrumb">
+      <Breadcrumb>
+        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+        <Dropdown direction="w">
+          <summary>
+            <Breadcrumb.Item href={`${stateCode}`} selected>
+              {stateName}
+            </Breadcrumb.Item>
+            <Dropdown.Caret className="caret" />
+          </summary>
+          {fetched && (
+            <Dropdown.Menu direction="se">
+              {allStateData.map((state) => (
+                <Dropdown.Item key={state.statecode} className="item">
+                  <Link to={`${state.statecode}`}>
+                    {STATE_CODES[state.statecode]}
+                  </Link>
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          )}
+        </Dropdown>
+      </Breadcrumb>
+    </div>
+  );
+}
+
+const Breadcrumbs = React.memo(PureBreadcrumbs);
 
 function State(props) {
-  const mapRef = useRef();
-  const tsRef = useRef();
+  const stateCode = useParams().stateCode.toUpperCase();
+  const stateName = STATE_CODES[stateCode];
 
+  const [allStateData, setAllStateData] = useState({});
   const [fetched, setFetched] = useState(false);
+  const [districtZones, setDistrictZones] = useState(null);
   const [timeseries, setTimeseries] = useState({});
-  const [graphOption, setGraphOption] = useState(1);
-  const [timeseriesMode, setTimeseriesMode] = useState(true);
-  const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
-  const [stateData, setStateData] = useState({});
+  const [stateData, setStateData] = useState(null);
   const [testData, setTestData] = useState({});
   const [sources, setSources] = useState({});
   const [districtData, setDistrictData] = useState({});
-  const [stateCode] = useState(
-    window.location.pathname.split('/').pop().toUpperCase()
-  );
-  const [stateName] = useState(STATE_CODES[stateCode]);
+  const [mapOption, setMapOption] = useState('confirmed');
+  const [mapSwitcher, {width}] = useMeasure();
+  const [showAllDistricts, setShowAllDistricts] = useState(false);
+  const [regionHighlighted, setRegionHighlighted] = useState({
+    state: stateName,
+  });
 
-  useEffect(() => {
-    if (fetched === false) {
-      getState(stateCode);
-    }
-  }, [fetched, stateCode]);
+  useEffectOnce(() => {
+    getState(stateCode);
+  });
 
   const getState = async (code) => {
     try {
@@ -51,291 +90,397 @@ function State(props) {
         {data: statesDailyResponse},
         {data: stateTestResponse},
         {data: sourcesResponse},
+        {data: zonesResponse},
       ] = await Promise.all([
         axios.get('https://api.nepalcovid19.org/data.json'),
         axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
         axios.get('https://api.nepalcovid19.org/states_daily.json'),
         axios.get('https://api.nepalcovid19.org/state_test_data.json'),
         axios.get('https://api.nepalcovid19.org/sources_list.json'),
+        axios.get(`${DATA_DIR}/zones.json`),
       ]);
-      const states = dataResponse.statewise;
-      setStateData(states.find((s) => s.statecode === code));
-      const ts = parseStateTimeseries(statesDailyResponse)[code];
-      setTimeseries(ts);
-      const statesTests = stateTestResponse.states_tested_data;
       const name = STATE_CODES[code];
-      setTestData(
-        statesTests.filter(
-          (obj) => obj.state === name && obj.totaltested !== ''
-        )
-      );
+
+      const states = dataResponse.statewise;
+      setAllStateData(states.filter((state) => state.statecode !== code));
+      setStateData([states.find((s) => s.statecode === code)]);
+      // Timeseries
+      const ts = parseStateTimeseries(statesDailyResponse)[code];
+      const testTs = parseStateTestTimeseries(
+        stateTestResponse.states_tested_data
+      )[code];
+      // Merge
+      const tsMerged = mergeTimeseries({[code]: ts}, {[code]: testTs});
+      setTimeseries(tsMerged[code]);
+      // District data
       setDistrictData({
         [name]: stateDistrictWiseResponse[name],
       });
       const sourceList = sourcesResponse.sources_list;
       setSources(sourceList.filter((state) => state.statecode === code));
+
+      const statesTests = stateTestResponse.states_tested_data;
+      setTestData(
+        statesTests.filter(
+          (obj) => obj.state === name && obj.totaltested !== ''
+        )
+      );
+
+      setDistrictZones(parseDistrictZones(zonesResponse.zones, stateName));
+
       setFetched(true);
+      anime({
+        targets: '.highlight',
+        duration: 200,
+        delay: 3000,
+        translateX:
+          mapOption === 'confirmed'
+            ? `${width * 0}px`
+            : mapOption === 'active'
+            ? `${width * 0.25}px`
+            : mapOption === 'recovered'
+            ? `${width * 0.5}px`
+            : mapOption === 'deceased'
+            ? `${width * 0.75}px`
+            : '0px',
+        easing: 'spring(1, 80, 90, 10)',
+        opacity: 1,
+      });
     } catch (err) {
       console.log(err);
     }
   };
 
   const testObjLast = testData[testData.length - 1];
+  const population = STATE_POPULATIONS[stateName];
 
-  return (
-    <React.Fragment>
-      <div className="State">
+  function toggleShowAllDistricts() {
+    setShowAllDistricts(!showAllDistricts);
+  }
+
+  const getGridRowCount = () => {
+    const gridColumnCount = window.innerWidth >= 540 ? 3 : 2;
+    const districtCount =
+      (districtData[stateName] &&
+        Object.keys(districtData[stateName].districtData).length) ||
+      0;
+    const gridRowCount = Math.ceil(districtCount / gridColumnCount);
+    return gridRowCount;
+  };
+  const gridRowCount = getGridRowCount();
+
+  if (!stateName) {
+    return <Redirect to="/" />;
+  } else {
+    return (
+      <React.Fragment>
         <Helmet>
           <title>
-            Coronavirus Outbreak in {STATE_CODES[stateCode]} - nepalcovid19.org
+            Coronavirus Outbreak in {STATE_CODES[stateCode]} - covid19india.org
           </title>
           <meta
             name="title"
             content={`Coronavirus Outbreak in ${STATE_CODES[stateCode]}: Latest Map and Case Count`}
           />
         </Helmet>
-        <div className="state-left">
-          <div className="breadcrumb fadeInUp">
-            <Link to="/">Home</Link>/
-            <Link to={`${stateCode}`}>{stateName}</Link>
-          </div>
-          <div className="header">
-            <div
-              className="header-left fadeInUp"
-              style={{animationDelay: '0.3s'}}
-            >
-              <h1>{stateName}</h1>
-              <h5>
-                Last Updated on{' '}
-                {Object.keys(stateData).length
-                  ? formatDateAbsolute(stateData.lastupdatedtime)
-                  : ''}
-              </h5>
-            </div>
-            <div
-              className="header-right fadeInUp"
-              style={{animationDelay: '0.5s'}}
-            >
-              <h5>Tested</h5>
-              <h2>{formatNumber(testObjLast?.totaltested)}</h2>
-              <h5 className="timestamp">
-                {!isNaN(parse(testObjLast?.updatedon, 'dd/MM/yyyy', new Date()))
-                  ? `As of ${format(
-                      parse(testObjLast?.updatedon, 'dd/MM/yyyy', new Date()),
-                      'dd MMM'
-                    )}`
-                  : ''}
-              </h5>
-              <h5>
-                {'per '}
-                {testObjLast?.totaltested && (
-                  <a href={testObjLast.source} target="_noblank">
-                    source
-                  </a>
-                )}
-              </h5>
-            </div>
-          </div>
 
-          {fetched && <Level data={stateData} />}
-          {fetched && <Minigraph timeseries={timeseries} />}
-          {fetched && (
-            <React.Fragment>
-              {
-                <MapExplorer
-                  forwardRef={mapRef}
-                  mapMeta={MAP_META[stateName]}
-                  states={[stateData]}
-                  stateDistrictWiseData={districtData}
-                  stateTestData={testData}
-                  isCountryLoaded={false}
-                />
-              }
-            </React.Fragment>
-          )}
+        <div className="State">
+          <div className="state-left">
+            <Breadcrumbs
+              stateName={stateName}
+              stateCode={stateCode}
+              fetched={fetched}
+              allStateData={allStateData}
+            />
 
-          {fetched && (
-            <div className="meta-secondary">
-              <div className="unknown">
-                <Icon.AlertCircle />
-                <div className="unknown-right">
-                  Awaiting district details for{' '}
-                  {districtData[stateName]?.districtData['Unknown']
-                    ?.confirmed || '0'}{' '}
-                  cases
-                </div>
-              </div>
-              <div className="sources">
-                <Icon.Compass />
-                <div className="sources-right">
-                  Data collected from sources{' '}
-                  {sources.length > 0
-                    ? Object.keys(sources[0]).map((key) => {
-                        if (
-                          key.match('source') &&
-                          sources[0][key] !== '' &&
-                          sources[0][key] !== '0'
-                        ) {
-                          const num = key.match(/\d+/);
-                          return (
-                            <React.Fragment>
-                              {num > 1 ? ',' : ''}
-                              <a href={sources[0][key]}>{num}</a>
-                            </React.Fragment>
-                          );
-                        }
-                        return null;
-                      })
+            <div className="header">
+              <div
+                className="header-left fadeInUp"
+                style={{animationDelay: '0.3s'}}
+              >
+                <h1>{stateName}</h1>
+                <h5>
+                  Last Updated on{' '}
+                  {stateData && Object.keys(stateData[0]).length
+                    ? formatDateAbsolute(stateData[0].lastupdatedtime)
                     : ''}
-                </div>
+                </h5>
+              </div>
+
+              <div
+                className="header-right fadeInUp"
+                style={{animationDelay: '0.5s'}}
+              >
+                <h5>Tested</h5>
+                <h2>{formatNumber(testObjLast?.totaltested)}</h2>
+                <h5 className="timestamp">
+                  {!isNaN(
+                    parse(testObjLast?.updatedon, 'dd/MM/yyyy', new Date())
+                  )
+                    ? `As of ${format(
+                        parse(testObjLast?.updatedon, 'dd/MM/yyyy', new Date()),
+                        'dd MMM'
+                      )}`
+                    : ''}
+                </h5>
+                <h5>
+                  {'per '}
+                  {testObjLast?.totaltested && (
+                    <a href={testObjLast.source} target="_noblank">
+                      source
+                    </a>
+                  )}
+                </h5>
               </div>
             </div>
-          )}
-        </div>
 
-        <div className="state-right">
-          {fetched && (
-            <React.Fragment>
-              <div className="district-bar">
+            {fetched && (
+              <div className="map-switcher" ref={mapSwitcher}>
                 <div
-                  className="district-bar-left fadeInUp"
-                  style={{animationDelay: '0.6s'}}
-                >
-                  <h2>Top districts</h2>
-                  <div className="districts">
-                    {districtData[stateName]
-                      ? Object.keys(districtData[stateName].districtData)
-                          .slice(0, 6)
-                          .sort(
-                            (a, b) =>
-                              districtData[stateName].districtData[b]
-                                .confirmed -
-                              districtData[stateName].districtData[a].confirmed
-                          )
-                          .map((district, index) => {
+                  className={`highlight ${mapOption}`}
+                  style={{
+                    transform: `translateX(${width * 0}px)`,
+                    opacity: 0,
+                  }}
+                ></div>
+                <div
+                  className="clickable"
+                  onClick={() => {
+                    setMapOption('confirmed');
+                    anime({
+                      targets: '.highlight',
+                      translateX: `${width * 0}px`,
+                      easing: 'spring(1, 80, 90, 10)',
+                    });
+                  }}
+                ></div>
+                <div
+                  className="clickable"
+                  onClick={() => {
+                    setMapOption('active');
+                    anime({
+                      targets: '.highlight',
+                      translateX: `${width * 0.25}px`,
+                      easing: 'spring(1, 80, 90, 10)',
+                    });
+                  }}
+                ></div>
+                <div
+                  className="clickable"
+                  onClick={() => {
+                    setMapOption('recovered');
+                    anime({
+                      targets: '.highlight',
+                      translateX: `${width * 0.5}px`,
+                      easing: 'spring(1, 80, 90, 10)',
+                    });
+                  }}
+                ></div>
+                <div
+                  className="clickable"
+                  onClick={() => {
+                    setMapOption('deceased');
+                    anime({
+                      targets: '.highlight',
+                      translateX: `${width * 0.75}px`,
+                      easing: 'spring(1, 80, 90, 10)',
+                    });
+                  }}
+                ></div>
+              </div>
+            )}
+
+            {fetched && <Level data={stateData[0]} />}
+            {fetched && <Minigraph timeseries={timeseries} />}
+            {fetched && (
+              <MapExplorer
+                mapName={stateName}
+                states={stateData}
+                districts={districtData}
+                zones={districtZones}
+                stateTestData={testData}
+                regionHighlighted={regionHighlighted}
+                setRegionHighlighted={setRegionHighlighted}
+                mapOption={mapOption}
+                isCountryLoaded={false}
+              />
+            )}
+
+            {fetched && (
+              <div className="meta-secondary">
+                <div className="alert">
+                  <Icon.AlertCircle />
+                  <div className="alert-right">
+                    Awaiting district details for{' '}
+                    {districtData[stateName]?.districtData['Unknown']
+                      ?.confirmed || '0'}{' '}
+                    cases
+                  </div>
+                </div>
+                <div className="alert">
+                  <Icon.Compass />
+                  <div className="alert-right">
+                    Data collected from sources{' '}
+                    {sources.length > 0
+                      ? Object.keys(sources[0]).map((key, index) => {
+                          if (key.match('source') && sources[0][key] !== '') {
+                            const num = key.match(/\d+/);
                             return (
-                              <div key={index} className="district">
-                                <h2>
-                                  {
-                                    districtData[stateName].districtData[
-                                      district
-                                    ].confirmed
-                                  }
-                                </h2>
-                                <h5>{district}</h5>
-                                <div className="delta">
-                                  <Icon.ArrowUp />
-                                  <h6>
-                                    {
-                                      districtData[stateName].districtData[
-                                        district
-                                      ].delta.confirmed
-                                    }
-                                  </h6>
-                                </div>
-                              </div>
+                              <React.Fragment key={index}>
+                                {num > 1 ? ',' : ''}
+                                <a href={sources[0][key]}>{num}</a>
+                              </React.Fragment>
                             );
-                          })
+                          }
+                          return null;
+                        })
                       : ''}
                   </div>
                 </div>
-                <div className="district-bar-right">
-                  {
-                    <DeltaBarGraph
-                      timeseries={timeseries.slice(-5)}
-                      arrayKey={'dailyconfirmed'}
-                    />
-                  }
-                </div>
               </div>
+            )}
 
-              <Link to="/essentials">
-                <div
-                  className="to-essentials fadeInUp"
-                  style={{animationDelay: '0.9s'}}
-                >
-                  <h2>Go to essentials</h2>
-                  <Icon.ArrowRightCircle />
-                </div>
-              </Link>
-
-              <div
-                className="timeseries-header fadeInUp"
-                style={{animationDelay: '2.5s'}}
-                ref={tsRef}
-              >
-                <div className="tabs">
-                  <div
-                    className={`tab ${graphOption === 1 ? 'focused' : ''}`}
-                    onClick={() => {
-                      setGraphOption(1);
-                    }}
-                  >
-                    <h4>Cumulative</h4>
-                  </div>
-                  <div
-                    className={`tab ${graphOption === 2 ? 'focused' : ''}`}
-                    onClick={() => {
-                      setGraphOption(2);
-                    }}
-                  >
-                    <h4>Daily</h4>
-                  </div>
-                </div>
-
-                <div className="scale-modes">
-                  <label className="main">Scale Modes</label>
-                  <div className="timeseries-mode">
-                    <label htmlFor="timeseries-mode">Uniform</label>
-                    <input
-                      type="checkbox"
-                      checked={timeseriesMode}
-                      className="switch"
-                      aria-label="Checked by default to scale uniformly."
-                      onChange={(event) => {
-                        setTimeseriesMode(!timeseriesMode);
-                      }}
-                    />
-                  </div>
-                  <div
-                    className={`timeseries-logmode ${
-                      graphOption !== 1 ? 'disabled' : ''
-                    }`}
-                  >
-                    <label htmlFor="timeseries-logmode">Logarithmic</label>
-                    <input
-                      type="checkbox"
-                      checked={graphOption === 1 && timeseriesLogMode}
-                      className="switch"
-                      disabled={graphOption !== 1}
-                      onChange={(event) => {
-                        setTimeseriesLogMode(!timeseriesLogMode);
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <TimeSeries
-                timeseries={timeseries}
-                type={graphOption}
-                mode={timeseriesMode}
-                logMode={timeseriesLogMode}
+            {fetched && (
+              <StateMeta
+                stateData={stateData[0]}
+                lastTestObject={testObjLast}
+                population={population}
+                lastSevenDaysData={timeseries.slice(-7)}
+                totalData={allStateData.filter(
+                  (state) => state.statecode === 'TT'
+                )}
               />
-            </React.Fragment>
-          )}
-        </div>
-        {/* <div className="state-left">
-          <div className="Clusters fadeInUp" style={{animationDelay: '0.8s'}}>
-            <h1>Network of transmission</h1>
-            <Clusters stateCode={stateCode} />
+            )}
           </div>
-        </div> */}
-        <div className="state-right"></div>
-      </div>
-      <Footer />
-    </React.Fragment>
-  );
+
+          <div className="state-right">
+            {fetched && (
+              <React.Fragment>
+                <div
+                  className="district-bar"
+                  style={!showAllDistricts ? {display: 'flex'} : {}}
+                >
+                  <div
+                    className="district-bar-left fadeInUp"
+                    style={{animationDelay: '0.6s'}}
+                  >
+                    <h2 className={mapOption}>Top districts</h2>
+                    <div
+                      className={`districts ${
+                        showAllDistricts ? 'is-grid' : ''
+                      }`}
+                      style={
+                        showAllDistricts
+                          ? {gridTemplateRows: `repeat(${gridRowCount}, 2rem)`}
+                          : {}
+                      }
+                    >
+                      {districtData[stateName]
+                        ? Object.keys(districtData[stateName].districtData)
+                            .filter((d) => d !== 'Unknown')
+                            .sort((a, b) => {
+                              const districtB =
+                                districtData[stateName].districtData[b];
+                              const districtA =
+                                districtData[stateName].districtData[a];
+                              return (
+                                districtB[mapOption] - districtA[mapOption]
+                              );
+                            })
+                            .slice(0, showAllDistricts ? undefined : 5)
+                            .map((district, index) => {
+                              const cases =
+                                districtData[stateName].districtData[district];
+                              return (
+                                <div key={index} className="district">
+                                  <h2>{cases[mapOption]}</h2>
+                                  <h5>{district}</h5>
+                                  {mapOption !== 'active' && (
+                                    <div className="delta">
+                                      <Icon.ArrowUp className={mapOption} />
+                                      <h6 className={mapOption}>
+                                        {cases.delta[mapOption]}
+                                      </h6>
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })
+                        : ''}
+                    </div>
+                    {districtData[stateName] &&
+                      Object.keys(districtData[stateName].districtData).length >
+                        5 && (
+                        <button
+                          className="button"
+                          onClick={toggleShowAllDistricts}
+                        >
+                          {showAllDistricts ? `View less` : `View all`}
+                        </button>
+                      )}
+                  </div>
+                  <div className="district-bar-right">
+                    {(mapOption === 'confirmed' ||
+                      mapOption === 'deceased') && (
+                      <div
+                        className="happy-sign fadeInUp"
+                        style={{animationDelay: '0.6s'}}
+                      >
+                        {timeseries
+                          .slice(-5)
+                          .every((day) => day[`daily${mapOption}`] === 0) && (
+                          <div
+                            className={`alert ${
+                              mapOption === 'confirmed' ? 'is-green' : ''
+                            }`}
+                          >
+                            <Icon.Smile />
+                            <div className="alert-right">
+                              No new {mapOption} cases in the past five days
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {
+                      <DeltaBarGraph
+                        timeseries={timeseries.slice(-5)}
+                        arrayKey={`daily${mapOption}`}
+                      />
+                    }
+                  </div>
+                </div>
+
+                {false && (
+                  <Link to="/essentials">
+                    <div
+                      className="to-essentials fadeInUp"
+                      style={{animationDelay: '0.9s'}}
+                    >
+                      <h2>Go to essentials</h2>
+                      <Icon.ArrowRightCircle />
+                    </div>
+                  </Link>
+                )}
+
+                <TimeSeriesExplorer timeseries={timeseries} />
+              </React.Fragment>
+            )}
+          </div>
+
+          <div className="state-left">
+            <div className="Clusters fadeInUp" style={{animationDelay: '0.8s'}}>
+              <h1>Network of Transmission</h1>
+              <Clusters stateCode={stateCode} />
+            </div>
+          </div>
+
+          <div className="state-right"></div>
+        </div>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
-export default State;
+export default React.memo(State);

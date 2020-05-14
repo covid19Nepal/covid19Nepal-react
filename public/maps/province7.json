@@ -1,93 +1,5 @@
 {
   "type": "Topology",
-  "objects": {
-    "province7_district": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Polygon",
-          "id": 69,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Kailali"
-          },
-          "arcs": [[0, 1, 2, 3]]
-        },
-        {
-          "type": "Polygon",
-          "id": 70,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Achham"
-          },
-          "arcs": [[4, 5, 6, 7]]
-        },
-        {
-          "type": "Polygon",
-          "id": 71,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Doti"
-          },
-          "arcs": [[8, -8, 9, -1, 10, 11]]
-        },
-        {
-          "type": "Polygon",
-          "id": 72,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Bajhang"
-          },
-          "arcs": [[12, 13, -5, -9, 14, 15]]
-        },
-        {
-          "type": "Polygon",
-          "id": 73,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Bajura"
-          },
-          "arcs": [[16, -6, -14]]
-        },
-        {
-          "type": "Polygon",
-          "id": 74,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Kanchanpur"
-          },
-          "arcs": [[-3, 17, 18]]
-        },
-        {
-          "type": "Polygon",
-          "id": 75,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Dadeldhura"
-          },
-          "arcs": [[-11, -4, -19, 19, 20]]
-        },
-        {
-          "type": "Polygon",
-          "id": 76,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Baitadi"
-          },
-          "arcs": [[21, -15, -12, -21, 22]]
-        },
-        {
-          "type": "Polygon",
-          "id": 77,
-          "properties": {
-            "st_nm": "sudurpaschim province",
-            "district": "Darchula"
-          },
-          "arcs": [[-16, -22, 23]]
-        }
-      ]
-    }
-  },
   "arcs": [
     [
       [2894, 3670],
@@ -7221,9 +7133,118 @@
       [-8, 3]
     ]
   ],
-  "bbox": [80.050926, 28.397205, 81.808723, 30.245025],
   "transform": {
     "scale": [0.00017579727972797245, 0.00018480048004800465],
     "translate": [80.050926, 28.397205]
+  },
+  "objects": {
+    "province7_district": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Kailali",
+            "dt_code": "69",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[0, 1, 2, 3]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Achham",
+            "dt_code": "70",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[4, 5, 6, 7]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Doti",
+            "dt_code": "71",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[8, -8, 9, -1, 10, 11]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Bajhang",
+            "dt_code": "72",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[12, 13, -5, -9, 14, 15]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Bajura",
+            "dt_code": "73",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[16, -6, -14]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Kanchanpur",
+            "dt_code": "74",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[-3, 17, 18]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Dadeldhura",
+            "dt_code": "75",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[-11, -4, -19, 19, 20]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Baitadi",
+            "dt_code": "76",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[21, -15, -12, -21, 22]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Darchula",
+            "dt_code": "77",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "arcs": [[-16, -22, 23]]
+        }
+      ]
+    }
+  },
+  "crs": {
+    "type": "name",
+    "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}
   }
 }

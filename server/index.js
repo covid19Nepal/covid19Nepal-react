@@ -14,5 +14,4 @@ require('@babel/register')({
     'dynamic-import-node',
   ],
 });
-
 require('./server');

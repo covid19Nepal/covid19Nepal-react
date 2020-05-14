@@ -6,7 +6,7 @@ export const testedToolTip = (
   <span className="tooltip-tested" onClick={(e) => e.stopPropagation()}>
     <Icon.Info
       data-for="tested"
-      data-tip="Reporting total samples tested from ICMR data"
+      data-tip="Reporting total samples tested from Nepal govt data"
       data-event="touchstart mouseover"
       data-event-off="mouseleave"
     />

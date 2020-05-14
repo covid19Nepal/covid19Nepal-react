@@ -1,13 +1,16 @@
 import {
   STATE_CODES_ARRAY,
-  DISTRICTS_ARRAY,
   STATE_CODES_REVERSE,
+  STATE_CODES,
 } from '../constants';
 
 import Bloodhound from 'bloodhound-js';
+import classnames from 'classnames';
 import React, {useState, useCallback, useRef} from 'react';
 import * as Icon from 'react-feather';
+import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
+import {useDebounce} from 'react-use';
 
 const engine = new Bloodhound({
   initialize: true,
@@ -18,10 +21,24 @@ const engine = new Bloodhound({
 
 const districtEngine = new Bloodhound({
   initialize: true,
-  local: DISTRICTS_ARRAY,
   limit: 5,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('district'),
+  indexRemote: true,
+  remote: {
+    url: 'https://api.nepalcovid19.org/state_district_wise.json',
+    transform: function (response) {
+      const districts = [];
+      Object.keys(response).map((stateName) => {
+        const districtData = response[stateName].districtData;
+        Object.keys(districtData).map((districtName) => {
+          return districts.push({district: districtName, state: stateName});
+        });
+        return null;
+      });
+      return districts;
+    },
+  },
 });
 
 const essentialsEngine = new Bloodhound({
@@ -45,11 +62,20 @@ const essentialsEngine = new Bloodhound({
   },
 });
 
-function Search(props) {
+let focused = false;
+const suggestions = [
+  'Kathmandu',
+  'Covid Testing',
+  'Health Facilities',
+  'Quarantine',
+];
+
+function Search({districtZones}) {
   const [searchValue, setSearchValue] = useState('');
   const [expand, setExpand] = useState(false);
   const [results, setResults] = useState([]);
   const searchInput = useRef(null);
+  const {t} = useTranslation();
 
   const handleSearch = useCallback((searchInput) => {
     const results = [];
@@ -67,10 +93,10 @@ function Search(props) {
     };
 
     const districtSync = (datums) => {
-      datums.slice(0, 5).map((result, index) => {
+      datums.slice(0, 3).map((result, index) => {
         const districtObj = {
-          name: result.district + ', ' + result.state,
-          type: 'state',
+          name: result.district,
+          type: 'district',
           route: STATE_CODES_REVERSE[result.state],
         };
         results.push(districtObj);
@@ -96,15 +122,22 @@ function Search(props) {
       setResults([...results]);
     };
 
-    const essentialsAsync = (datums) => {
-      // to handle async remote call on initial launch
-      essentialsEngine.search(searchInput, essentialsSync);
-    };
-
     engine.search(searchInput, sync);
     districtEngine.search(searchInput, districtSync);
-    essentialsEngine.search(searchInput, essentialsSync, essentialsAsync);
+    essentialsEngine.search(searchInput, essentialsSync);
   }, []);
+
+  useDebounce(
+    () => {
+      if (searchValue) {
+        handleSearch(searchValue);
+      } else {
+        setResults([]);
+      }
+    },
+    100,
+    [searchValue]
+  );
 
   function setNativeValue(element, value) {
     const valueSetter = Object.getOwnPropertyDescriptor(element, 'value').set;
@@ -121,9 +154,57 @@ function Search(props) {
     }
   }
 
+  function fillPlaceholder(target, index, cursorPosition, callback) {
+    if (focused) {
+      target.textContent = '';
+      return true;
+    }
+    const text = suggestions[index];
+    const placeholder = target.textContent;
+    target.classList.remove('disappear');
+    target.textContent = placeholder + text[cursorPosition];
+    if (cursorPosition < text.length - 1) {
+      setTimeout(function () {
+        fillPlaceholder(target, index, cursorPosition + 1, callback);
+      }, 200);
+      return true;
+    }
+    callback();
+  }
+
+  function clearPlaceholder(target, callback) {
+    const placeholder = target.textContent;
+    target.classList.add('disappear');
+    if (placeholder.length > 0) {
+      setTimeout(function () {
+        target.textContent = '';
+        clearPlaceholder(target, callback);
+      }, 1000);
+      return true;
+    }
+    callback();
+  }
+
+  function loopThroughSuggestions(target, index) {
+    if (focused) {
+      target.textContent = '';
+      return true;
+    }
+    fillPlaceholder(target, index, 0, function () {
+      setTimeout(function () {
+        clearPlaceholder(target, function () {
+          loopThroughSuggestions(target, (index + 1) % suggestions.length);
+        });
+      }, 2000);
+    });
+  }
+
+  const targetInput = document.getElementById('search-placeholder');
+  if (targetInput) loopThroughSuggestions(targetInput, 0);
+
   return (
     <div className="Search">
-      <label>Search your district, resources, etc</label>
+      <label>{t('Search your district, resources, etc')}</label>
       <div className="line"></div>
 
       <input
@@ -131,6 +212,7 @@ function Search(props) {
         value={searchValue}
         ref={searchInput}
         onFocus={(event) => {
+          focused = true;
           setExpand(true);
         }}
         onBlur={() => {
@@ -138,15 +220,15 @@ function Search(props) {
         }}
         onChange={(event) => {
           setSearchValue(event.target.value);
-          handleSearch(event.target.value.toLowerCase());
         }}
       />
+      <span id="search-placeholder" className="search-placeholder"></span>
 
       <div className={`search-button`}>
         <Icon.Search />
       </div>
 
-      {results.length > 0 && (
+      {searchValue.length > 0 && (
         <div
           className={`close-button`}
           onClick={() => {
@@ -161,13 +243,27 @@ function Search(props) {
       {results.length > 0 && (
         <div className="results">
           {results.map((result, index) => {
-            if (result.type === 'state') {
+            if (result.type === 'state' || result.type === 'district') {
               return (
                 <Link key={index} to={`state/${result.route}`}>
                   <div className="result">
-                    <div className="result-name">{result.name}</div>
+                    <div className="result-left">
+                      <div className="result-name">
+                        {`${result.name}`}
+                        {result.type === 'district' &&
+                          `, ${STATE_CODES[result.route]}`}
+                      </div>
+                      <div
+                        className={classnames('result-zone', {
+                          [`is-${districtZones[STATE_CODES[result.route]][
+                            result.name
+                          ]?.zone.toLowerCase()}`]: true,
+                        })}
+                      ></div>
+                    </div>
                     <div className="result-type">
-                      Visit {result?.type?.toLowerCase()} page
+                      <span>{[result.route]}</span>
+                      <Icon.ArrowRightCircle size={14} />
                     </div>
                   </div>
                 </Link>
@@ -189,8 +285,8 @@ function Search(props) {
                     </div>
                     <div className="result-category">
                       <div>
-                        {result.category.match('Delivery')
-                          ? 'Home Delivery'
+                        {result.category.match('Testing')
+                          ? 'Covid19-Testing Labs'
                           : result.category}
                       </div>
                       <Icon.ExternalLink />
@@ -211,7 +307,7 @@ function Search(props) {
       {expand && (
         <div className="expanded">
           <div className="expanded-left">
-            <h3>Essentials</h3>
+            <h3>{t('Essentials')}</h3>
             <div className="suggestions">
               <div className="suggestion">
                 <div>-</div>
@@ -224,7 +320,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Covid19-Testing Labs
+                  {t('Covid19-Testing Labs')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -238,7 +334,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Quarantine Center
+                  {t('Quarantine Center')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -252,7 +348,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Health Facility
+                  {t('Health Facility')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -266,7 +362,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Medical College
+                  {t('Medical College')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -283,13 +379,13 @@ function Search(props) {
                     );
                   }}
                 >
-                  District Level Hospital
+                  {t(' District Level Hospital')}
                 </h4>
               </div>
             </div>
           </div>
           <div className="expanded-right">
-            <h3>Locations</h3>
+            <h3>{t('Locations')}</h3>
             <div className="suggestions">
               <div className="suggestion">
                 <div>-</div>
@@ -302,7 +398,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Kathmandu
+                  {t('Kathmandu')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -316,7 +412,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Rautahat
+                  {t('Rautahat')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -330,7 +426,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Chitwan
+                  {t('Chitwan')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -344,7 +440,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Baglung
+                  {t('Baglung')}
                 </h4>
               </div>
               <div className="suggestion">
@@ -358,7 +454,7 @@ function Search(props) {
                     );
                   }}
                 >
-                  Udayapur
+                  {t('Udayapur')}
                 </h4>
               </div>
             </div>

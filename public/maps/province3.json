@@ -1,129 +1,5 @@
 {
   "type": "Topology",
-  "objects": {
-    "province3_district": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Polygon",
-          "id": 20,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Sindhuli"
-          },
-          "arcs": [[0, 1, 2, 3]]
-        },
-        {
-          "type": "Polygon",
-          "id": 21,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Ramechhap"
-          },
-          "arcs": [[-1, 4, 5, 6]]
-        },
-        {
-          "type": "Polygon",
-          "id": 22,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Dolakha"
-          },
-          "arcs": [[-6, 7, 8, 9]]
-        },
-        {
-          "type": "Polygon",
-          "id": 23,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Bhaktapur"
-          },
-          "arcs": [[10, 11, 12]]
-        },
-        {
-          "type": "Polygon",
-          "id": 24,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Dhading"
-          },
-          "arcs": [[13, 14, 15, 16, 17, 18]]
-        },
-        {
-          "type": "Polygon",
-          "id": 25,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Kathmandu"
-          },
-          "arcs": [[19, 20, 21, -13, 22, 23, -16]]
-        },
-        {
-          "type": "Polygon",
-          "id": 26,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Kavrepalanchowk"
-          },
-          "arcs": [[24, -8, -5, -4, 25, 26, -11, -22]]
-        },
-        {
-          "type": "Polygon",
-          "id": 27,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Lalitpur"
-          },
-          "arcs": [[-27, 27, -23, -12]]
-        },
-        {
-          "type": "Polygon",
-          "id": 28,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Nuwakot"
-          },
-          "arcs": [[28, 29, -20, -15]]
-        },
-        {
-          "type": "Polygon",
-          "id": 29,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Rasuwa"
-          },
-          "arcs": [[30, 31, -29, -14]]
-        },
-        {
-          "type": "Polygon",
-          "id": 30,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Sindhupalchowk"
-          },
-          "arcs": [[-32, 32, -9, -25, -21, -30]]
-        },
-        {
-          "type": "Polygon",
-          "id": 34,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Chitwan"
-          },
-          "arcs": [[-18, 33, 34]]
-        },
-        {
-          "type": "Polygon",
-          "id": 35,
-          "properties": {
-            "st_nm": "bagmati province",
-            "district": "Makwanpur"
-          },
-          "arcs": [[-24, -28, -26, -3, 35, -34, -17]]
-        }
-      ]
-    }
-  },
   "arcs": [
     [
       [7156, 3634],
@@ -5724,9 +5600,162 @@
       [-5, -13]
     ]
   ],
-  "bbox": [83.920516, 26.916873, 86.574531, 28.385269],
   "transform": {
     "scale": [0.0002654280428042791, 0.00014685428542854308],
     "translate": [83.920516, 26.916873]
+  },
+  "objects": {
+    "province3_district": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Sindhuli",
+            "dt_code": "20",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[0, 1, 2, 3]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Ramechhap",
+            "dt_code": "21",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-1, 4, 5, 6]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Dolakha",
+            "dt_code": "22",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-6, 7, 8, 9]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Bhaktapur",
+            "dt_code": "23",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[10, 11, 12]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Dhading",
+            "dt_code": "24",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[13, 14, 15, 16, 17, 18]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Kathmandu",
+            "dt_code": "25",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[19, 20, 21, -13, 22, 23, -16]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Kavrepalanchowk",
+            "dt_code": "26",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[24, -8, -5, -4, 25, 26, -11, -22]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Lalitpur",
+            "dt_code": "27",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-27, 27, -23, -12]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Nuwakot",
+            "dt_code": "28",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[28, 29, -20, -15]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Rasuwa",
+            "dt_code": "29",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[30, 31, -29, -14]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Sindhupalchowk",
+            "dt_code": "30",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-32, 32, -9, -25, -21, -30]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Chitwan",
+            "dt_code": "34",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-18, 33, 34]]
+        },
+        {
+          "type": "Polygon",
+          "properties": {
+            "district": "Makwanpur",
+            "dt_code": "35",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          },
+          "arcs": [[-24, -28, -26, -3, 35, -34, -17]]
+        }
+      ]
+    }
+  },
+  "crs": {
+    "type": "name",
+    "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}
   }
 }

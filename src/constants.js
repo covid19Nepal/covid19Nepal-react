@@ -1,59 +1,78 @@
 export const MAP_TYPES = {
   COUNTRY: 'country',
   STATE: 'state',
+  DISTRICT: 'district',
 };
 
 export const MAPS_DIR = '/maps';
 export const DATA_DIR = '/data';
 
+export const STATE_ROW_STATISTICS = [
+  'confirmed',
+  'active',
+  'recovered',
+  'deaths',
+];
+
+export const DISTRICT_ROW_STATISTICS = [
+  'confirmed',
+  'active',
+  'recovered',
+  'deceased',
+];
+
+export const MAP_STATISTICS = {
+  TOTAL: 0,
+  PER_MILLION: 1,
+  Zone: 2,
+};
+
+export const MAP_VIEWS = {
+  STATES: 0,
+  DISTRICTS: 1,
+};
+
 export const MAP_META = {
   Nepal: {
-    name: 'Nepal',
     geoDataFile: `${MAPS_DIR}/nepal.json`,
     mapType: MAP_TYPES.COUNTRY,
-    graphObjectName: 'nepal',
+    graphObjectStates: 'nepal-states',
+    graphObjectDistricts: 'nepal-districts',
   },
   'Province 1': {
-    name: 'Province 1',
     geoDataFile: `${MAPS_DIR}/province1.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province1_district',
+    graphObjectDistricts: 'province1_district',
   },
   'Province 2': {
-    name: 'Province 2',
     geoDataFile: `${MAPS_DIR}/province2.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province2_district',
+    graphObjectDistricts: 'province2_district',
   },
   'Bagmati Province': {
-    name: 'Bagmati Province',
     geoDataFile: `${MAPS_DIR}/province3.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province3_district',
+    graphObjectDistricts: 'province3_district',
   },
   'Gandaki Province': {
-    name: 'Gandaki Province',
     geoDataFile: `${MAPS_DIR}/province4.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province4_district',
+    graphObjectDistricts: 'province4_district',
   },
   'Province 5': {
-    name: 'Province 5',
     geoDataFile: `${MAPS_DIR}/province5.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province5_district',
+    graphObjectDistricts: 'province5_district',
   },
   'Karnali Province': {
-    name: 'Karnali Province',
     geoDataFile: `${MAPS_DIR}/province6.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province6_district',
+    graphObjectDistricts: 'province6_district',
   },
   'Sudurpaschim Province': {
-    name: 'Sudurpaschim Province',
     geoDataFile: `${MAPS_DIR}/province7.json`,
     mapType: MAP_TYPES.STATE,
-    graphObjectName: 'province7_district',
+    graphObjectDistricts: 'province7_district',
   },
 };
 
@@ -67,18 +86,25 @@ export const STATE_CODES = {
   P7: 'Sudurpaschim Province',
 };
 
+export const STATE_POPULATIONS = {
+  'Province 1': 4766923,
+  'Province 2': 5871066,
+  'Bagmati Province': 6026626,
+  'Gandaki Province': 2472494,
+  'Province 5': 4831638,
+  'Karnali Province': 1701800,
+  'Sudurpaschim Province': 2760947,
+  Total: 28431494,
+};
+
+const stateCodes = [];
 const reverseStateCodes = {};
 Object.keys(STATE_CODES).map((key, index) => {
   reverseStateCodes[STATE_CODES[key]] = key;
-  return null;
-});
-export const STATE_CODES_REVERSE = reverseStateCodes;
-
-const stateCodes = [];
-Object.keys(STATE_CODES).map((key, index) => {
   stateCodes.push({code: key, name: STATE_CODES[key]});
   return null;
 });
+export const STATE_CODES_REVERSE = reverseStateCodes;
 export const STATE_CODES_ARRAY = stateCodes;
 
 export const DISTRICTS_ARRAY = [

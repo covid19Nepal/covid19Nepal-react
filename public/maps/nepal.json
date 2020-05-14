@@ -9686,17 +9686,872 @@
     "translate": [80.06014251708984, 26.347515106201286]
   },
   "objects": {
-    "nepal": {
+    "nepal-districts": {
       "type": "GeometryCollection",
       "geometries": [
         {
+          "arcs": [[0, 1, 2, 3]],
           "type": "Polygon",
-          "properties": {"st_nm": "Karnali Province"},
-          "arcs": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [13], [14]]
+          "properties": {
+            "district": "Western Rukum",
+            "dt_code": "57",
+            "st_nm": "Karnali Province",
+            "st_code": "P60",
+            "year": "2011_c"
+          }
         },
         {
+          "arcs": [[-3, 4, 5, 6]],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 5"},
+          "properties": {
+            "district": "Salyan",
+            "dt_code": "58",
+            "st_nm": "Karnali province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[7, -1, 8, 9, 10]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dolpa",
+            "dt_code": "59",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[11, 12]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Humla",
+            "dt_code": "60",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-10, 13, 14, 15]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Jumla",
+            "dt_code": "61",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-15, 16, 17, 18, 19]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kalikot",
+            "dt_code": "62",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[20, -11, -16, -20, 21, -12]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Mugu",
+            "dt_code": "63",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[22, 23, -6, 24]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Surkhet",
+            "dt_code": "66",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[25, -23, 26, -18]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dailekh",
+            "dt_code": "67",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-9, -4, -7, -24, -26, -17, -14]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Jajarkot",
+            "dt_code": "68",
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1, 2, 3]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kapilvastu",
+            "dt_code": "42",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[4, 5, 6]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Parasi",
+            "dt_code": "44",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[7, 8, -5, 9, -2]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Rupandehi",
+            "dt_code": "45",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[10, 11, -8, -1, 12, 13]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Argakhanchi",
+            "dt_code": "46",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[14, 15, 16, -11]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Gulmi",
+            "dt_code": "47",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-17, 17, -6, -9, -12]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Palpa",
+            "dt_code": "48",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[18, 19, 20, -13, -4, 21, 22]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dang",
+            "dt_code": "53",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[23, -15, -14, -21, 24]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Pyuthan",
+            "dt_code": "54",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[25, 26, -25, -20, 27]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Rolpa",
+            "dt_code": "55",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[28, -26]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Eastern Rukum",
+            "dt_code": "56",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-23, 29, 30, 31]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Banke",
+            "dt_code": "64",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-31, 32]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bardiya",
+            "dt_code": "65",
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1, 2, 3]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Gorkha",
+            "dt_code": "36",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[4, 5, 6, 7, 8, 9]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kaski",
+            "dt_code": "37",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-3, 10, -5, 11]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Lamjung",
+            "dt_code": "38",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-7, 12, 13, 14]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Syangja",
+            "dt_code": "39",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-6, -11, -2, 15, 16, 17, -13]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Tanahu",
+            "dt_code": "40",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[18, -4, -12, -10, 19, 20]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Manang",
+            "dt_code": "41",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-17, 21]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Nawalpur",
+            "dt_code": "43",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[22, 23, 24]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Baglung",
+            "dt_code": "49",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[25, -20, -9, 26, -23, 27]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Myagdi",
+            "dt_code": "50",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-27, -8, -15, 28, -24]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Parbat",
+            "dt_code": "51",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-21, -26, 29]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Mustang",
+            "dt_code": "52",
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Saptari",
+            "dt_code": "11",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[2, -1, 3, 4]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Siraha",
+            "dt_code": "12",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-5, 5, 6, 7]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dhanusa",
+            "dt_code": "17",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-7, 8, 9, 10]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Mahottari",
+            "dt_code": "18",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-10, 11, 12, 13]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Sarlahi",
+            "dt_code": "19",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[14, 15, 16, 17]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bara",
+            "dt_code": "31",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-18, 18]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Parsa",
+            "dt_code": "32",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[19, -13, 20, -16]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Rautahat",
+            "dt_code": "33",
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1, 2, 3]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kailali",
+            "dt_code": "69",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[4, 5, 6, 7]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Achham",
+            "dt_code": "70",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[8, -8, 9, -1, 10, 11]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Doti",
+            "dt_code": "71",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[12, 13, -5, -9, 14, 15]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bajhang",
+            "dt_code": "72",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[16, -6, -14]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bajura",
+            "dt_code": "73",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-3, 17, 18]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kanchanpur",
+            "dt_code": "74",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-11, -4, -19, 19, 20]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dadeldhura",
+            "dt_code": "75",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[21, -15, -12, -21, 22]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Baitadi",
+            "dt_code": "76",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-16, -22, 23]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Darchula",
+            "dt_code": "77",
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1, 2]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Jhapa",
+            "dt_code": "1",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[3, -3, 4, 5]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Illam",
+            "dt_code": "2",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[6, -6, 7, 8, 9, 10]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Panchthar",
+            "dt_code": "3",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[11, -11, 12, 13]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Taplejung",
+            "dt_code": "4",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-8, -5, -2, 14, 15, 16]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Morang",
+            "dt_code": "5",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-16, 17, 18, 19]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Sunsari",
+            "dt_code": "6",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[20, 21, 22, 23, 24]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bhojpur",
+            "dt_code": "7",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[25, -9, -17, -20, 26, -22, 27]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dhankuta",
+            "dt_code": "8",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-13, -10, -26, 28]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Tehrathum",
+            "dt_code": "9",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-14, -29, -28, -21, 29, 30]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Sankhuwasabha",
+            "dt_code": "10",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[31, -23, -27, -19, 32, 33]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Udayapur",
+            "dt_code": "13",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-24, -32, 34, 35]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Khotang",
+            "dt_code": "14",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[36, -35, -34, 37]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Okhaldunga",
+            "dt_code": "15",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-30, -25, -36, -37, 38]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Solukhumbu",
+            "dt_code": "16",
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[0, 1, 2, 3]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Sindhuli",
+            "dt_code": "20",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-1, 4, 5, 6]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Ramechhap",
+            "dt_code": "21",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-6, 7, 8, 9]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dolakha",
+            "dt_code": "22",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[10, 11, 12]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Bhaktapur",
+            "dt_code": "23",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[13, 14, 15, 16, 17, 18]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Dhading",
+            "dt_code": "24",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[19, 20, 21, -13, 22, 23, -16]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kathmandu",
+            "dt_code": "25",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[24, -8, -5, -4, 25, 26, -11, -22]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Kavrepalanchowk",
+            "dt_code": "26",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-27, 27, -23, -12]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Lalitpur",
+            "dt_code": "27",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[28, 29, -20, -15]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Nuwakot",
+            "dt_code": "28",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[30, 31, -29, -14]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Rasuwa",
+            "dt_code": "29",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-32, 32, -9, -25, -21, -30]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Sindhupalchowk",
+            "dt_code": "30",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-18, 33, 34]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Chitwan",
+            "dt_code": "34",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        },
+        {
+          "arcs": [[-24, -28, -26, -3, 35, -34, -17]],
+          "type": "Polygon",
+          "properties": {
+            "district": "Makwanpur",
+            "dt_code": "35",
+            "st_nm": "Bagmati Province",
+            "st_code": "P3",
+            "year": "2011_c"
+          }
+        }
+      ]
+    },
+    "nepal-states": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "arcs": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [13], [14]],
+          "type": "Polygon",
+          "properties": {
+            "st_nm": "Karnali Province",
+            "st_code": "P6",
+            "year": "2011_c"
+          },
+          "id": "Karnali Province"
+        },
+        {
           "arcs": [
             [
               15,
@@ -9735,7 +10590,14 @@
             [45],
             [46],
             [47]
-          ]
+          ],
+          "type": "Polygon",
+          "properties": {
+            "st_nm": "Province 5",
+            "st_code": "P5",
+            "year": "2011_c"
+          },
+          "id": "Province 5"
         },
         {
           "arcs": [
@@ -9795,7 +10657,12 @@
             [87]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Gandaki Province"}
+          "properties": {
+            "st_nm": "Gandaki Province",
+            "st_code": "P4",
+            "year": "2011_c"
+          },
+          "id": "Gandaki Province"
         },
         {
           "arcs": [
@@ -9825,12 +10692,22 @@
             [109]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 2"}
+          "properties": {
+            "st_nm": "Province 2",
+            "st_code": "P2",
+            "year": "2011_c"
+          },
+          "id": "Province 2"
         },
         {
           "arcs": [[-9, 110, -7, -40, 111]],
           "type": "Polygon",
-          "properties": {"st_nm": "Sudurpaschim Province"}
+          "properties": {
+            "st_nm": "Sudurpaschim Province",
+            "st_code": "P7",
+            "year": "2011_c"
+          },
+          "id": "Sudurpaschim Province"
         },
         {
           "arcs": [
@@ -9862,7 +10739,12 @@
             ]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Province 1"}
+          "properties": {
+            "st_nm": "Province 1",
+            "st_code": "P1",
+            "year": "2011_c"
+          },
+          "id": "Province 1"
         },
         {
           "arcs": [
@@ -9897,7 +10779,11 @@
             [144]
           ],
           "type": "Polygon",
-          "properties": {"st_nm": "Bagmati Province"}
+          "properties": {
+            "st_nm": "Bagmati Province",
+            "year": "2011_c"
+          },
+          "id": "Bagmati Province"
         }
       ]
     }
