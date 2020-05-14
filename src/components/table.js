@@ -97,7 +97,7 @@ function Table({
   const FineprintBottom = useMemo(
     () => (
       <h5 className="table-fineprint fadeInUp" style={{animationDelay: '1s'}}>
-        {states.slice(1).filter((s) => s && s.confirmed > 0).length} States/UTS
+        {states.slice(1).filter((s) => s && s.confirmed > 0).length} Province
         Affected
       </h5>
     ),
@@ -158,7 +158,7 @@ function Table({
             <tr>
               <th className="state-heading" onClick={() => handleSort('state')}>
                 <div className="heading-content">
-                  <abbr title="State">{t('State/UT')}</abbr>
+                  <abbr title="State">{t('Province')}</abbr>
                   <div
                     style={{
                       display:

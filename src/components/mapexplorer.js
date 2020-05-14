@@ -564,7 +564,7 @@ function MapExplorer({
             </h4>
           </div>
         )}
-        <div
+        {/* <div
           className={`tab ${
             currentMap.stat === MAP_STATISTICS.ZONE ? 'focused' : ''
           }`}
@@ -581,7 +581,7 @@ function MapExplorer({
           }}
         >
           <h4>Zones</h4>
-        </div>
+        </div> */}
       </div>
 
       <h6 className="footnote table-fineprint">

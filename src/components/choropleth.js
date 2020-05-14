@@ -290,7 +290,7 @@ function ChoroplethMap({
         meshStates = [
           topojson.mesh(geoData, geoData.objects[mapMeta.graphObjectStates]),
         ];
-
+        console.log(meshStates);
         meshStates[0].id = mapMeta.graphObjectStates;
       }
       let meshDistricts = [];

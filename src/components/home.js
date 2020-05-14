@@ -1,4 +1,5 @@
 import Footer from './footer';
+// import LanguageSwitcher from './languageswitcher';
 import Level from './level';
 import MapExplorer from './mapexplorer';
 import Minigraph from './minigraph';

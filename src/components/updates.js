@@ -1,11 +1,15 @@
 import axios from 'axios';
 import {formatDistance, format} from 'date-fns';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useLayoutEffect} from 'react';
+import {useEffectOnce} from 'react-use';
+
+const newDate = new Date();
+let currentDate = newDate;
 
 function Updates(props) {
   const [updates, setUpdates] = useState([]);
 
-  useEffect(() => {
+  useEffectOnce(() => {
     axios
       .get('https://api.nepalcovid19.org/updatelog/log.json')
       .then((response) => {
@@ -16,25 +20,54 @@ function Updates(props) {
       });
   });
 
+  // reset the currentDate after rendering is complete
+  // in case the currentDate was changed during addHeader
+  useLayoutEffect(() => {
+    currentDate = newDate;
+  });
+
   return (
-    <React.Fragment>
+    <div className="updates">
       <div className="updates-header">
-        <h2>{format(new Date(), 'd MMM')}</h2>
+        <h2>{format(currentDate, 'd MMM')}</h2>
       </div>
 
-      <div className="updates">
-        {updates
-          .slice(-5)
-          .reverse()
-          .map(function (activity, index) {
-            activity.update = activity.update.replace('\n', '<br/>');
+      {updates
+        .slice(-5)
+        .reverse()
+        .map(function (activity, index) {
+          activity.update = activity.update.replace('\n', '<br/>');
+          const activityDate = new Date(activity.timestamp * 1000);
+          const addHeader = () => {
+            currentDate = activityDate;
+
             return (
+              <React.Fragment>
+                {index === 0 ? (
+                  <div className="update">
+                    <h4>No updates yet!</h4>
+                  </div>
+                ) : (
+                  ''
+                )}
+                <div className="updates-header">
+                  <h2>{format(activityDate, 'd MMM')}</h2>
+                </div>
+              </React.Fragment>
+            );
+          };
+
+          return (
+            <React.Fragment key={index}>
+              {activityDate.getDate() !== currentDate.getDate()
+                ? addHeader()
+                : ' '}
               <div key={index} className="update">
                 <h5>
                   {formatDistance(
                     new Date(activity.timestamp * 1000),
                     new Date()
-                  ) + ' Ago'}
+                  ) + ' ago'}
                 </h5>
                 <h4
                   dangerouslySetInnerHTML={{
@@ -42,10 +75,10 @@ function Updates(props) {
                   }}
                 ></h4>
               </div>
-            );
-          })}
-      </div>
-    </React.Fragment>
+            </React.Fragment>
+          );
+        })}
+    </div>
   );
 }
 
