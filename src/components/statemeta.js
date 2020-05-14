@@ -62,9 +62,9 @@ function StateMeta({
         <div className="alert">
           <Icon.Compass />
           <div className="alert-right">
-            Based on 2019 population projection by NCP{' '}
+            Based on 2019 population projection{' '}
             <a
-              href="https://nhm.gov.in/New_Updates_2018/Report_Population_Projection_2019.pdf"
+              href="https://www.citypopulation.de/php/nepal-admin.php"
               target="_noblank"
             >
               report

@@ -585,7 +585,7 @@ function MapExplorer({
       </div>
 
       <h6 className="footnote table-fineprint">
-        &dagger; {t('Based on 2019 population projection by NCP') + '('}
+        &dagger; {t('Based on 2019 population projection') + '('}
         <a
           href="https://www.citypopulation.de/php/nepal-admin.php"
           target="_noblank"

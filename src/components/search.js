@@ -4,8 +4,8 @@ import {
   STATE_CODES,
 } from '../constants';
 
-import Bloodhound from 'bloodhound-js';
 import classnames from 'classnames';
+import Bloodhound from 'corejs-typeahead';
 import React, {useState, useCallback, useRef} from 'react';
 import * as Icon from 'react-feather';
 import {useTranslation} from 'react-i18next';
