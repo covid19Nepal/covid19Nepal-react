@@ -23,6 +23,7 @@
     "d3-svg-legend": "^2.25.6",
     "date-fns": "^2.11.0",
     "date-fns-tz": "^1.0.10",
+    "deepmerge": "^4.2.2",
     "i": "^0.3.6",
     "i18next": "^19.4.4",
     "i18next-browser-languagedetector": "^4.1.1",

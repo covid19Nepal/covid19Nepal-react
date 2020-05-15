@@ -1,28 +1,11 @@
+import {defaultOptions, xAxisDefaults, formatNumber} from './chart-defaults.js';
+
+import deepmerge from 'deepmerge';
 import React from 'react';
-import {Bar, defaults} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 function AgeChart(props) {
-  defaults.global.tooltips.intersect = false;
-  defaults.global.tooltips.mode = 'nearest';
-  defaults.global.tooltips.position = 'average';
-  defaults.global.tooltips.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-  defaults.global.tooltips.displayColors = false;
-  defaults.global.tooltips.borderColor = '#c62828';
-  defaults.global.tooltips.borderWidth = 1;
-  defaults.global.tooltips.titleFontColor = '#000';
-  defaults.global.tooltips.bodyFontColor = '#000';
-  defaults.global.tooltips.caretPadding = 4;
-  defaults.global.tooltips.intersect = false;
-  defaults.global.tooltips.mode = 'nearest';
-  defaults.global.tooltips.position = 'nearest';
-
-  defaults.global.legend.display = true;
-  defaults.global.legend.position = 'bottom';
-
-  defaults.global.hover.intersect = false;
-
-  const ages = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
+  const ages = Array(10).fill(0);
   if (!props.data || props.data.length === 0) {
     return <div></div>;
   }
@@ -30,35 +13,10 @@ function AgeChart(props) {
   props.data.forEach((patient) => {
     if (patient.agebracket) {
       const age = parseInt(patient.agebracket);
-      if (age >= 0 && age <= 10) {
-        ages[0]++;
-      }
-      if (age > 10 && age <= 20) {
-        ages[1]++;
-      }
-      if (age > 20 && age <= 30) {
-        ages[2]++;
-      }
-      if (age > 30 && age <= 40) {
-        ages[3]++;
-      }
-      if (age > 40 && age <= 50) {
-        ages[4]++;
-      }
-      if (age > 50 && age <= 60) {
-        ages[5]++;
-      }
-      if (age > 60 && age <= 70) {
-        ages[6]++;
-      }
-      if (age > 70 && age <= 80) {
-        ages[7]++;
-      }
-      if (age > 80 && age <= 90) {
-        ages[8]++;
-      }
-      if (age > 90 && age <= 100) {
-        ages[9]++;
+      for (let i = 0; i < 10; i++) {
+        if (age > i * 10 && age <= (i + 1) * 10) {
+          ages[i]++;
+        }
       }
     }
   });
@@ -80,34 +38,20 @@ function AgeChart(props) {
       {
         data: ages,
         label: 'Cases',
-        backgroundColor: '#ff073a',
+        backgroundColor: '#bc79c9',
       },
     ],
   };
 
-  const chartOptions = {
-    events: ['mousemove', 'mouseout', 'touchstart', 'touchmove', 'touchend'],
-    responsive: true,
-    maintainAspectRatio: false,
+  const chartOptions = deepmerge(defaultOptions, {
     legend: {
       display: false,
     },
-    layout: {
-      padding: {
-        left: 20,
-        right: 20,
-        top: 20,
-        bottom: 20,
-      },
-    },
     scales: {
       xAxes: [
-        {
+        deepmerge(xAxisDefaults, {
           stacked: true,
-          gridLines: {
-            color: 'rgba(0, 0, 0, 0)',
-          },
-        },
+        }),
       ],
       yAxes: [
         {
@@ -115,13 +59,24 @@ function AgeChart(props) {
         },
       ],
     },
-  };
+    events: ['mousemove', 'mouseout', 'touchstart', 'touchmove', 'touchend'],
+    responsive: true,
+    maintainAspectRatio: false,
+    tooltips: {
+      mode: 'index',
+    },
+  });
+
+  const sampleSize = ages.reduce((a, b) => a + b, 0);
 
   return (
     <div className="charts-header">
       <div className="chart-title">{props.title}</div>
       <div className="chart-content doughnut">
         <Bar data={chartData} options={chartOptions} />
+      </div>
+      <div className="chart-note">
+        Sample Size: {formatNumber(sampleSize)} patients
       </div>
     </div>
   );

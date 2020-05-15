@@ -1,6 +1,9 @@
-import moment from 'moment';
+import {defaultOptions, xAxisDefaults, yAxisDefaults} from './chart-defaults';
+
+import {parse} from 'date-fns';
+import deepmerge from 'deepmerge';
 import React from 'react';
-import {Line, defaults} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 function TotalConfirmedChart(props) {
   const dates = [];
@@ -8,32 +11,14 @@ function TotalConfirmedChart(props) {
   const recovered = [];
   const deceased = [];
 
-  defaults.global.elements.line.fill = false;
-  defaults.global.tooltips.intersect = false;
-  defaults.global.tooltips.mode = 'nearest';
-  defaults.global.tooltips.position = 'average';
-  defaults.global.tooltips.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-  defaults.global.tooltips.displayColors = false;
-  defaults.global.tooltips.borderColor = '#c62828';
-  defaults.global.tooltips.borderWidth = 1;
-  defaults.global.tooltips.titleFontColor = '#000';
-  defaults.global.tooltips.bodyFontColor = '#000';
-  defaults.global.tooltips.caretPadding = 4;
-  defaults.global.tooltips.intersect = false;
-  defaults.global.tooltips.mode = 'nearest';
-  defaults.global.tooltips.position = 'nearest';
-  defaults.global.legend.display = true;
-  defaults.global.legend.position = 'bottom';
-
-  defaults.global.hover.intersect = false;
-
   if (!props.timeseries || props.timeseries.length === 0) {
     return <div></div>;
   }
 
   props.timeseries.forEach((data, index) => {
     if (index >= 31) {
-      dates.push(moment(data.date.trim(), 'DD MMM'));
+      const date = parse(data.date, 'dd MMMM', new Date(2020, 0, 1));
+      dates.push(date);
       confirmed.push(data.totalconfirmed);
       recovered.push(data.totalrecovered);
       deceased.push(data.totaldeceased);
@@ -44,79 +29,55 @@ function TotalConfirmedChart(props) {
     labels: dates,
     datasets: [
       {
-        borderWidth: 4,
+        borderWidth: 2,
         data: confirmed,
         borderCapStyle: 'round',
-        pointBackgroundColor: '#ff073a',
+        pointBackgroundColor: '#ff6862',
         label: 'Confirmed',
-        borderColor: '#ff073a',
+        borderColor: '#ff6862',
+        pointHoverRadius: 2,
       },
       {
-        borderWidth: 4,
+        borderWidth: 2,
         data: recovered,
         borderCapStyle: 'round',
-        pointBackgroundColor: '#28a745',
+        pointBackgroundColor: '#7ebf80',
         label: 'Recovered',
-        borderColor: '#28a745',
+        borderColor: '#7ebf80',
+        pointHoverRadius: 2,
       },
       {
-        borderWidth: 4,
+        borderWidth: 2,
         data: deceased,
         borderCapStyle: 'round',
         pointBackgroundColor: '#6c757d',
         label: 'Deceased',
         borderColor: '#6c757d',
+        pointHoverRadius: 2,
       },
     ],
   };
 
-  const options = {
-    responsive: true,
-    events: [
-      'click',
-      'mousemove',
-      'mouseout',
-      'touchstart',
-      'touchmove',
-      'touchend',
-    ],
-    maintainAspectRatio: false,
-    tooltips: {
-      mode: 'index',
-    },
+  const options = deepmerge(defaultOptions, {
     elements: {
       point: {
         radius: 0,
       },
       line: {
-        tension: 0.2,
-      },
-    },
-    layout: {
-      padding: {
-        left: 20,
-        right: 20,
-        top: 0,
-        bottom: 20,
+        tension: 0.1,
       },
     },
     scales: {
       yAxes: [
-        {
-          type: 'linear',
-          ticks: {
-            beginAtZero: true,
-            max: undefined,
-            precision: 0,
-          },
+        deepmerge(yAxisDefaults, {
           scaleLabel: {
             display: false,
             labelString: 'Total Cases',
           },
-        },
+        }),
       ],
       xAxes: [
-        {
+        deepmerge(xAxisDefaults, {
           type: 'time',
           time: {
             unit: 'day',
@@ -134,13 +95,10 @@ function TotalConfirmedChart(props) {
               year: 'MMM DD',
             },
           },
-          gridLines: {
-            color: 'rgba(0, 0, 0, 0)',
-          },
-        },
+        }),
       ],
     },
-  };
+  });
 
   if (props.mode) {
     options.scales.yAxes = [
