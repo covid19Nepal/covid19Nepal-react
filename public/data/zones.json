@@ -151,7 +151,7 @@
       "source": "",
       "state": "Province 2",
       "statecode": "P2",
-      "zone": "Green"
+      "zone": "Orange"
     },
     {
       "district": "Dhanusa",
@@ -252,7 +252,7 @@
       "source": "",
       "state": "Bagmati Province",
       "statecode": "P3",
-      "zone": "Green"
+      "zone": "Orange"
     },
 
     {
@@ -271,7 +271,7 @@
       "source": "",
       "state": "Bagmati Province",
       "statecode": "P3",
-      "zone": "Green"
+      "zone": "Orange"
     },
     {
       "district": "Lalitpur",
@@ -307,7 +307,7 @@
       "source": "",
       "state": "Bagmati Province",
       "statecode": "P3",
-      "zone": "Green"
+      "zone": "Orange"
     },
     {
       "district": "Chitwan",
@@ -325,7 +325,7 @@
       "source": "",
       "state": "Bagmati Province",
       "statecode": "P3",
-      "zone": "Green"
+      "zone": "Orange"
     },
     {
       "district": "Gorkha",
@@ -487,7 +487,7 @@
       "source": "",
       "state": "Province 5",
       "statecode": "P5",
-      "zone": "Green"
+      "zone": "Orange"
     },
     {
       "district": "Pyuthan",

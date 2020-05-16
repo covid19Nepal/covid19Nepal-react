@@ -2,10 +2,94 @@
   "Bagmati Province": {
     "districtData": {
       "Kathmandu": {
-        "confirmed": 5,
+        "active": 5,
+        "confirmed": 9,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 4,
         "delta": {
-          "confirmed": 2
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Chitwan": {
+        "active": 1,
+        "confirmed": 3,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 2,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Bhaktapur": {
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Dhading": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Makwanpur": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Kavre": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Sindhupalchowk": {
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 1,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       }
     }
@@ -13,17 +97,29 @@
   "Sudurpaschim Province": {
     "districtData": {
       "Kailali": {
+        "active": 0,
         "confirmed": 4,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 4,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       },
       "Kanchanpur": {
+        "active": 0,
         "confirmed": 1,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 1,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       }
     }
@@ -31,10 +127,29 @@
   "Gandaki Province": {
     "districtData": {
       "Baglung": {
+        "active": 0,
         "confirmed": 2,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 2,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Nawalpur": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       }
     }
@@ -42,17 +157,232 @@
   "Province 2": {
     "districtData": {
       "Parsa": {
-        "confirmed": 3,
+        "active": 89,
+        "confirmed": 91,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 2,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       },
       "Rautahat": {
-        "confirmed": 1,
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
         "lastupdatedtime": "",
+        "recovered": 0,
         "delta": {
-          "confirmed": 0
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Dhanusa": {
+        "active": 6,
+        "confirmed": 6,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Bara": {
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Saptari": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Mahottari": {
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Sarlahi": {
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Siraha": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      }
+    }
+  },
+  "Province 1": {
+    "districtData": {
+      "Udayapur": {
+        "active": 18,
+        "confirmed": 33,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 15,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Bhojpur": {
+        "active": 0,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Jhapa": {
+        "active": 1,
+        "confirmed": 2,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      }
+    }
+  },
+  "Province 5": {
+    "districtData": {
+      "Banke": {
+        "active": 33,
+        "confirmed": 33,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Rupandehi": {
+        "active": 27,
+        "confirmed": 28,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 1,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Kapilvastu": {
+        "active": 42,
+        "confirmed": 42,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Bardiya": {
+        "active": 2,
+        "confirmed": 2,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Parasi": {
+        "active": 1,
+        "confirmed": 1,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
+        }
+      },
+      "Dang": {
+        "active": 3,
+        "confirmed": 3,
+        "deceased": 0,
+        "lastupdatedtime": "",
+        "recovered": 0,
+        "delta": {
+          "confirmed": 0,
+          "active": 0,
+          "recovered": 0,
+          "deceased": 0
         }
       }
     }
