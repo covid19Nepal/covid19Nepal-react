@@ -29,7 +29,7 @@ function DeepDive() {
         rawDataResponse,
         stateDailyResponse,
       ] = await Promise.all([
-        axios.get('https://api.nepalcovid19.org/data.json'),
+        axios.get('https://api.nepalcovid19.org/latest_data.json'),
         axios.get('https://api.nepalcovid19.org/raw_data.json'),
         axios.get('https://api.nepalcovid19.org/states_daily.json'),
       ]);

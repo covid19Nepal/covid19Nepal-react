@@ -12,7 +12,7 @@ function removeUnknown(e) {
 
 export async function getStatesAndDistrictsFromAPI() {
   const stateDistrictWiseResponse = (
-    await axios.get('https://api.nepalcovid19.org/state_district_wise.json')
+    await axios.get('https://api.nepalcovid19.org/state-district-wise.json')
   ).data;
   const states = Object.keys(stateDistrictWiseResponse).filter(removeUnknown);
   const result = {};

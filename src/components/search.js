@@ -26,7 +26,7 @@ const districtEngine = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('district'),
   indexRemote: true,
   remote: {
-    url: 'https://api.nepalcovid19.org/state_district_wise.json',
+    url: 'https://api.nepalcovid19.org/state-district-wise.json',
     transform: function (response) {
       const districts = [];
       Object.keys(response).map((stateName) => {

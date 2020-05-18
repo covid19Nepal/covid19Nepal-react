@@ -112,8 +112,8 @@ function Home(props) {
         {data: stateDistrictWiseResponse},
         {data: stateTestData},
       ] = await Promise.all([
-        axios.get('https://api.nepalcovid19.org/data.json'),
-        axios.get('https://api.nepalcovid19.org/state_district_wise.json'),
+        axios.get('https://api.nepalcovid19.org/latest_data.json'),
+        axios.get('https://api.nepalcovid19.org/state-district-wise.json'),
         axios.get('https://api.nepalcovid19.org/state_test_data.json'),
       ]);
 

@@ -19,7 +19,7 @@ function Summary(props) {
 
   const getStates = () => {
     axios
-      .get(`https://api.nepalcovid19.org/data.json`)
+      .get(`https://api.nepalcovid19.org/latest_data.json`)
       .then((response) => {
         setStates(response.data.statewise);
         setDeltas(response.data.key_values[0]);
